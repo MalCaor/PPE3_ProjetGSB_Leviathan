@@ -26,3 +26,4 @@ X:\PPE fin\obj\Debug\PPE3_Leviathan.csproj.CoreCompileInputs.cache
 X:\PPE fin\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 X:\PPE fin\obj\Debug\PPE3_Leviathan.exe
 X:\PPE fin\obj\Debug\PPE3_Leviathan.pdb
+X:\PPE fin\obj\Debug\PPE3_Leviathan.Form1.resources
