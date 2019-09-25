@@ -13,3 +13,16 @@ E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_Leviathan\obj\Debug\PPE3_Leviathan.cspro
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_Leviathan\obj\Debug\PPE3_Leviathan.exe
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_Leviathan\obj\Debug\PPE3_Leviathan.pdb
+X:\PPE fin\bin\Debug\PPE3_Leviathan.exe.config
+X:\PPE fin\bin\Debug\PPE3_Leviathan.exe
+X:\PPE fin\bin\Debug\PPE3_Leviathan.pdb
+X:\PPE fin\bin\Debug\EntityFramework.dll
+X:\PPE fin\bin\Debug\EntityFramework.SqlServer.dll
+X:\PPE fin\bin\Debug\fr\EntityFramework.resources.dll
+X:\PPE fin\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
+X:\PPE fin\obj\Debug\PPE3_Leviathan.Properties.Resources.resources
+X:\PPE fin\obj\Debug\PPE3_Leviathan.csproj.GenerateResource.cache
+X:\PPE fin\obj\Debug\PPE3_Leviathan.csproj.CoreCompileInputs.cache
+X:\PPE fin\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
+X:\PPE fin\obj\Debug\PPE3_Leviathan.exe
+X:\PPE fin\obj\Debug\PPE3_Leviathan.pdb
