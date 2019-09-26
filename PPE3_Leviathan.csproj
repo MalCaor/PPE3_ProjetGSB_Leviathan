@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controleur.cs" />
     <Compile Include="Etat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
