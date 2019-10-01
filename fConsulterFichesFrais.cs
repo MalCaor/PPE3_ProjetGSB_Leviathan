@@ -20,6 +20,9 @@ namespace PPE3_Leviathan
             // dgv = bs
             dataGridViewFicheFrais.DataSource = bindingSourceFicheFrais;
             // Hide some grid (du to error or empty grid)
+            dataGridViewFicheFrais.Columns[2].Visible = false;
+            dataGridViewFicheFrais.Columns[3].Visible = false;
+            dataGridViewFicheFrais.Columns[5].Visible = false;
             dataGridViewFicheFrais.Columns[6].Visible = false;
             dataGridViewFicheFrais.Columns[7].Visible = false;
             dataGridViewFicheFrais.Columns[8].Visible = false;
