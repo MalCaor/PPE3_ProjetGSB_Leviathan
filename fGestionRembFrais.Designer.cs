@@ -1,6 +1,6 @@
 ﻿namespace PPE3_Leviathan
 {
-    partial class FGestionRembFrais
+    partial class fGestionRembFrais
     {
         /// <summary>
         /// Required designer variable.
