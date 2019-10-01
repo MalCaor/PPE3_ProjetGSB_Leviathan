@@ -17,7 +17,8 @@ namespace PPE3_Leviathan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ControleurMission1.init();
-            Application.Run(new FrmConnexion());
+            controleurMission3.init();
+            Application.Run(new fGestionRembFrais());
         }
     }
 }
