@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PPE3_Leviathan
 {
-    public partial class FGestionRembFrais : Form
+    public partial class fGestionRembFrais : Form
     {
-        public FGestionRembFrais()
+        public fGestionRembFrais()
         {
             InitializeComponent();
         }
