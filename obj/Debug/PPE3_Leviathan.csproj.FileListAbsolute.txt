@@ -89,7 +89,6 @@ X:\test\PPE3_ProjetGSB_Leviathan\bin\Debug\EntityFramework.dll
 X:\test\PPE3_ProjetGSB_Leviathan\bin\Debug\EntityFramework.SqlServer.dll
 X:\test\PPE3_ProjetGSB_Leviathan\bin\Debug\fr\EntityFramework.resources.dll
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
-X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Form1.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Properties.Resources.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.GenerateResource.cache
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CoreCompileInputs.cache
@@ -112,3 +111,5 @@ E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Levia
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.pdb
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fGestionRembFrais.resources
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fConsulterFichesFrais.resources
+X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConnexion.resources
+X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Accueil.resources
