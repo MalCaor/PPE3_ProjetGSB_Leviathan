@@ -1,0 +1,4 @@
+Nom du Serveur : 172.16.0.50
+Authentification SQL Server.
+	Connexion : Leviathan
+	Mot de passe : Levi@than2019
