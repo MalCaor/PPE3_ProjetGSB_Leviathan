@@ -15,8 +15,15 @@ namespace PPE3_Leviathan
         public fConsulterFichesFrais()
         {
             InitializeComponent();
+            // insert listFicheFrais in bs
             bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
+            // dgv = bs
             dataGridViewFicheFrais.DataSource = bindingSourceFicheFrais;
+            // Hide some grid (du to error or empty grid)
+            dataGridViewFicheFrais.Columns[6].Visible = false;
+            dataGridViewFicheFrais.Columns[7].Visible = false;
+            dataGridViewFicheFrais.Columns[8].Visible = false;
+            dataGridViewFicheFrais.Columns[9].Visible = false;
         }
     }
 }
