@@ -110,3 +110,4 @@ E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Levia
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.exe
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.pdb
+E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fGestionRembFrais.resources
