@@ -146,6 +146,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fConsulterFichesFrais.resx">
+      <DependentUpon>fConsulterFichesFrais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fGestionRembFrais.resx">
       <DependentUpon>fGestionRembFrais.cs</DependentUpon>
     </EmbeddedResource>
