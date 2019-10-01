@@ -59,6 +59,7 @@
             this.consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
             this.consulterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consulterToolStripMenuItem.Text = "Consulter";
+            this.consulterToolStripMenuItem.Click += new System.EventHandler(this.ConsulterToolStripMenuItem_Click);
             // 
             // renseignerToolStripMenuItem
             // 
