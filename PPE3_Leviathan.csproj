@@ -63,6 +63,12 @@
     <Compile Include="FAMILLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="fConsulterFichesFrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fConsulterFichesFrais.Designer.cs">
+      <DependentUpon>fConsulterFichesFrais.cs</DependentUpon>
+    </Compile>
     <Compile Include="fGestionRembFrais.cs">
       <SubType>Form</SubType>
     </Compile>
