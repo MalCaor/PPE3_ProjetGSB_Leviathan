@@ -16,5 +16,10 @@ namespace PPE3_Leviathan
         {
             InitializeComponent();
         }
+
+        private void BtnConnexion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ControleurMission1.validConnexion(txtIdentifiant.Text, txtMotDePasse.Text));
+        }
     }
 }

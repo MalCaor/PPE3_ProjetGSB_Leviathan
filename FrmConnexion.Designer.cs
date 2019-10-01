@@ -46,6 +46,7 @@
             // 
             this.txtMotDePasse.Location = new System.Drawing.Point(143, 122);
             this.txtMotDePasse.Name = "txtMotDePasse";
+            this.txtMotDePasse.PasswordChar = '*';
             this.txtMotDePasse.Size = new System.Drawing.Size(188, 20);
             this.txtMotDePasse.TabIndex = 1;
             // 
@@ -75,6 +76,7 @@
             this.btnConnexion.TabIndex = 4;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.BtnConnexion_Click);
             // 
             // FrmConnexion
             // 
