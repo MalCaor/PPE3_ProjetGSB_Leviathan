@@ -19,10 +19,10 @@ namespace PPE3_Leviathan
 
         //----------------------CONNEXION-----------------------
 
-        private Visiteur leVisiteur;
-        private static bool connexionValide;
+        private static Visiteur leVisiteur;
+        private static bool connexionValide = false;
 
-        private static string GetMd5Hash(string PasswdSaisi)
+        private static string GetMd5Hash(string PasswdSaisi) //Cryptage du mot de passe
         {
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(PasswdSaisi);
             byte[] hash = (MD5.Create()).ComputeHash(inputBytes);
@@ -31,14 +31,34 @@ namespace PPE3_Leviathan
             {
                 sb.Append(hash[i].ToString("x2"));
             }
-            return (sb.ToString());
+            return ("0x"+sb.ToString().ToUpper());
         }
 
-        public static string validConnexion(string identifiant, string motDePasse)
+        public static string validConnexion(string identifiantVisiteur, string motDePasse)
         {
             string message = "";
-            message = GetMd5Hash(motDePasse.ToString());
+            var LQuery = maConnexion.Visiteur.ToList()
+                           .Where(x => x.identifiant == identifiantVisiteur);
+            leVisiteur = (Visiteur)LQuery.First();
+            if(leVisiteur.password.ToString() == GetMd5Hash(motDePasse.ToString()))
+            {
+                connexionValide = true;
+                message = message + "Connecté";
+            }
+            else
+            {
+                connexionValide = false;
+                message = message + "Erreur de mot de passe ou Identifiant incorrect";
+            }
             return message;
+        }
+        public static bool getConnexionValide()
+        {
+            return connexionValide;
+        }
+        public static List<Visiteur> listevisiteur()
+        {
+            return maConnexion.Visiteur.ToList();
         }
     }
 }

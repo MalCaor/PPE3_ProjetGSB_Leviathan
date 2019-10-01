@@ -19,7 +19,21 @@ namespace PPE3_Leviathan
 
         private void BtnConnexion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ControleurMission1.validConnexion(txtIdentifiant.Text, txtMotDePasse.Text));
+            MessageBox.Show(ControleurMission1.validConnexion(txtIdentifiant.Text.ToString(), txtMotDePasse.Text.ToString()));
+
+            if(ControleurMission1.getConnexionValide())
+            {
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                t.Start();
+                this.Close();
+            }
         }
+
+        public static void ThreadProc()
+        {
+            Application.Run(new Form1());
+        }
+
+
     }
 }
