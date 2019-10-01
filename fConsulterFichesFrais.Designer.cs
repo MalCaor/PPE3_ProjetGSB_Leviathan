@@ -40,7 +40,7 @@
             this.dataGridViewFicheFrais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFicheFrais.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewFicheFrais.Name = "dataGridViewFicheFrais";
-            this.dataGridViewFicheFrais.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewFicheFrais.Size = new System.Drawing.Size(775, 425);
             this.dataGridViewFicheFrais.TabIndex = 0;
             // 
             // fConsulterFichesFrais
