@@ -6,3 +6,8 @@
 *.suo
 .vs
 Program.cs
+/Program.cs
+.Program.cs
+Program.*
+/Program.*
+.Program.*

@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'X:\test\PPE3_ProjetGSB_Leviathan\Model1.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\Model1.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.
