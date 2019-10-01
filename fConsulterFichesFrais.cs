@@ -15,7 +15,8 @@ namespace PPE3_Leviathan
         public fConsulterFichesFrais()
         {
             InitializeComponent();
-            bindingSourceFicheFrais.DataSource = Controleur
+            bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
+            dataGridViewFicheFrais.DataSource = bindingSourceFicheFrais;
         }
     }
 }

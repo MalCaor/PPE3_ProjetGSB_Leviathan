@@ -17,6 +17,9 @@ namespace PPE3_Leviathan
             maConnexion = new Leviathan_PPE3Entities();
         }
 
-        //public static List<>
+        public static List<fichefrais> listeFicheFrais()
+        {
+            return maConnexion.fichefrais.ToList();
+        }
     }
 }

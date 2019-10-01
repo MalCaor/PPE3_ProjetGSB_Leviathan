@@ -16,6 +16,7 @@ namespace PPE3_Leviathan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            controleurMission3.init();
             Application.Run(new fGestionRembFrais());
             //test
         }
