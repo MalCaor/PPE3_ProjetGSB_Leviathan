@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0d90135de37e42cf89b238b3224f922b" Name="Diagram1">
+      <Diagram DiagramId="0d90135de37e42cf89b238b3224f922b" Name="Diagram1" ZoomLevel="69">
         <EntityTypeShape EntityType="Leviathan_PPE3Model.Etat" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Leviathan_PPE3Model.FAMILLE" Width="1.5" PointX="6" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Leviathan_PPE3Model.fichefrais" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
@@ -19,7 +19,7 @@
         <EntityTypeShape EntityType="Leviathan_PPE3Model.RAPPORT" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Leviathan_PPE3Model.Region" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Leviathan_PPE3Model.Secteur" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Leviathan_PPE3Model.SPECIALITE" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Leviathan_PPE3Model.SPECIALITE" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Leviathan_PPE3Model.Visiteur" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
         <AssociationConnector Association="Leviathan_PPE3Model.FK__fichefrai__idEta__1ED998B2" ManuallyRouted="false" />
         <AssociationConnector Association="Leviathan_PPE3Model.medicament_fk" ManuallyRouted="false" />
