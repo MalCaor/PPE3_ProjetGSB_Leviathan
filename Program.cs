@@ -21,6 +21,7 @@ namespace PPE3_Leviathan
             //controleurMission3.init();
 
             Application.Run(new Form2());
+            //Application.Run(new testCo());
             // test
         }
     }
