@@ -31,7 +31,7 @@ namespace PPE3_Leviathan
 
         public static void ThreadProc()
         {
-            Application.Run(new Form1());
+            Application.Run(new Accueil());
         }
 
 
