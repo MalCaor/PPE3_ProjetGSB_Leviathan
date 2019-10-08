@@ -66,37 +66,45 @@ namespace PPE3_Leviathan
         {
             return maConnexion.Visiteur.ToList();
         }
-        public static void setIdentifiantConnexion(string identifiant) // conserve l'identifiant de la personne connectée
+
+        // conserve l'identifiant de la personne connectée
+        public static void setIdentifiantConnexion(string identifiant) 
         {
             nomConnexion = identifiant;
         }
 
 
-        //-------------GETTER DE LA PERSONNE CONNECTEE
+        //-------------GETTER DE LA PERSONNE CONNECTEE-------------------------------
 
 
-        public static string getIDVisiteur(string identifiantVisiteur)
+        public static string getIDVisiteur()
         {
-            return InfoVisiteur(identifiantVisiteur).idVisiteur;
+            return InfoVisiteur(nomConnexion).idVisiteur;
         }
-        public static string getNomVisiteur(string identifiantVisiteur)
+        public static string getNomVisiteur()
         {
-            return InfoVisiteur(identifiantVisiteur).nom;
+            return InfoVisiteur(nomConnexion).nom;
         }
-        public static string getPrenomVisiteur(string identifiantVisiteur)
+        public static string getPrenomVisiteur()
         {
-            return InfoVisiteur(identifiantVisiteur).prenom;
+            return InfoVisiteur(nomConnexion).prenom;
         }
-        public static string getAdresseVisiteur(string identifiantVisiteur)
+        public static string getAdresseVisiteur()
         {
-            return InfoVisiteur(identifiantVisiteur).rue + " " + InfoVisiteur(identifiantVisiteur).cp + " " + InfoVisiteur(identifiantVisiteur).ville;
+            return InfoVisiteur(nomConnexion).rue + " " + InfoVisiteur(nomConnexion).cp + " " + InfoVisiteur(nomConnexion).ville;
         }
-        public static string getIDLaboVisiteur(string identifiantVisiteur)
+        public static string getIDLaboVisiteur()
         {
-            var labo = maConnexion.Laboratoire.ToList().Where(x => x.idLabo == InfoVisiteur(identifiantVisiteur).idLabo);
+            var labo = maConnexion.Laboratoire.ToList().Where(x => x.idLabo == InfoVisiteur(nomConnexion).idLabo);
             leLabo = (Laboratoire)labo.First();
             return leLabo.nomLabo;
         }
+        public static List<Region> getRegionVisiteur()
+        {
+            return InfoVisiteur(nomConnexion).Region.ToList();
+        }
+
+
 
         // Prend toutes les infos du visiteur passé en paramètre
         public static Visiteur InfoVisiteur(string identifiantVisiteur)
@@ -115,5 +123,22 @@ namespace PPE3_Leviathan
             vretour = (Visiteur)LQuery.First();
             return vretour;
         }
+
+
+        //CHOIX POUR LA VISUALISATION DES VISITEURS
+
+        public static string choixVisuVisiteur;
+        public static void VisualisationVisiteurs(string valeur)
+        {
+            choixVisuVisiteur = valeur;
+            List<string> leschoix = new List<string>();
+            leschoix.Add("global");
+            leschoix.Add("par secteur");
+            leschoix.Add("par regions");
+        }
+
+
+
+
     }
 }

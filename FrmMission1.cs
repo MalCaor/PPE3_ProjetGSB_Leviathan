@@ -22,5 +22,26 @@ namespace PPE3_Leviathan
             Form ConsulterInfos = new FrmConsulterInfos();
             ConsulterInfos.Show();
         }
+
+        private void GlobalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControleurMission1.VisualisationVisiteurs("global");
+            Form lesVisiteursListe = new FrmLesVisiteur();
+            lesVisiteursListe.Show();
+        }
+
+        private void ParSecteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControleurMission1.VisualisationVisiteurs("secteur");
+            Form lesVisiteursListe = new FrmLesVisiteur();
+            lesVisiteursListe.Show();
+        }
+
+        private void ParRégionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControleurMission1.VisualisationVisiteurs("region");
+            Form lesVisiteursListe = new FrmLesVisiteur();
+            lesVisiteursListe.Show();
+        }
     }
 }

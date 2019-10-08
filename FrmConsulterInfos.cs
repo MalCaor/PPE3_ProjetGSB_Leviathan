@@ -19,7 +19,7 @@ namespace PPE3_Leviathan
             InitializeComponent();
         }
 
-        private void FrmConsulterInfos_Load(object sender, EventArgs e)
+        private void FrmConsulterInfos_Load(object sender, EventArgs e) //Charge les infos du visiteur
         {
             Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
             txtNom.Text = lesInfos.nom;
@@ -28,20 +28,46 @@ namespace PPE3_Leviathan
             txtVille.Text = lesInfos.ville;
             txtCp.Text = lesInfos.cp;
             lblDateEmbaucheValeur.Text = lesInfos.dateEmbauche;
+
+            // Liste des régions où le visiteur travail
+            List<Region> lesRegions = lesInfos.Region1.ToList();
+            string lesreg = "";
+            if (lesreg.Count() > 1)
+            {
+                lesreg = "Région : ";
+            }
+            else
+            {
+                lesreg = "Régions : ";
+            }
+            foreach (Region Region in lesRegions)
+            {
+                lesreg += Region.libRegion+", ";
+            }
+            lblRegionsVisiteur.Text = lesreg;
+
+            //liste des régions sous la responsabilité du visiteur
+            List<Region> LesRegionResp = lesInfos.Region.ToList();
+            string message = "";
+            if(LesRegionResp.Count()>1)
+            {
+                message = "Responsable des Régions : ";
+            }
+            else
+            {
+                message = "Responsable de la Région : ";
+            }
+            foreach(Region Region in LesRegionResp)
+            {
+                message += Region.libRegion + ", ";
+            }
+            lblRegionresponsable.Text = message;
+
         }
 
         private void Restaurer_Click(object sender, EventArgs e)
         {
-            Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
-            txtNom.Text = lesInfos.nom;
-            txtPrenom.Text = lesInfos.prenom;
-            txtRue.Text = lesInfos.rue;
-            txtVille.Text = lesInfos.ville;
-            txtCp.Text = lesInfos.cp;
-            lblDateEmbaucheValeur.Text = lesInfos.dateEmbauche;
-            txtAncienMdp.Text = "";
-            txtConfirmerMdp.Text = "";
-            txtNouveauMdp.Text = "";
+            reset();
         }
 
         private void Confirmer_Click(object sender, EventArgs e)
@@ -92,12 +118,13 @@ namespace PPE3_Leviathan
             if (modification != 0)
             {
                 message = message + "- Modification enregistré \n";
-                MessageBox.Show(message);
             }
+            MessageBox.Show(message);
             ControleurMission1.SaveChanges();
+            reset();
         }
 
-        private void Retour_Click(object sender, EventArgs e)
+        private void Retour_Click(object sender, EventArgs e) // ferme le form de modification
         {
             this.Close();
         }
@@ -114,7 +141,19 @@ namespace PPE3_Leviathan
             return ("0x" + sb.ToString().ToUpper());
         }
 
-
+        private void reset() // met a jour les informations affichées dans les textBox
+        {
+            Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
+            txtNom.Text = lesInfos.nom;
+            txtPrenom.Text = lesInfos.prenom;
+            txtRue.Text = lesInfos.rue;
+            txtVille.Text = lesInfos.ville;
+            txtCp.Text = lesInfos.cp;
+            lblDateEmbaucheValeur.Text = lesInfos.dateEmbauche;
+            txtAncienMdp.Text = "";
+            txtConfirmerMdp.Text = "";
+            txtNouveauMdp.Text = "";
+        }
 
     }
 }

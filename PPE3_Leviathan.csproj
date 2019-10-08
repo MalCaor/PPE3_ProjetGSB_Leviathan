@@ -90,6 +90,12 @@
     <Compile Include="FrmConsulterInfos.Designer.cs">
       <DependentUpon>FrmConsulterInfos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLesVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLesVisiteur.Designer.cs">
+      <DependentUpon>FrmLesVisiteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMission1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterInfos.resx">
       <DependentUpon>FrmConsulterInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLesVisiteur.resx">
+      <DependentUpon>FrmLesVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMission1.resx">
       <DependentUpon>FrmMission1.cs</DependentUpon>

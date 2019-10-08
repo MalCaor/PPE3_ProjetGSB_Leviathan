@@ -79,18 +79,21 @@
             this.parSecteursToolStripMenuItem.Name = "parSecteursToolStripMenuItem";
             this.parSecteursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.parSecteursToolStripMenuItem.Text = "Par Secteurs";
+            this.parSecteursToolStripMenuItem.Click += new System.EventHandler(this.ParSecteursToolStripMenuItem_Click);
             // 
             // parRégionsToolStripMenuItem
             // 
             this.parRégionsToolStripMenuItem.Name = "parRégionsToolStripMenuItem";
             this.parRégionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.parRégionsToolStripMenuItem.Text = "Par Régions";
+            this.parRégionsToolStripMenuItem.Click += new System.EventHandler(this.ParRégionsToolStripMenuItem_Click);
             // 
             // globalToolStripMenuItem
             // 
             this.globalToolStripMenuItem.Name = "globalToolStripMenuItem";
             this.globalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.globalToolStripMenuItem.Text = "Global";
+            this.globalToolStripMenuItem.Click += new System.EventHandler(this.GlobalToolStripMenuItem_Click);
             // 
             // FrmMission1
             // 

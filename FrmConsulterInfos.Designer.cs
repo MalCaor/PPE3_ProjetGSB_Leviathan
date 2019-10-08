@@ -50,6 +50,9 @@
             this.lblDateEmbauche = new System.Windows.Forms.Label();
             this.lblDateEmbaucheValeur = new System.Windows.Forms.Label();
             this.Restaurer = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblRegionsVisiteur = new System.Windows.Forms.Label();
+            this.lblRegionresponsable = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblnom
@@ -172,6 +175,7 @@
             // 
             this.txtAncienMdp.Location = new System.Drawing.Point(449, 84);
             this.txtAncienMdp.Name = "txtAncienMdp";
+            this.txtAncienMdp.PasswordChar = '*';
             this.txtAncienMdp.Size = new System.Drawing.Size(165, 20);
             this.txtAncienMdp.TabIndex = 14;
             // 
@@ -179,6 +183,7 @@
             // 
             this.txtNouveauMdp.Location = new System.Drawing.Point(449, 113);
             this.txtNouveauMdp.Name = "txtNouveauMdp";
+            this.txtNouveauMdp.PasswordChar = '*';
             this.txtNouveauMdp.Size = new System.Drawing.Size(165, 20);
             this.txtNouveauMdp.TabIndex = 15;
             // 
@@ -186,12 +191,13 @@
             // 
             this.txtConfirmerMdp.Location = new System.Drawing.Point(449, 145);
             this.txtConfirmerMdp.Name = "txtConfirmerMdp";
+            this.txtConfirmerMdp.PasswordChar = '*';
             this.txtConfirmerMdp.Size = new System.Drawing.Size(165, 20);
             this.txtConfirmerMdp.TabIndex = 16;
             // 
             // Retour
             // 
-            this.Retour.Location = new System.Drawing.Point(507, 241);
+            this.Retour.Location = new System.Drawing.Point(539, 436);
             this.Retour.Name = "Retour";
             this.Retour.Size = new System.Drawing.Size(75, 23);
             this.Retour.TabIndex = 17;
@@ -201,7 +207,7 @@
             // 
             // Confirmer
             // 
-            this.Confirmer.Location = new System.Drawing.Point(223, 241);
+            this.Confirmer.Location = new System.Drawing.Point(225, 206);
             this.Confirmer.Name = "Confirmer";
             this.Confirmer.Size = new System.Drawing.Size(75, 23);
             this.Confirmer.TabIndex = 18;
@@ -228,7 +234,7 @@
             // 
             // Restaurer
             // 
-            this.Restaurer.Location = new System.Drawing.Point(105, 241);
+            this.Restaurer.Location = new System.Drawing.Point(105, 206);
             this.Restaurer.Name = "Restaurer";
             this.Restaurer.Size = new System.Drawing.Size(75, 23);
             this.Restaurer.TabIndex = 21;
@@ -236,11 +242,41 @@
             this.Restaurer.UseVisualStyleBackColor = true;
             this.Restaurer.Click += new System.EventHandler(this.Restaurer_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 246);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(541, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "---------------------------------------------------------------------------------" +
+    "--------------------------------------------------------------------------------" +
+    "-----------------";
+            // 
+            // lblRegionsVisiteur
+            // 
+            this.lblRegionsVisiteur.AutoSize = true;
+            this.lblRegionsVisiteur.Location = new System.Drawing.Point(36, 322);
+            this.lblRegionsVisiteur.Name = "lblRegionsVisiteur";
+            this.lblRegionsVisiteur.Size = new System.Drawing.Size(0, 13);
+            this.lblRegionsVisiteur.TabIndex = 23;
+            // 
+            // lblRegionresponsable
+            // 
+            this.lblRegionresponsable.AutoSize = true;
+            this.lblRegionresponsable.Location = new System.Drawing.Point(36, 385);
+            this.lblRegionresponsable.Name = "lblRegionresponsable";
+            this.lblRegionresponsable.Size = new System.Drawing.Size(0, 13);
+            this.lblRegionresponsable.TabIndex = 24;
+            // 
             // FrmConsulterInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 305);
+            this.ClientSize = new System.Drawing.Size(631, 471);
+            this.Controls.Add(this.lblRegionresponsable);
+            this.Controls.Add(this.lblRegionsVisiteur);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Restaurer);
             this.Controls.Add(this.lblDateEmbaucheValeur);
             this.Controls.Add(this.lblDateEmbauche);
@@ -295,5 +331,8 @@
         private System.Windows.Forms.Label lblDateEmbauche;
         private System.Windows.Forms.Label lblDateEmbaucheValeur;
         private System.Windows.Forms.Button Restaurer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRegionsVisiteur;
+        private System.Windows.Forms.Label lblRegionresponsable;
     }
 }
