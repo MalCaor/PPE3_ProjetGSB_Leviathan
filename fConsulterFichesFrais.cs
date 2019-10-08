@@ -63,7 +63,9 @@ namespace PPE3_Leviathan
             if (!close)
             {
                 fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
-                tbMois.Text = ff.mois;
+                string moisAnne = ff.mois;
+                tbMois.Text = string.Concat(moisAnne.Substring(0, 2), " / ", moisAnne.Substring(2, 4));
+                tbNbJust.Text = ff.nbJustificatifs.ToString();
             }
         }
 

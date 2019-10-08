@@ -48,6 +48,8 @@
             this.cbFicheFrais = new System.Windows.Forms.ComboBox();
             this.tbMois = new System.Windows.Forms.TextBox();
             this.labMois = new System.Windows.Forms.Label();
+            this.tbNbJust = new System.Windows.Forms.TextBox();
+            this.labNbJust = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -181,15 +183,34 @@
             this.labMois.AutoSize = true;
             this.labMois.Location = new System.Drawing.Point(551, 116);
             this.labMois.Name = "labMois";
-            this.labMois.Size = new System.Drawing.Size(35, 13);
+            this.labMois.Size = new System.Drawing.Size(36, 13);
             this.labMois.TabIndex = 15;
-            this.labMois.Text = "Mois :";
+            this.labMois.Text = "Date :";
+            // 
+            // tbNbJust
+            // 
+            this.tbNbJust.Location = new System.Drawing.Point(661, 139);
+            this.tbNbJust.Name = "tbNbJust";
+            this.tbNbJust.ReadOnly = true;
+            this.tbNbJust.Size = new System.Drawing.Size(100, 20);
+            this.tbNbJust.TabIndex = 18;
+            // 
+            // labNbJust
+            // 
+            this.labNbJust.AutoSize = true;
+            this.labNbJust.Location = new System.Drawing.Point(551, 142);
+            this.labNbJust.Name = "labNbJust";
+            this.labNbJust.Size = new System.Drawing.Size(104, 13);
+            this.labNbJust.TabIndex = 17;
+            this.labNbJust.Text = "Nombre Justificatifs :";
             // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbNbJust);
+            this.Controls.Add(this.labNbJust);
             this.Controls.Add(this.tbMois);
             this.Controls.Add(this.labMois);
             this.Controls.Add(this.cbFicheFrais);
@@ -239,5 +260,7 @@
         private System.Windows.Forms.ComboBox cbFicheFrais;
         private System.Windows.Forms.TextBox tbMois;
         private System.Windows.Forms.Label labMois;
+        private System.Windows.Forms.TextBox tbNbJust;
+        private System.Windows.Forms.Label labNbJust;
     }
 }
