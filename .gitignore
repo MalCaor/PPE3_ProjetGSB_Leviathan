@@ -5,3 +5,5 @@
 .vs/PPE3_Leviathan/v16/Server/sqlite3/storage.ide-wal
 *.suo
 .vs
+.bin
+.obj
