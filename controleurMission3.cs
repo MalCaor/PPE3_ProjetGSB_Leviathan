@@ -21,5 +21,49 @@ namespace PPE3_Leviathan
         {
             return maConnexion.fichefrais.ToList();
         }
+
+        public static List<Visiteur> listeVisiteur()
+        {
+            return maConnexion.Visiteur.ToList();
+        }
+
+
+        public static List<string> nomVisit()
+        {
+            List<string> listprenom = new List<string>();
+            List<Visiteur> listVisit = listeVisiteur();
+            foreach (Visiteur visiteur in listVisit)
+            {
+                listprenom.Add(visiteur.prenom + visiteur.nom);
+            }
+            return listprenom;
+        }
+
+        public static Visiteur visiteurIDSearch(string nompre)
+        {
+            List<Visiteur> listVisit = listeVisiteur();
+            foreach (Visiteur visiteur in listVisit)
+            {
+                if (nompre == visiteur.prenom + visiteur.nom)
+                {
+                    return visiteur;
+                }
+            }
+            return null;
+        }
+
+        public static List<fichefrais> listFicheFraisVisiteur(Visiteur v)
+        {
+            List<fichefrais> ficheFFRetour = new List<fichefrais>();
+            List<fichefrais> listeFicheFrais = controleurMission3.listeFicheFrais();
+            foreach(fichefrais ff in listeFicheFrais)
+            {
+                if (v.idVisiteur == ff.idVisiteur)
+                {
+                    ficheFFRetour.Add(ff);
+                }
+            }
+            return ficheFFRetour;
+        }
     }
 }

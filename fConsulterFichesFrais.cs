@@ -17,6 +17,8 @@ namespace PPE3_Leviathan
             InitializeComponent();
             // insert listFicheFrais in bs
             bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
+            bindingSourceVisiteur.DataSource = controleurMission3.listeVisiteur();
+            bindingSourceNomVis.DataSource = controleurMission3.nomVisit();
             // dgv = bs
             dataGridViewFicheFrais.DataSource = bindingSourceFicheFrais;
             // Hide some grid (du to error or empty grid)
@@ -27,6 +29,14 @@ namespace PPE3_Leviathan
             dataGridViewFicheFrais.Columns[7].Visible = false;
             dataGridViewFicheFrais.Columns[8].Visible = false;
             dataGridViewFicheFrais.Columns[9].Visible = false;
+
+            CBVisiteur.DataSource = bindingSourceNomVis.DataSource; 
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
+            dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
         }
     }
 }
