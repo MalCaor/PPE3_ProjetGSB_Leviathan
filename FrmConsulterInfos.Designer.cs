@@ -45,7 +45,7 @@
             this.txtAncienMdp = new System.Windows.Forms.TextBox();
             this.txtNouveauMdp = new System.Windows.Forms.TextBox();
             this.txtConfirmerMdp = new System.Windows.Forms.TextBox();
-            this.Annuler = new System.Windows.Forms.Button();
+            this.Retour = new System.Windows.Forms.Button();
             this.Confirmer = new System.Windows.Forms.Button();
             this.lblDateEmbauche = new System.Windows.Forms.Label();
             this.lblDateEmbaucheValeur = new System.Windows.Forms.Label();
@@ -189,18 +189,19 @@
             this.txtConfirmerMdp.Size = new System.Drawing.Size(165, 20);
             this.txtConfirmerMdp.TabIndex = 16;
             // 
-            // Annuler
+            // Retour
             // 
-            this.Annuler.Location = new System.Drawing.Point(219, 241);
-            this.Annuler.Name = "Annuler";
-            this.Annuler.Size = new System.Drawing.Size(75, 23);
-            this.Annuler.TabIndex = 17;
-            this.Annuler.Text = "Annuler";
-            this.Annuler.UseVisualStyleBackColor = true;
+            this.Retour.Location = new System.Drawing.Point(507, 241);
+            this.Retour.Name = "Retour";
+            this.Retour.Size = new System.Drawing.Size(75, 23);
+            this.Retour.TabIndex = 17;
+            this.Retour.Text = "Retour";
+            this.Retour.UseVisualStyleBackColor = true;
+            this.Retour.Click += new System.EventHandler(this.Retour_Click);
             // 
             // Confirmer
             // 
-            this.Confirmer.Location = new System.Drawing.Point(337, 241);
+            this.Confirmer.Location = new System.Drawing.Point(223, 241);
             this.Confirmer.Name = "Confirmer";
             this.Confirmer.Size = new System.Drawing.Size(75, 23);
             this.Confirmer.TabIndex = 18;
@@ -244,7 +245,7 @@
             this.Controls.Add(this.lblDateEmbaucheValeur);
             this.Controls.Add(this.lblDateEmbauche);
             this.Controls.Add(this.Confirmer);
-            this.Controls.Add(this.Annuler);
+            this.Controls.Add(this.Retour);
             this.Controls.Add(this.txtConfirmerMdp);
             this.Controls.Add(this.txtNouveauMdp);
             this.Controls.Add(this.txtAncienMdp);
@@ -289,7 +290,7 @@
         private System.Windows.Forms.TextBox txtAncienMdp;
         private System.Windows.Forms.TextBox txtNouveauMdp;
         private System.Windows.Forms.TextBox txtConfirmerMdp;
-        private System.Windows.Forms.Button Annuler;
+        private System.Windows.Forms.Button Retour;
         private System.Windows.Forms.Button Confirmer;
         private System.Windows.Forms.Label lblDateEmbauche;
         private System.Windows.Forms.Label lblDateEmbaucheValeur;

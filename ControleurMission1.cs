@@ -15,7 +15,10 @@ namespace PPE3_Leviathan
         {
             maConnexion = new Leviathan_PPE3Entities(); 
         }
-
+        public static void SaveChanges()
+        {
+            maConnexion.SaveChanges();
+        }
 
         //----------------------CONNEXION-----------------------
 
