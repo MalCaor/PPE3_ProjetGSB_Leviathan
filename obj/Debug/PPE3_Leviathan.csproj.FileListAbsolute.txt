@@ -114,3 +114,5 @@ E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Levia
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fConsulterFichesFrais.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConnexion.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Accueil.resources
+X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmMission1.resources
+X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConsulterInfos.resources
