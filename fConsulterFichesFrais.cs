@@ -13,6 +13,7 @@ namespace PPE3_Leviathan
     public partial class fConsulterFichesFrais : Form
     {
         private bool close = false;
+        private bool change = false;
         public fConsulterFichesFrais()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace PPE3_Leviathan
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            change = false;
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
             //dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
             //dgvFiche.Columns[1].Visible = false;
@@ -60,18 +62,22 @@ namespace PPE3_Leviathan
 
         private void CbFicheFrais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!close)
+            if (!close && !change)
             {
                 fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
                 string moisAnne = ff.mois;
                 tbMois.Text = string.Concat(moisAnne.Substring(0, 2), " / ", moisAnne.Substring(2, 4));
                 tbNbJust.Text = ff.nbJustificatifs.ToString();
+                tbMont.Text = ff.montantValide.ToString();
+                tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
+                change = true;
             }
         }
 
         private void FConsulterFichesFrais_Load(object sender, EventArgs e)
         {
             close = false;
+            change = true;
         }
 
         private void FConsulterFichesFrais_FormClosing(object sender, FormClosingEventArgs e)

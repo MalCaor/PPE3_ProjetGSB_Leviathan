@@ -50,6 +50,10 @@
             this.labMois = new System.Windows.Forms.Label();
             this.tbNbJust = new System.Windows.Forms.TextBox();
             this.labNbJust = new System.Windows.Forms.Label();
+            this.tbMont = new System.Windows.Forms.TextBox();
+            this.labMont = new System.Windows.Forms.Label();
+            this.tbDateModif = new System.Windows.Forms.TextBox();
+            this.labDateModif = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -204,11 +208,49 @@
             this.labNbJust.TabIndex = 17;
             this.labNbJust.Text = "Nombre Justificatifs :";
             // 
+            // tbMont
+            // 
+            this.tbMont.Location = new System.Drawing.Point(661, 165);
+            this.tbMont.Name = "tbMont";
+            this.tbMont.ReadOnly = true;
+            this.tbMont.Size = new System.Drawing.Size(100, 20);
+            this.tbMont.TabIndex = 20;
+            // 
+            // labMont
+            // 
+            this.labMont.AutoSize = true;
+            this.labMont.Location = new System.Drawing.Point(551, 168);
+            this.labMont.Name = "labMont";
+            this.labMont.Size = new System.Drawing.Size(84, 13);
+            this.labMont.TabIndex = 19;
+            this.labMont.Text = "Montant Valide :";
+            // 
+            // tbDateModif
+            // 
+            this.tbDateModif.Location = new System.Drawing.Point(661, 191);
+            this.tbDateModif.Name = "tbDateModif";
+            this.tbDateModif.ReadOnly = true;
+            this.tbDateModif.Size = new System.Drawing.Size(100, 20);
+            this.tbDateModif.TabIndex = 22;
+            // 
+            // labDateModif
+            // 
+            this.labDateModif.AutoSize = true;
+            this.labDateModif.Location = new System.Drawing.Point(551, 194);
+            this.labDateModif.Name = "labDateModif";
+            this.labDateModif.Size = new System.Drawing.Size(113, 13);
+            this.labDateModif.TabIndex = 21;
+            this.labDateModif.Text = "Derniere Modification :";
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbDateModif);
+            this.Controls.Add(this.labDateModif);
+            this.Controls.Add(this.tbMont);
+            this.Controls.Add(this.labMont);
             this.Controls.Add(this.tbNbJust);
             this.Controls.Add(this.labNbJust);
             this.Controls.Add(this.tbMois);
@@ -262,5 +304,9 @@
         private System.Windows.Forms.Label labMois;
         private System.Windows.Forms.TextBox tbNbJust;
         private System.Windows.Forms.Label labNbJust;
+        private System.Windows.Forms.TextBox tbMont;
+        private System.Windows.Forms.Label labMont;
+        private System.Windows.Forms.TextBox tbDateModif;
+        private System.Windows.Forms.Label labDateModif;
     }
 }
