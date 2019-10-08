@@ -23,6 +23,7 @@ namespace PPE3_Leviathan
 
             if(ControleurMission1.getConnexionValide())
             {
+                ControleurMission1.setIdentifiantConnexion(txtIdentifiant.Text.ToString());
                 System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
                 t.Start();
                 this.Close();
@@ -31,7 +32,7 @@ namespace PPE3_Leviathan
 
         public static void ThreadProc()
         {
-            Application.Run(new Accueil());
+            Application.Run(new FrmMission1());
         }
 
 
