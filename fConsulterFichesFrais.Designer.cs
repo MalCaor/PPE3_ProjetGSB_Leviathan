@@ -40,6 +40,10 @@
             this.labDEmbau = new System.Windows.Forms.Label();
             this.tbVille = new System.Windows.Forms.TextBox();
             this.tbDateEmb = new System.Windows.Forms.TextBox();
+            this.tbRue = new System.Windows.Forms.TextBox();
+            this.labRue = new System.Windows.Forms.Label();
+            this.tbCP = new System.Windows.Forms.TextBox();
+            this.labCP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -59,9 +63,9 @@
             // dgvFiche
             // 
             this.dgvFiche.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFiche.Location = new System.Drawing.Point(203, 355);
+            this.dgvFiche.Location = new System.Drawing.Point(515, 87);
             this.dgvFiche.Name = "dgvFiche";
-            this.dgvFiche.Size = new System.Drawing.Size(585, 83);
+            this.dgvFiche.Size = new System.Drawing.Size(273, 211);
             this.dgvFiche.TabIndex = 2;
             // 
             // labVisit
@@ -86,7 +90,7 @@
             // labDEmbau
             // 
             this.labDEmbau.AutoSize = true;
-            this.labDEmbau.Location = new System.Drawing.Point(204, 113);
+            this.labDEmbau.Location = new System.Drawing.Point(204, 168);
             this.labDEmbau.Name = "labDEmbau";
             this.labDEmbau.Size = new System.Drawing.Size(90, 13);
             this.labDEmbau.TabIndex = 5;
@@ -102,17 +106,55 @@
             // 
             // tbDateEmb
             // 
-            this.tbDateEmb.Location = new System.Drawing.Point(314, 110);
+            this.tbDateEmb.Location = new System.Drawing.Point(314, 165);
             this.tbDateEmb.Name = "tbDateEmb";
             this.tbDateEmb.ReadOnly = true;
             this.tbDateEmb.Size = new System.Drawing.Size(100, 20);
             this.tbDateEmb.TabIndex = 7;
+            // 
+            // tbRue
+            // 
+            this.tbRue.Location = new System.Drawing.Point(314, 113);
+            this.tbRue.Name = "tbRue";
+            this.tbRue.ReadOnly = true;
+            this.tbRue.Size = new System.Drawing.Size(100, 20);
+            this.tbRue.TabIndex = 9;
+            // 
+            // labRue
+            // 
+            this.labRue.AutoSize = true;
+            this.labRue.Location = new System.Drawing.Point(204, 116);
+            this.labRue.Name = "labRue";
+            this.labRue.Size = new System.Drawing.Size(33, 13);
+            this.labRue.TabIndex = 8;
+            this.labRue.Text = "Rue :";
+            // 
+            // tbCP
+            // 
+            this.tbCP.Location = new System.Drawing.Point(314, 139);
+            this.tbCP.Name = "tbCP";
+            this.tbCP.ReadOnly = true;
+            this.tbCP.Size = new System.Drawing.Size(100, 20);
+            this.tbCP.TabIndex = 11;
+            // 
+            // labCP
+            // 
+            this.labCP.AutoSize = true;
+            this.labCP.Location = new System.Drawing.Point(204, 142);
+            this.labCP.Name = "labCP";
+            this.labCP.Size = new System.Drawing.Size(70, 13);
+            this.labCP.TabIndex = 10;
+            this.labCP.Text = "Code Postal :";
             // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbCP);
+            this.Controls.Add(this.labCP);
+            this.Controls.Add(this.tbRue);
+            this.Controls.Add(this.labRue);
             this.Controls.Add(this.tbDateEmb);
             this.Controls.Add(this.tbVille);
             this.Controls.Add(this.labDEmbau);
@@ -145,5 +187,9 @@
         private System.Windows.Forms.Label labDEmbau;
         private System.Windows.Forms.TextBox tbVille;
         private System.Windows.Forms.TextBox tbDateEmb;
+        private System.Windows.Forms.TextBox tbRue;
+        private System.Windows.Forms.Label labRue;
+        private System.Windows.Forms.TextBox tbCP;
+        private System.Windows.Forms.Label labCP;
     }
 }

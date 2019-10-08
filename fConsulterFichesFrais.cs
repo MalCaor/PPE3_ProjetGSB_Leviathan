@@ -27,6 +27,7 @@ namespace PPE3_Leviathan
         {
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
             dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
+            dgvFiche.Columns[1].Visible = false;
             dgvFiche.Columns[2].Visible = false;
             dgvFiche.Columns[3].Visible = false;
             dgvFiche.Columns[5].Visible = false;
@@ -38,6 +39,8 @@ namespace PPE3_Leviathan
             labVisit.Text = v.identifiant;
             tbVille.Text = v.ville;
             tbDateEmb.Text = v.dateEmbauche;
+            tbRue.Text = v.rue;
+            tbCP.Text = v.cp;
         }
     }
 }
