@@ -16,7 +16,7 @@ namespace PPE3_Leviathan
         {
             InitializeComponent();
             // insert listFicheFrais in bs
-            bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
+            //bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
             bindingSourceVisiteur.DataSource = controleurMission3.listeVisiteur();
             bindingSourceNomVis.DataSource = controleurMission3.nomVisit();
             bindingSourceRegion.DataSource = controleurMission3.listeRegion();
@@ -26,21 +26,26 @@ namespace PPE3_Leviathan
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
-            dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
-            dgvFiche.Columns[1].Visible = false;
-            dgvFiche.Columns[2].Visible = false;
-            dgvFiche.Columns[3].Visible = false;
-            dgvFiche.Columns[5].Visible = false;
-            dgvFiche.Columns[6].Visible = false;
-            dgvFiche.Columns[7].Visible = false;
-            dgvFiche.Columns[8].Visible = false;
-            dgvFiche.Columns[9].Visible = false;
-
+            //dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
+            //dgvFiche.Columns[1].Visible = false;
+            //dgvFiche.Columns[2].Visible = false;
+            //dgvFiche.Columns[3].Visible = false;
+            //dgvFiche.Columns[5].Visible = false;
+            //dgvFiche.Columns[6].Visible = false;
+            //dgvFiche.Columns[7].Visible = false;
+            //dgvFiche.Columns[8].Visible = false;
+            //dgvFiche.Columns[9].Visible = false;
+            bindingSourceFicheFrais.DataSource = controleurMission3.listFicheFraisVisiteur(v);
+            cbFicheFrais.DataSource = bindingSourceFicheFrais;
+            cbFicheFrais.ValueMember = "mois";
+            cbFicheFrais.DisplayMember = "mois";
             labVisit.Text = v.identifiant;
             tbVille.Text = v.ville;
             tbDateEmb.Text = v.dateEmbauche;
             tbRue.Text = v.rue;
             tbCP.Text = v.cp;
+            Laboratoire lab = v.Laboratoire;
+            tbLab.Text = lab.nomLabo;
         }
     }
 }

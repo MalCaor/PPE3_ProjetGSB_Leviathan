@@ -30,6 +30,10 @@ namespace PPE3_Leviathan
         {
             return maConnexion.Region.ToList();
         }
+        public static List<Laboratoire> listeLabo()
+        {
+            return maConnexion.Laboratoire.ToList();
+        }
 
 
         public static List<string> nomVisit()
@@ -78,6 +82,19 @@ namespace PPE3_Leviathan
                 if (v.idRegion == R.idRegion)
                 {
                     return R.libRegion;
+                }
+            }
+            return null;
+        }
+
+        public static Laboratoire retourLabParID(int id)
+        {
+            List<Laboratoire> listeLab = controleurMission3.listeLabo();
+            foreach (Laboratoire L in listeLab)
+            {
+                if (id == L.idLabo)
+                {
+                    return L;
                 }
             }
             return null;

@@ -33,7 +33,6 @@
             this.CBVisiteur = new System.Windows.Forms.ComboBox();
             this.bindingSourceVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceNomVis = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvFiche = new System.Windows.Forms.DataGridView();
             this.labVisit = new System.Windows.Forms.Label();
             this.labVille = new System.Windows.Forms.Label();
             this.bindingSourceRegion = new System.Windows.Forms.BindingSource(this.components);
@@ -44,10 +43,12 @@
             this.labRue = new System.Windows.Forms.Label();
             this.tbCP = new System.Windows.Forms.TextBox();
             this.labCP = new System.Windows.Forms.Label();
+            this.tbLab = new System.Windows.Forms.TextBox();
+            this.lalLab = new System.Windows.Forms.Label();
+            this.cbFicheFrais = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFiche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,14 +60,6 @@
             this.CBVisiteur.Size = new System.Drawing.Size(184, 21);
             this.CBVisiteur.TabIndex = 1;
             this.CBVisiteur.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-            // 
-            // dgvFiche
-            // 
-            this.dgvFiche.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFiche.Location = new System.Drawing.Point(515, 87);
-            this.dgvFiche.Name = "dgvFiche";
-            this.dgvFiche.Size = new System.Drawing.Size(273, 211);
-            this.dgvFiche.TabIndex = 2;
             // 
             // labVisit
             // 
@@ -146,11 +139,39 @@
             this.labCP.TabIndex = 10;
             this.labCP.Text = "Code Postal :";
             // 
+            // tbLab
+            // 
+            this.tbLab.Location = new System.Drawing.Point(314, 191);
+            this.tbLab.Name = "tbLab";
+            this.tbLab.ReadOnly = true;
+            this.tbLab.Size = new System.Drawing.Size(100, 20);
+            this.tbLab.TabIndex = 13;
+            // 
+            // lalLab
+            // 
+            this.lalLab.AutoSize = true;
+            this.lalLab.Location = new System.Drawing.Point(204, 194);
+            this.lalLab.Name = "lalLab";
+            this.lalLab.Size = new System.Drawing.Size(66, 13);
+            this.lalLab.TabIndex = 12;
+            this.lalLab.Text = "Laboratoire :";
+            // 
+            // cbFicheFrais
+            // 
+            this.cbFicheFrais.FormattingEnabled = true;
+            this.cbFicheFrais.Location = new System.Drawing.Point(544, 82);
+            this.cbFicheFrais.Name = "cbFicheFrais";
+            this.cbFicheFrais.Size = new System.Drawing.Size(217, 21);
+            this.cbFicheFrais.TabIndex = 14;
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbFicheFrais);
+            this.Controls.Add(this.tbLab);
+            this.Controls.Add(this.lalLab);
             this.Controls.Add(this.tbCP);
             this.Controls.Add(this.labCP);
             this.Controls.Add(this.tbRue);
@@ -160,14 +181,12 @@
             this.Controls.Add(this.labDEmbau);
             this.Controls.Add(this.labVille);
             this.Controls.Add(this.labVisit);
-            this.Controls.Add(this.dgvFiche);
             this.Controls.Add(this.CBVisiteur);
             this.Name = "fConsulterFichesFrais";
             this.Text = "fConsulterFichesFrais";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFiche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,7 +199,6 @@
         private System.Windows.Forms.ComboBox CBVisiteur;
         private System.Windows.Forms.BindingSource bindingSourceVisiteur;
         private System.Windows.Forms.BindingSource bindingSourceNomVis;
-        private System.Windows.Forms.DataGridView dgvFiche;
         private System.Windows.Forms.Label labVisit;
         private System.Windows.Forms.Label labVille;
         private System.Windows.Forms.BindingSource bindingSourceRegion;
@@ -191,5 +209,8 @@
         private System.Windows.Forms.Label labRue;
         private System.Windows.Forms.TextBox tbCP;
         private System.Windows.Forms.Label labCP;
+        private System.Windows.Forms.TextBox tbLab;
+        private System.Windows.Forms.Label lalLab;
+        private System.Windows.Forms.ComboBox cbFicheFrais;
     }
 }
