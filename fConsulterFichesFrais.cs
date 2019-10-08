@@ -19,17 +19,7 @@ namespace PPE3_Leviathan
             bindingSourceFicheFrais.DataSource = controleurMission3.listeFicheFrais();
             bindingSourceVisiteur.DataSource = controleurMission3.listeVisiteur();
             bindingSourceNomVis.DataSource = controleurMission3.nomVisit();
-            // dgv = bs
-            dataGridViewFicheFrais.DataSource = bindingSourceFicheFrais;
-            // Hide some grid (du to error or empty grid)
-            dataGridViewFicheFrais.Columns[2].Visible = false;
-            dataGridViewFicheFrais.Columns[3].Visible = false;
-            dataGridViewFicheFrais.Columns[5].Visible = false;
-            dataGridViewFicheFrais.Columns[6].Visible = false;
-            dataGridViewFicheFrais.Columns[7].Visible = false;
-            dataGridViewFicheFrais.Columns[8].Visible = false;
-            dataGridViewFicheFrais.Columns[9].Visible = false;
-
+            bindingSourceRegion.DataSource = controleurMission3.listeRegion();
             CBVisiteur.DataSource = bindingSourceNomVis.DataSource; 
         }
 
@@ -37,6 +27,17 @@ namespace PPE3_Leviathan
         {
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
             dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
+            dgvFiche.Columns[2].Visible = false;
+            dgvFiche.Columns[3].Visible = false;
+            dgvFiche.Columns[5].Visible = false;
+            dgvFiche.Columns[6].Visible = false;
+            dgvFiche.Columns[7].Visible = false;
+            dgvFiche.Columns[8].Visible = false;
+            dgvFiche.Columns[9].Visible = false;
+
+            labVisit.Text = v.identifiant;
+            tbVille.Text = v.ville;
+            tbDateEmb.Text = v.dateEmbauche;
         }
     }
 }

@@ -26,6 +26,10 @@ namespace PPE3_Leviathan
         {
             return maConnexion.Visiteur.ToList();
         }
+        public static List<Region> listeRegion()
+        {
+            return maConnexion.Region.ToList();
+        }
 
 
         public static List<string> nomVisit()
@@ -64,6 +68,19 @@ namespace PPE3_Leviathan
                 }
             }
             return ficheFFRetour;
+        }
+
+        public static string libRegionIDVis(Region v)
+        {
+            List<Region> listeReg = controleurMission3.listeRegion();
+            foreach (Region R in listeReg)
+            {
+                if (v.idRegion == R.idRegion)
+                {
+                    return R.libRegion;
+                }
+            }
+            return null;
         }
     }
 }
