@@ -12,6 +12,7 @@ namespace PPE3_Leviathan
 {
     public partial class fConsulterFichesFrais : Form
     {
+        private bool close = false;
         public fConsulterFichesFrais()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace PPE3_Leviathan
             cbFicheFrais.DataSource = bindingSourceFicheFrais;
             cbFicheFrais.ValueMember = "mois";
             cbFicheFrais.DisplayMember = "mois";
+            
             labVisit.Text = v.identifiant;
             tbVille.Text = v.ville;
             tbDateEmb.Text = v.dateEmbauche;
@@ -46,6 +48,33 @@ namespace PPE3_Leviathan
             tbCP.Text = v.cp;
             Laboratoire lab = v.Laboratoire;
             tbLab.Text = lab.nomLabo;
+            fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
+        }
+
+        private void CbFicheFrais_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string moisAnne = ((fichefrais)e.ListItem).mois;
+            string dys = string.Concat(moisAnne.Substring(0, 2)," / ", moisAnne.Substring(2, 4));
+            e.Value = dys;
+        }
+
+        private void CbFicheFrais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!close)
+            {
+                fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
+                tbMois.Text = ff.mois;
+            }
+        }
+
+        private void FConsulterFichesFrais_Load(object sender, EventArgs e)
+        {
+            close = false;
+        }
+
+        private void FConsulterFichesFrais_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            close = true;
         }
     }
 }

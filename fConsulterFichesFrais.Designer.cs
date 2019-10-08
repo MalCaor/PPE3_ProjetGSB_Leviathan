@@ -46,6 +46,8 @@
             this.tbLab = new System.Windows.Forms.TextBox();
             this.lalLab = new System.Windows.Forms.Label();
             this.cbFicheFrais = new System.Windows.Forms.ComboBox();
+            this.tbMois = new System.Windows.Forms.TextBox();
+            this.labMois = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -163,12 +165,33 @@
             this.cbFicheFrais.Name = "cbFicheFrais";
             this.cbFicheFrais.Size = new System.Drawing.Size(217, 21);
             this.cbFicheFrais.TabIndex = 14;
+            this.cbFicheFrais.SelectedIndexChanged += new System.EventHandler(this.CbFicheFrais_SelectedIndexChanged);
+            this.cbFicheFrais.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.CbFicheFrais_Format);
+            // 
+            // tbMois
+            // 
+            this.tbMois.Location = new System.Drawing.Point(661, 113);
+            this.tbMois.Name = "tbMois";
+            this.tbMois.ReadOnly = true;
+            this.tbMois.Size = new System.Drawing.Size(100, 20);
+            this.tbMois.TabIndex = 16;
+            // 
+            // labMois
+            // 
+            this.labMois.AutoSize = true;
+            this.labMois.Location = new System.Drawing.Point(551, 116);
+            this.labMois.Name = "labMois";
+            this.labMois.Size = new System.Drawing.Size(35, 13);
+            this.labMois.TabIndex = 15;
+            this.labMois.Text = "Mois :";
             // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbMois);
+            this.Controls.Add(this.labMois);
             this.Controls.Add(this.cbFicheFrais);
             this.Controls.Add(this.tbLab);
             this.Controls.Add(this.lalLab);
@@ -184,6 +207,8 @@
             this.Controls.Add(this.CBVisiteur);
             this.Name = "fConsulterFichesFrais";
             this.Text = "fConsulterFichesFrais";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FConsulterFichesFrais_FormClosing);
+            this.Load += new System.EventHandler(this.FConsulterFichesFrais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).EndInit();
@@ -212,5 +237,7 @@
         private System.Windows.Forms.TextBox tbLab;
         private System.Windows.Forms.Label lalLab;
         private System.Windows.Forms.ComboBox cbFicheFrais;
+        private System.Windows.Forms.TextBox tbMois;
+        private System.Windows.Forms.Label labMois;
     }
 }
