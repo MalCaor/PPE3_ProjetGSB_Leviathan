@@ -66,11 +66,13 @@ namespace PPE3_Leviathan
                 bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
                 dgvLigneFor.DataSource = bindingSourceLigneF;
                 dgvLigneHor.DataSource = bindingSourceLigneHF;
+                bModifFF.Enabled = true;
             }
         }
 
         private void FConsulterFichesFrais_Load(object sender, EventArgs e)
         {
+            bModifFF.Enabled = false;
             close = false;
             change = true;
         }

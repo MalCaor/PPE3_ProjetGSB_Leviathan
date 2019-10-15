@@ -58,6 +58,7 @@
             this.dgvLigneHor = new System.Windows.Forms.DataGridView();
             this.bindingSourceLigneF = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceLigneHF = new System.Windows.Forms.BindingSource(this.components);
+            this.bModifFF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -266,11 +267,21 @@
             this.dgvLigneHor.Size = new System.Drawing.Size(240, 150);
             this.dgvLigneHor.TabIndex = 24;
             // 
+            // bModifFF
+            // 
+            this.bModifFF.Location = new System.Drawing.Point(207, 396);
+            this.bModifFF.Name = "bModifFF";
+            this.bModifFF.Size = new System.Drawing.Size(75, 23);
+            this.bModifFF.TabIndex = 25;
+            this.bModifFF.Text = "Modifier";
+            this.bModifFF.UseVisualStyleBackColor = true;
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bModifFF);
             this.Controls.Add(this.dgvLigneHor);
             this.Controls.Add(this.dgvLigneFor);
             this.Controls.Add(this.tbDateModif);
@@ -342,5 +353,6 @@
         private System.Windows.Forms.DataGridView dgvLigneHor;
         private System.Windows.Forms.BindingSource bindingSourceLigneF;
         private System.Windows.Forms.BindingSource bindingSourceLigneHF;
+        private System.Windows.Forms.Button bModifFF;
     }
 }
