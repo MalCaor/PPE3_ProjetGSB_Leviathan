@@ -29,15 +29,6 @@ namespace PPE3_Leviathan
         {
             change = false;
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
-            //dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
-            //dgvFiche.Columns[1].Visible = false;
-            //dgvFiche.Columns[2].Visible = false;
-            //dgvFiche.Columns[3].Visible = false;
-            //dgvFiche.Columns[5].Visible = false;
-            //dgvFiche.Columns[6].Visible = false;
-            //dgvFiche.Columns[7].Visible = false;
-            //dgvFiche.Columns[8].Visible = false;
-            //dgvFiche.Columns[9].Visible = false;
             bindingSourceFicheFrais.DataSource = controleurMission3.listFicheFraisVisiteur(v);
             cbFicheFrais.DataSource = bindingSourceFicheFrais;
             cbFicheFrais.ValueMember = "mois";
@@ -71,11 +62,20 @@ namespace PPE3_Leviathan
                 tbMont.Text = ff.montantValide.ToString();
                 tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
                 change = true;
+                bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
+                bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
+                dgvLigneFor.DataSource = bindingSourceLigneF;
+                dgvLigneHor.DataSource = bindingSourceLigneHF;
+                if (!(ff.idEtat == "CL"))
+                {
+                    bModifFF.Enabled = true;
+                }
             }
         }
 
         private void FConsulterFichesFrais_Load(object sender, EventArgs e)
         {
+            bModifFF.Enabled = false;
             close = false;
             change = true;
         }
@@ -83,6 +83,13 @@ namespace PPE3_Leviathan
         private void FConsulterFichesFrais_FormClosing(object sender, FormClosingEventArgs e)
         {
             close = true;
+        }
+
+        private void BModifFF_Click(object sender, EventArgs e)
+        {
+            fichefrais ffModif = (fichefrais)bindingSourceFicheFrais.Current;
+            Form modifFF = new fModifFF(ffModif);
+            modifFF.ShowDialog();
         }
     }
 }
