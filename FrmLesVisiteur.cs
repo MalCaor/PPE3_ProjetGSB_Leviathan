@@ -20,7 +20,7 @@ namespace PPE3_Leviathan
         private void FrmLesVisiteur_Load(object sender, EventArgs e)
         {
             cboChoixAffichage.ValueMember = "choix";
-            cboChoixAffichage.DisplayMember = 
+            //cboChoixAffichage.DisplayMember =; 
         }
     }
 }
