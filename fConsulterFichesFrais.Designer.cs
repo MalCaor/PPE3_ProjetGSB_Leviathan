@@ -275,6 +275,7 @@
             this.bModifFF.TabIndex = 25;
             this.bModifFF.Text = "Modifier";
             this.bModifFF.UseVisualStyleBackColor = true;
+            this.bModifFF.Click += new System.EventHandler(this.BModifFF_Click);
             // 
             // fConsulterFichesFrais
             // 

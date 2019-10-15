@@ -84,5 +84,11 @@ namespace PPE3_Leviathan
         {
             close = true;
         }
+
+        private void BModifFF_Click(object sender, EventArgs e)
+        {
+            Form modifFF = new fModifFF();
+            modifFF.ShowDialog();
+        }
     }
 }
