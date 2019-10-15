@@ -29,15 +29,6 @@ namespace PPE3_Leviathan
         {
             change = false;
             Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
-            //dgvFiche.DataSource = controleurMission3.listFicheFraisVisiteur(v);
-            //dgvFiche.Columns[1].Visible = false;
-            //dgvFiche.Columns[2].Visible = false;
-            //dgvFiche.Columns[3].Visible = false;
-            //dgvFiche.Columns[5].Visible = false;
-            //dgvFiche.Columns[6].Visible = false;
-            //dgvFiche.Columns[7].Visible = false;
-            //dgvFiche.Columns[8].Visible = false;
-            //dgvFiche.Columns[9].Visible = false;
             bindingSourceFicheFrais.DataSource = controleurMission3.listFicheFraisVisiteur(v);
             cbFicheFrais.DataSource = bindingSourceFicheFrais;
             cbFicheFrais.ValueMember = "mois";
