@@ -42,17 +42,25 @@ namespace PPE3_Leviathan
                 string test = "";
                 foreach(Region region in LesRegion)
                 {
-                    test += region.libRegion + "\n";
+                    test += "\n" + region.libRegion + "\n \n";
                     foreach(Visiteur visiteur in lesVisiteurs)
                     {
-                        List<Region> LesRegionTravail = lesInfos.Region1.ToList();
-                        foreach(Region regionlbl in LesRegionTravail)
+                        List<Region> LesRegionTravail = visiteur.Region1.ToList();
+                        List<Region> LesRegionResponsable = visiteur.Region.ToList();
+                        foreach(Region regionResponsable in LesRegionResponsable)
+                        {
+                            if(regionResponsable.libRegion == region.libRegion)
+                            {
+                                test += "Responsable de la Région : " + visiteur.nom + " " + visiteur.prenom + "\n";
+                            }
+                        }
+                        foreach (Region regionlbl in LesRegionTravail)
                         {
                             if(regionlbl.libRegion == region.libRegion)
                             {
                                 test += visiteur.nom + "\n";
                             }
-                        }
+                        }// il faut enregistrer le nom du responsable pour ne pas le remettre dans la liste et faire en sorte que le resonsable soit le premier afficher
                     }
                 }
                 lblTest1.Text = test;
