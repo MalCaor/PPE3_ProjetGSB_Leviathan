@@ -46,7 +46,7 @@ namespace PPE3_Leviathan
             var LQuery = maConnexion.Visiteur.ToList()
                                .Where(x => x.identifiant == identifiantVisiteur);    
             leVisiteur = (Visiteur)LQuery.First();
-            if(leVisiteur.password.ToString() == GetMd5Hash(motDePasse.ToString()))
+            if(leVisiteur.password.ToString() == GetMd5Hash(motDePasse.ToString()) || leVisiteur.password.ToString() == motDePasse)
             {
                 connexionValide = true;
                 message = message + "Connecté";
@@ -72,6 +72,21 @@ namespace PPE3_Leviathan
         {
             nomConnexion = identifiant;
         }
+
+        //Verification si ADMIN
+        private static bool boolADMIN = false;
+        public static void verifConnexionAdmin()
+        {
+            if(getPrenomVisiteur()=="Admin" && getNomVisiteur()=="Admin" && nomConnexion=="Admin")
+            {
+                boolADMIN = true;
+            }
+        }
+        public static bool getVerifAdmin()
+        {
+            return boolADMIN;
+        }
+
 
 
         //-------------GETTER DE LA PERSONNE CONNECTEE-------------------------------
@@ -128,13 +143,13 @@ namespace PPE3_Leviathan
         //CHOIX POUR LA VISUALISATION DES VISITEURS
 
         public static string choixVisuVisiteur;
-        public static void VisualisationVisiteurs(string valeur)
+        public static void setChoixVisualisationVisiteurs(string valeur)
         {
             choixVisuVisiteur = valeur;
-            List<string> leschoix = new List<string>();
-            leschoix.Add("global");
-            leschoix.Add("par secteur");
-            leschoix.Add("par regions");
+        }
+        public static string getChoixVisualisationVisiteurs()
+        {
+            return choixVisuVisiteur;
         }
 
         public static List<string> ListeChoixVisualisation()
@@ -149,9 +164,43 @@ namespace PPE3_Leviathan
 
         public static Object listeVisiteursVisualisation(string valeur)
         {
-            var LQuery = maConnexion.
-            return (Visiteur)LQuery;
+            //Visiteur vretour;
+            //if (valeur == "Par Région")
+           // {
+                var LQuery = maConnexion.Visiteur.ToList()
+                            .Where(x => x.Region == listeRegionVisiteur(x.idVisiteur))
+                            .OrderBy(x=>x.Region);
+                return (Visiteur)LQuery;
+           // }
+           // return vretour;
         }
+        public static Object listeRegionVisiteur(string idVisiteurPara)
+        {
+            var LQuery = maConnexion.Region.ToList()
+                .Where(x => x.idVisiteur == idVisiteurPara);
+            return (Region)LQuery;
+        }
+
+
+
+
+
+        //LISTE DES TABLES DE LA BASE DE DONNEES
+        public static List<Visiteur> listeVisiteur()
+        {
+            return maConnexion.Visiteur.ToList();
+        }
+        public static List<Region> listeRegion()
+        {
+            return maConnexion.Region.ToList();
+        }
+        public static List<Secteur> listeSecteur()
+        {
+            return maConnexion.Secteur.ToList();
+        }
+
+
+
 
 
     }

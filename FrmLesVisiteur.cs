@@ -25,6 +25,7 @@ namespace PPE3_Leviathan
 
         private void BsVisiteurs_CurrentChanged(object sender, EventArgs e)
         {
+            Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
             string choix = (string)bsVisiteurs.Current;
             if(choix == "Global")
             {
@@ -36,8 +37,31 @@ namespace PPE3_Leviathan
             }
             if(choix == "Par Région")
             {
-                
+                List<Region> LesRegion= ControleurMission1.listeRegion();
+                List<Visiteur> lesVisiteurs = ControleurMission1.listeVisiteur();
+                string test = "";
+                foreach(Region region in LesRegion)
+                {
+                    test += region.libRegion + "\n";
+                    foreach(Visiteur visiteur in lesVisiteurs)
+                    {
+                        List<Region> LesRegionTravail = lesInfos.Region1.ToList();
+                        foreach(Region regionlbl in LesRegionTravail)
+                        {
+                            if(regionlbl.libRegion == region.libRegion)
+                            {
+                                test += visiteur.nom + "\n";
+                            }
+                        }
+                    }
+                }
+                lblTest1.Text = test;
             }
+        }
+
+        private void BtnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

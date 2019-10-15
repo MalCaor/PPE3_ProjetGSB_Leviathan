@@ -34,11 +34,15 @@ namespace PPE3_Leviathan
             string lesreg = "";
             if (lesreg.Count() > 1)
             {
-                lesreg = "Région : ";
+                lesreg = "Régions : ";
             }
             else
             {
-                lesreg = "Régions : ";
+                lesreg = "Région : ";
+                if(lesreg.Count() == 0)
+                {
+                    lesreg = "Région : /";
+                }
             }
             foreach (Region Region in lesRegions)
             {
@@ -56,6 +60,10 @@ namespace PPE3_Leviathan
             else
             {
                 message = "Responsable de la Région : ";
+                if(LesRegionResp.Count() == 0)
+                {
+                    message = "Responsable de la Région : /";
+                }
             }
             foreach(Region Region in LesRegionResp)
             {
@@ -63,6 +71,22 @@ namespace PPE3_Leviathan
             }
             lblRegionresponsable.Text = message;
 
+            //liste du secteur sous la resonsabilité du visiteur
+            List<Secteur> lesSecteurs = lesInfos.Secteur.ToList();
+            string secteurVisiteur = "";
+            if(lesSecteurs.Count() > 0)
+            {
+                secteurVisiteur = "Responsable du secteur : ";
+                foreach(Secteur secteur in lesSecteurs)
+                {
+                    secteurVisiteur += secteur.libSecteur;
+                }
+            }
+            else
+            {
+                secteurVisiteur = "Responsable du secteur : /";
+            }
+            lblSecteurVisiteur.Text = secteurVisiteur;
         }
 
         private void Restaurer_Click(object sender, EventArgs e)

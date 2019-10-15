@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRegionsVisiteur = new System.Windows.Forms.Label();
             this.lblRegionresponsable = new System.Windows.Forms.Label();
+            this.lblSecteurVisiteur = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblnom
@@ -258,22 +259,34 @@
             this.lblRegionsVisiteur.AutoSize = true;
             this.lblRegionsVisiteur.Location = new System.Drawing.Point(36, 322);
             this.lblRegionsVisiteur.Name = "lblRegionsVisiteur";
-            this.lblRegionsVisiteur.Size = new System.Drawing.Size(0, 13);
+            this.lblRegionsVisiteur.Size = new System.Drawing.Size(90, 13);
             this.lblRegionsVisiteur.TabIndex = 23;
+            this.lblRegionsVisiteur.Text = "lblRegionsVisiteur";
             // 
             // lblRegionresponsable
             // 
             this.lblRegionresponsable.AutoSize = true;
             this.lblRegionresponsable.Location = new System.Drawing.Point(36, 385);
             this.lblRegionresponsable.Name = "lblRegionresponsable";
-            this.lblRegionresponsable.Size = new System.Drawing.Size(0, 13);
+            this.lblRegionresponsable.Size = new System.Drawing.Size(108, 13);
             this.lblRegionresponsable.TabIndex = 24;
+            this.lblRegionresponsable.Text = "lblRegionresponsable";
+            // 
+            // lblSecteurVisiteur
+            // 
+            this.lblSecteurVisiteur.AutoSize = true;
+            this.lblSecteurVisiteur.Location = new System.Drawing.Point(373, 321);
+            this.lblSecteurVisiteur.Name = "lblSecteurVisiteur";
+            this.lblSecteurVisiteur.Size = new System.Drawing.Size(88, 13);
+            this.lblSecteurVisiteur.TabIndex = 25;
+            this.lblSecteurVisiteur.Text = "lblSecteurVisiteur";
             // 
             // FrmConsulterInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 471);
+            this.Controls.Add(this.lblSecteurVisiteur);
             this.Controls.Add(this.lblRegionresponsable);
             this.Controls.Add(this.lblRegionsVisiteur);
             this.Controls.Add(this.label1);
@@ -334,5 +347,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRegionsVisiteur;
         private System.Windows.Forms.Label lblRegionresponsable;
+        private System.Windows.Forms.Label lblSecteurVisiteur;
     }
 }
