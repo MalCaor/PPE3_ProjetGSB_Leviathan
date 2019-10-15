@@ -114,3 +114,4 @@ X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConnexion.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Accueil.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmMission1.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConsulterInfos.resources
+X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmLesVisiteur.resources

@@ -137,7 +137,17 @@ namespace PPE3_Leviathan
             leschoix.Add("par regions");
         }
 
+        public static List<string> ListeChoixVisualisation()
+        {
+            List<string> vretour = new List<string>();
+            vretour.Add("Global");
+            vretour.Add("Par Secteur");
+            vretour.Add("Par Régions");
 
+            return vretour;
+        }
+
+        
 
 
     }
