@@ -141,7 +141,7 @@ namespace PPE3_Leviathan
             return ("0x" + sb.ToString().ToUpper());
         }
 
-        private void reset() // met a jour les informations affichées dans les textBox
+        private void reset() // réinitialise / met a jour les informations affichées dans les textBox
         {
             Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
             txtNom.Text = lesInfos.nom;

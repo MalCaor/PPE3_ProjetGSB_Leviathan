@@ -142,12 +142,16 @@ namespace PPE3_Leviathan
             List<string> vretour = new List<string>();
             vretour.Add("Global");
             vretour.Add("Par Secteur");
-            vretour.Add("Par Régions");
+            vretour.Add("Par Région");
 
             return vretour;
         }
 
-        
+        public static Object listeVisiteursVisualisation(string valeur)
+        {
+            var LQuery = maConnexion.
+            return (Visiteur)LQuery;
+        }
 
 
     }

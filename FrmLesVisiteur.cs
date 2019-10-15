@@ -19,10 +19,25 @@ namespace PPE3_Leviathan
 
         private void FrmLesVisiteur_Load(object sender, EventArgs e)
         {
-            cboChoixAffichage.ValueMember = "choixUtil";
             bsVisiteurs.DataSource = ControleurMission1.ListeChoixVisualisation();
             cboChoixAffichage.DataSource = bsVisiteurs;
-            MessageBox.Show(cboChoixAffichage.ValueMember);
+        }
+
+        private void BsVisiteurs_CurrentChanged(object sender, EventArgs e)
+        {
+            string choix = (string)bsVisiteurs.Current;
+            if(choix == "Global")
+            {
+                
+            }
+            if(choix == "Par secteur")
+            {
+
+            }
+            if(choix == "Par Région")
+            {
+                
+            }
         }
     }
 }

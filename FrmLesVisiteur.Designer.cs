@@ -44,6 +44,10 @@
             this.dgvVisiteurs.Size = new System.Drawing.Size(667, 288);
             this.dgvVisiteurs.TabIndex = 0;
             // 
+            // bsVisiteurs
+            // 
+            this.bsVisiteurs.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
+            // 
             // cboChoixAffichage
             // 
             this.cboChoixAffichage.FormattingEnabled = true;
