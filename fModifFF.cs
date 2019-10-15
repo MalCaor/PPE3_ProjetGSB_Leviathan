@@ -12,9 +12,10 @@ namespace PPE3_Leviathan
 {
     public partial class fModifFF : Form
     {
-        public fModifFF()
+        public fModifFF(fichefrais ffModif)
         {
             InitializeComponent();
+            bsFF.DataSource = ffModif;
         }
     }
 }

@@ -87,7 +87,8 @@ namespace PPE3_Leviathan
 
         private void BModifFF_Click(object sender, EventArgs e)
         {
-            Form modifFF = new fModifFF();
+            fichefrais ffModif = (fichefrais)bindingSourceFicheFrais.Current;
+            Form modifFF = new fModifFF(ffModif);
             modifFF.ShowDialog();
         }
     }
