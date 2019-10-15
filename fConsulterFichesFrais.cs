@@ -62,6 +62,10 @@ namespace PPE3_Leviathan
                 tbMont.Text = ff.montantValide.ToString();
                 tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
                 change = true;
+                bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
+                bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
+                dgvLigneFor.DataSource = bindingSourceLigneF;
+                dgvLigneHor.DataSource = bindingSourceLigneHF;
             }
         }
 
