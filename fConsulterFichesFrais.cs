@@ -87,8 +87,15 @@ namespace PPE3_Leviathan
 
         private void BModifFF_Click(object sender, EventArgs e)
         {
-            fichefrais ffModif = (fichefrais)bindingSourceFicheFrais.Current;
-            Form modifFF = new fModifFF(ffModif);
+            LigneFraisForfait F = (LigneFraisForfait)bindingSourceLigneF.Current;
+            Form modifFF = new fModifFF(F);
+            modifFF.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            LigneFraisHorsForfait HF = (LigneFraisHorsForfait)bindingSourceLigneHF.Current;
+            Form modifFF = new fModifFF(HF);
             modifFF.ShowDialog();
         }
     }
