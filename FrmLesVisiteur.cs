@@ -30,9 +30,48 @@ namespace PPE3_Leviathan
             if(choix == "Global")
             {
                 string messageGlobal = "";
+                string resultatPrecedent = "";
+                List<Secteur>SecteurGlobal = ControleurMission1.listeSecteur();
+                List<Region>RegionGlobal = ControleurMission1.listeRegion();
+                List<Visiteur>VisiteurGlobal = ControleurMission1.listeVisiteur();
+                
+                foreach(Visiteur visiteur in VisiteurGlobal)
+                {
+                    if(visiteur.nom == "Admin" && visiteur.prenom == "Admin" && visiteur.identifiant == "Admin")
+                    {
+                        messageGlobal += "Administrateur : " + visiteur.nom + " " + visiteur.prenom + "\n";
+                        break;
+                    }
+                }
 
+                foreach (Visiteur visiteur in VisiteurGlobal)
+                {
+                    foreach(Secteur secteur in SecteurGlobal)
+                    {
+                        if(secteur.idVisiteur == visiteur.idVisiteur/* && visiteur.idVisiteur != resultatPrecedent*/)
+                        {
+                            messageGlobal += "\tResponsable du Secteur " + secteur.libSecteur + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
+                            resultatPrecedent = visiteur.idVisiteur;
+                        }
+                    }
+                }
 
-
+                resultatPrecedent = "";
+                foreach(Region region in RegionGlobal)
+                {
+                    foreach(Visiteur visiteur in VisiteurGlobal)
+                    {
+                        List<Region> LesRegionTravailGlobal = visiteur.Region1.ToList();
+                        foreach(Region regionTravail in LesRegionTravailGlobal)
+                        {
+                            if(region.idRegion == regionTravail.idRegion /*&& visiteur.idVisiteur != resultatPrecedent*/)
+                            {
+                                resultatPrecedent = visiteur.idVisiteur;
+                                messageGlobal += "\t\tResponsable de la Region " + region.libRegion + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
+                            }
+                        }
+                    }
+                }
                 rtbListeSelection.Text = messageGlobal;
             }
             if(choix == "Par Secteur")
