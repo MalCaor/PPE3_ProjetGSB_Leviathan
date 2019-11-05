@@ -32,9 +32,6 @@
             this.mesInformationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consulterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lesVisiteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parSecteursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parRégionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.globalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,34 +63,10 @@
             // 
             // lesVisiteursToolStripMenuItem
             // 
-            this.lesVisiteursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parSecteursToolStripMenuItem,
-            this.parRégionsToolStripMenuItem,
-            this.globalToolStripMenuItem});
             this.lesVisiteursToolStripMenuItem.Name = "lesVisiteursToolStripMenuItem";
-            this.lesVisiteursToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.lesVisiteursToolStripMenuItem.Text = "Les Visiteurs";
-            // 
-            // parSecteursToolStripMenuItem
-            // 
-            this.parSecteursToolStripMenuItem.Name = "parSecteursToolStripMenuItem";
-            this.parSecteursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parSecteursToolStripMenuItem.Text = "Par Secteurs";
-            this.parSecteursToolStripMenuItem.Click += new System.EventHandler(this.ParSecteursToolStripMenuItem_Click);
-            // 
-            // parRégionsToolStripMenuItem
-            // 
-            this.parRégionsToolStripMenuItem.Name = "parRégionsToolStripMenuItem";
-            this.parRégionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parRégionsToolStripMenuItem.Text = "Par Régions";
-            this.parRégionsToolStripMenuItem.Click += new System.EventHandler(this.ParRégionsToolStripMenuItem_Click);
-            // 
-            // globalToolStripMenuItem
-            // 
-            this.globalToolStripMenuItem.Name = "globalToolStripMenuItem";
-            this.globalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.globalToolStripMenuItem.Text = "Global";
-            this.globalToolStripMenuItem.Click += new System.EventHandler(this.GlobalToolStripMenuItem_Click);
+            this.lesVisiteursToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.lesVisiteursToolStripMenuItem.Text = "Voir les Visiteurs";
+            this.lesVisiteursToolStripMenuItem.Click += new System.EventHandler(this.LesVisiteursToolStripMenuItem_Click);
             // 
             // FrmMission1
             // 
@@ -117,8 +90,5 @@
         private System.Windows.Forms.ToolStripMenuItem mesInformationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consulterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lesVisiteursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parSecteursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parRégionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem globalToolStripMenuItem;
     }
 }

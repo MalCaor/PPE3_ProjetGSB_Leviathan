@@ -34,11 +34,15 @@ namespace PPE3_Leviathan
             string lesreg = "";
             if (lesreg.Count() > 1)
             {
-                lesreg = "Région : ";
+                lesreg = "Régions : ";
             }
             else
             {
-                lesreg = "Régions : ";
+                lesreg = "Région : ";
+                if(lesreg.Count() == 0)
+                {
+                    lesreg = "Région : /";
+                }
             }
             foreach (Region Region in lesRegions)
             {
@@ -56,6 +60,10 @@ namespace PPE3_Leviathan
             else
             {
                 message = "Responsable de la Région : ";
+                if(LesRegionResp.Count() == 0)
+                {
+                    message = "Responsable de la Région : /";
+                }
             }
             foreach(Region Region in LesRegionResp)
             {
@@ -63,6 +71,22 @@ namespace PPE3_Leviathan
             }
             lblRegionresponsable.Text = message;
 
+            //liste du secteur sous la resonsabilité du visiteur
+            List<Secteur> lesSecteurs = lesInfos.Secteur.ToList();
+            string secteurVisiteur = "";
+            if(lesSecteurs.Count() > 0)
+            {
+                secteurVisiteur = "Responsable du secteur : ";
+                foreach(Secteur secteur in lesSecteurs)
+                {
+                    secteurVisiteur += secteur.libSecteur;
+                }
+            }
+            else
+            {
+                secteurVisiteur = "Responsable du secteur : /";
+            }
+            lblSecteurVisiteur.Text = secteurVisiteur;
         }
 
         private void Restaurer_Click(object sender, EventArgs e)
@@ -103,7 +127,7 @@ namespace PPE3_Leviathan
             //-----------MODIFICATION MDP----------------
             if(!string.IsNullOrEmpty(txtAncienMdp.Text) && !string.IsNullOrEmpty(txtNouveauMdp.Text) && !string.IsNullOrEmpty(txtConfirmerMdp.Text))
             {
-                if(ControleurMission1.leVisiteur.password == GetMd5Hash(txtAncienMdp.Text.ToString()) && txtNouveauMdp.Text.ToString() == txtConfirmerMdp.Text.ToString())
+                if((ControleurMission1.leVisiteur.password == GetMd5Hash(txtAncienMdp.Text.ToString()) || ControleurMission1.leVisiteur.password == txtAncienMdp.Text.ToString() ) && txtNouveauMdp.Text.ToString() == txtConfirmerMdp.Text.ToString())
                 {
                     ControleurMission1.leVisiteur.password = GetMd5Hash(txtConfirmerMdp.Text.ToString());
                     message = message + "- Mot de passe modifié \n";
@@ -141,7 +165,7 @@ namespace PPE3_Leviathan
             return ("0x" + sb.ToString().ToUpper());
         }
 
-        private void reset() // met a jour les informations affichées dans les textBox
+        private void reset() // réinitialise / met a jour les informations affichées dans les textBox
         {
             Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
             txtNom.Text = lesInfos.nom;
