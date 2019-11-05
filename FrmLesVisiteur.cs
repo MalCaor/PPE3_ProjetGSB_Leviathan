@@ -62,7 +62,7 @@ namespace PPE3_Leviathan
                             }
                         }// il faut enregistrer le nom du responsable pour ne pas le remettre dans la liste et faire en sorte que le resonsable soit le premier afficher
                     }
-                }
+                } 
                 lblTest1.Text = test;
             }
         }
