@@ -26,6 +26,9 @@ namespace PPE3_Leviathan
         public string bilan { get; set; }
         public string idVisiteur { get; set; }
         public int idMedecin { get; set; }
+        public Nullable<bool> remplacement { get; set; }
+        public string nomRemplacent { get; set; }
+        public string prenomRemplacent { get; set; }
     
         public virtual MEDECIN MEDECIN { get; set; }
         public virtual MOTIF MOTIF { get; set; }

@@ -12,21 +12,19 @@ namespace PPE3_Leviathan
     using System;
     using System.Collections.Generic;
     
-    public partial class FraisForfait
+    public partial class Spec
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FraisForfait()
+        public Spec()
         {
-            this.LigneFraisForfait = new HashSet<LigneFraisForfait>();
+            this.FraisForfait = new HashSet<FraisForfait>();
         }
     
-        public string id { get; set; }
         public string libelle { get; set; }
-        public Nullable<decimal> montant { get; set; }
-        public string SpecID { get; set; }
+        public Nullable<int> montant { get; set; }
+        public string ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LigneFraisForfait> LigneFraisForfait { get; set; }
-        public virtual Spec Spec { get; set; }
+        public virtual ICollection<FraisForfait> FraisForfait { get; set; }
     }
 }

@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.bsFF = new System.Windows.Forms.BindingSource(this.components);
             this.lTitre = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lMois = new System.Windows.Forms.Label();
+            this.lQuantite = new System.Windows.Forms.Label();
+            this.tbMois = new System.Windows.Forms.TextBox();
+            this.tbQuantite = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsFF)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,64 +48,51 @@
             this.lTitre.TabIndex = 0;
             this.lTitre.Text = "Etat de Frais : ";
             // 
-            // label1
+            // lMois
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Visiteur :";
+            this.lMois.AutoSize = true;
+            this.lMois.Location = new System.Drawing.Point(13, 85);
+            this.lMois.Name = "lMois";
+            this.lMois.Size = new System.Drawing.Size(35, 13);
+            this.lMois.TabIndex = 1;
+            this.lMois.Text = "Mois :";
             // 
-            // label2
+            // lQuantite
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Matricule :";
+            this.lQuantite.AutoSize = true;
+            this.lQuantite.Location = new System.Drawing.Point(12, 109);
+            this.lQuantite.Name = "lQuantite";
+            this.lQuantite.Size = new System.Drawing.Size(53, 13);
+            this.lQuantite.TabIndex = 2;
+            this.lQuantite.Text = "Quantite :";
             // 
-            // label3
+            // tbMois
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nom :";
+            this.tbMois.Location = new System.Drawing.Point(58, 82);
+            this.tbMois.Name = "tbMois";
+            this.tbMois.Size = new System.Drawing.Size(100, 20);
+            this.tbMois.TabIndex = 3;
             // 
-            // label4
+            // tbQuantite
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Mois :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Frais Forfaitaire :";
+            this.tbQuantite.Location = new System.Drawing.Point(70, 106);
+            this.tbQuantite.Name = "tbQuantite";
+            this.tbQuantite.Size = new System.Drawing.Size(100, 20);
+            this.tbQuantite.TabIndex = 4;
             // 
             // fModifFF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbQuantite);
+            this.Controls.Add(this.tbMois);
+            this.Controls.Add(this.lQuantite);
+            this.Controls.Add(this.lMois);
             this.Controls.Add(this.lTitre);
             this.Name = "fModifFF";
             this.Text = "fModifFF";
+            this.Load += new System.EventHandler(this.FModifFF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsFF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,10 +103,9 @@
 
         private System.Windows.Forms.BindingSource bsFF;
         private System.Windows.Forms.Label lTitre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lMois;
+        private System.Windows.Forms.Label lQuantite;
+        private System.Windows.Forms.TextBox tbMois;
+        private System.Windows.Forms.TextBox tbQuantite;
     }
 }

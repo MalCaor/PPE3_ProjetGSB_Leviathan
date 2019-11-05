@@ -41,5 +41,6 @@ namespace PPE3_Leviathan
         public virtual DbSet<Secteur> Secteur { get; set; }
         public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
+        public virtual DbSet<Spec> Spec { get; set; }
     }
 }

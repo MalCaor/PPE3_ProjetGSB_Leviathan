@@ -64,8 +64,8 @@ namespace PPE3_Leviathan
                 change = true;
                 bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
                 bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
-                dgvLigneFor.DataSource = bindingSourceLigneF;
-                dgvLigneHor.DataSource = bindingSourceLigneHF;
+                dgvLigneFor.DataSource = bindingSourceLigneF.DataSource;
+                dgvLigneHor.DataSource = bindingSourceLigneHF.DataSource;
                 if (!(ff.idEtat == "CL"))
                 {
                     bModifFF.Enabled = true;
@@ -87,9 +87,21 @@ namespace PPE3_Leviathan
 
         private void BModifFF_Click(object sender, EventArgs e)
         {
-            fichefrais ffModif = (fichefrais)bindingSourceFicheFrais.Current;
-            Form modifFF = new fModifFF(ffModif);
+            LigneFraisForfait F = (LigneFraisForfait)bindingSourceLigneF.Current;
+            Form modifFF = new fModifFF(F);
             modifFF.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            LigneFraisHorsForfait HF = (LigneFraisHorsForfait)bindingSourceLigneHF.Current;
+            Form modifFF = new fModifFF(HF);
+            modifFF.ShowDialog();
+        }
+
+        private void DgvLigneFor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
