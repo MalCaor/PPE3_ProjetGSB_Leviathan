@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Leviathan_PPE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Leviathan_PPE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -38,6 +38,7 @@
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libelle" Type="char" MaxLength="20" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SpecID" Type="char" MaxLength="32" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -135,6 +136,14 @@
           <Property Name="libSecteur" Type="varchar" MaxLength="64" />
           <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
         </EntityType>
+        <EntityType Name="Spec">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="libelle" Type="varchar" MaxLength="32" />
+          <Property Name="montant" Type="int" />
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+        </EntityType>
         <EntityType Name="SPECIALITE">
           <Key>
             <PropertyRef Name="idSpecialite" />
@@ -186,6 +195,18 @@
             </Principal>
             <Dependent Role="fichefrais">
               <PropertyRef Name="idVisiteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FraisForf__SpecI__5535A963">
+          <End Role="Spec" Type="Self.Spec" Multiplicity="0..1" />
+          <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spec">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FraisForfait">
+              <PropertyRef Name="SpecID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -400,6 +421,7 @@
           <EntitySet Name="RAPPORT" EntityType="Self.RAPPORT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Secteur" EntityType="Self.Secteur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spec" EntityType="Self.Spec" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
@@ -410,6 +432,10 @@
           <AssociationSet Name="FK__fichefrai__idVis__1FCDBCEB" Association="Self.FK__fichefrai__idVis__1FCDBCEB">
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="fichefrais" EntitySet="fichefrais" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FraisForf__SpecI__5535A963" Association="Self.FK__FraisForf__SpecI__5535A963">
+            <End Role="Spec" EntitySet="Spec" />
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
           </AssociationSet>
           <AssociationSet Name="FK__LigneFrai__idFra__267ABA7A" Association="Self.FK__LigneFrai__idFra__267ABA7A">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
@@ -476,8 +502,7 @@
             <End Role="RAPPORT" EntitySet="RAPPORT" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Leviathan_PPE3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -521,6 +546,8 @@
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFrai__idFra__267ABA7A" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <Property Name="SpecID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Spec" Relationship="Leviathan_PPE3Model.FK__FraisForf__SpecI__5535A963" FromRole="FraisForfait" ToRole="Spec" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -952,7 +979,33 @@
             <End Role="Region" EntitySet="Region" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <EntitySet Name="Spec" EntityType="Leviathan_PPE3Model.Spec" />
+          <AssociationSet Name="FK__FraisForf__SpecI__5535A963" Association="Leviathan_PPE3Model.FK__FraisForf__SpecI__5535A963">
+            <End Role="Spec" EntitySet="Spec" />
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Spec">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="libelle" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="montant" Type="Int32" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="FraisForfait" Relationship="Leviathan_PPE3Model.FK__FraisForf__SpecI__5535A963" FromRole="Spec" ToRole="FraisForfait" />
+        </EntityType>
+        <Association Name="FK__FraisForf__SpecI__5535A963">
+          <End Type="Leviathan_PPE3Model.Spec" Role="Spec" Multiplicity="0..1" />
+          <End Type="Leviathan_PPE3Model.FraisForfait" Role="FraisForfait" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Spec">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FraisForfait">
+              <PropertyRef Name="SpecID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -990,6 +1043,7 @@
           <EntitySetMapping Name="FraisForfait">
             <EntityTypeMapping TypeName="Leviathan_PPE3Model.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="SpecID" ColumnName="SpecID" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="montant" ColumnName="montant" />
@@ -1131,6 +1185,15 @@
               <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Spec">
+            <EntityTypeMapping TypeName="Leviathan_PPE3Model.Spec">
+              <MappingFragment StoreEntitySet="Spec">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="montant" ColumnName="montant" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

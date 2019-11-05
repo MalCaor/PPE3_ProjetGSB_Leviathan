@@ -31,15 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.bsFF = new System.Windows.Forms.BindingSource(this.components);
             this.lTitre = new System.Windows.Forms.Label();
-            this.lVisiteur = new System.Windows.Forms.Label();
-            this.lMatr = new System.Windows.Forms.Label();
-            this.lNom = new System.Windows.Forms.Label();
             this.lMois = new System.Windows.Forms.Label();
-            this.lFraisFor = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lAutoMat = new System.Windows.Forms.Label();
-            this.lAutoNom = new System.Windows.Forms.Label();
+            this.lQuantite = new System.Windows.Forms.Label();
+            this.tbMois = new System.Windows.Forms.TextBox();
+            this.tbQuantite = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsFF)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,99 +48,47 @@
             this.lTitre.TabIndex = 0;
             this.lTitre.Text = "Etat de Frais : ";
             // 
-            // lVisiteur
-            // 
-            this.lVisiteur.AutoSize = true;
-            this.lVisiteur.Location = new System.Drawing.Point(19, 67);
-            this.lVisiteur.Name = "lVisiteur";
-            this.lVisiteur.Size = new System.Drawing.Size(47, 13);
-            this.lVisiteur.TabIndex = 1;
-            this.lVisiteur.Text = "Visiteur :";
-            // 
-            // lMatr
-            // 
-            this.lMatr.AutoSize = true;
-            this.lMatr.Location = new System.Drawing.Point(72, 67);
-            this.lMatr.Name = "lMatr";
-            this.lMatr.Size = new System.Drawing.Size(56, 13);
-            this.lMatr.TabIndex = 2;
-            this.lMatr.Text = "Matricule :";
-            // 
-            // lNom
-            // 
-            this.lNom.AutoSize = true;
-            this.lNom.Location = new System.Drawing.Point(72, 80);
-            this.lNom.Name = "lNom";
-            this.lNom.Size = new System.Drawing.Size(35, 13);
-            this.lNom.TabIndex = 3;
-            this.lNom.Text = "Nom :";
-            // 
             // lMois
             // 
             this.lMois.AutoSize = true;
-            this.lMois.Location = new System.Drawing.Point(19, 101);
+            this.lMois.Location = new System.Drawing.Point(13, 85);
             this.lMois.Name = "lMois";
             this.lMois.Size = new System.Drawing.Size(35, 13);
-            this.lMois.TabIndex = 4;
+            this.lMois.TabIndex = 1;
             this.lMois.Text = "Mois :";
             // 
-            // lFraisFor
+            // lQuantite
             // 
-            this.lFraisFor.AutoSize = true;
-            this.lFraisFor.Location = new System.Drawing.Point(19, 123);
-            this.lFraisFor.Name = "lFraisFor";
-            this.lFraisFor.Size = new System.Drawing.Size(84, 13);
-            this.lFraisFor.TabIndex = 5;
-            this.lFraisFor.Text = "Frais Forfaitaire :";
+            this.lQuantite.AutoSize = true;
+            this.lQuantite.Location = new System.Drawing.Point(12, 109);
+            this.lQuantite.Name = "lQuantite";
+            this.lQuantite.Size = new System.Drawing.Size(53, 13);
+            this.lQuantite.TabIndex = 2;
+            this.lQuantite.Text = "Quantite :";
             // 
-            // label6
+            // tbMois
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 6;
+            this.tbMois.Location = new System.Drawing.Point(58, 82);
+            this.tbMois.Name = "tbMois";
+            this.tbMois.Size = new System.Drawing.Size(100, 20);
+            this.tbMois.TabIndex = 3;
             // 
-            // label7
+            // tbQuantite
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(134, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 13);
-            this.label7.TabIndex = 7;
-            // 
-            // lAutoMat
-            // 
-            this.lAutoMat.AutoSize = true;
-            this.lAutoMat.Location = new System.Drawing.Point(134, 67);
-            this.lAutoMat.Name = "lAutoMat";
-            this.lAutoMat.Size = new System.Drawing.Size(25, 13);
-            this.lAutoMat.TabIndex = 8;
-            this.lAutoMat.Text = "Mat";
-            // 
-            // lAutoNom
-            // 
-            this.lAutoNom.AutoSize = true;
-            this.lAutoNom.Location = new System.Drawing.Point(113, 80);
-            this.lAutoNom.Name = "lAutoNom";
-            this.lAutoNom.Size = new System.Drawing.Size(29, 13);
-            this.lAutoNom.TabIndex = 9;
-            this.lAutoNom.Text = "Nom";
+            this.tbQuantite.Location = new System.Drawing.Point(70, 106);
+            this.tbQuantite.Name = "tbQuantite";
+            this.tbQuantite.Size = new System.Drawing.Size(100, 20);
+            this.tbQuantite.TabIndex = 4;
             // 
             // fModifFF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lAutoNom);
-            this.Controls.Add(this.lAutoMat);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lFraisFor);
+            this.Controls.Add(this.tbQuantite);
+            this.Controls.Add(this.tbMois);
+            this.Controls.Add(this.lQuantite);
             this.Controls.Add(this.lMois);
-            this.Controls.Add(this.lNom);
-            this.Controls.Add(this.lMatr);
-            this.Controls.Add(this.lVisiteur);
             this.Controls.Add(this.lTitre);
             this.Name = "fModifFF";
             this.Text = "fModifFF";
@@ -160,14 +103,9 @@
 
         private System.Windows.Forms.BindingSource bsFF;
         private System.Windows.Forms.Label lTitre;
-        private System.Windows.Forms.Label lVisiteur;
-        private System.Windows.Forms.Label lMatr;
-        private System.Windows.Forms.Label lNom;
         private System.Windows.Forms.Label lMois;
-        private System.Windows.Forms.Label lFraisFor;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lAutoMat;
-        private System.Windows.Forms.Label lAutoNom;
+        private System.Windows.Forms.Label lQuantite;
+        private System.Windows.Forms.TextBox tbMois;
+        private System.Windows.Forms.TextBox tbQuantite;
     }
 }
