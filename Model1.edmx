@@ -118,6 +118,9 @@
           <Property Name="bilan" Type="varchar" MaxLength="64" />
           <Property Name="idVisiteur" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="idMedecin" Type="int" Nullable="false" />
+          <Property Name="remplacement" Type="bit" />
+          <Property Name="nomRemplacent" Type="varchar" MaxLength="30" />
+          <Property Name="prenomRemplacent" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -642,6 +645,9 @@
           <NavigationProperty Name="MOTIF" Relationship="Self.rapport_fk3" FromRole="RAPPORT" ToRole="MOTIF" />
           <NavigationProperty Name="OFFRIR" Relationship="Self.offrir_fk1" FromRole="RAPPORT" ToRole="OFFRIR" />
           <NavigationProperty Name="Visiteur" Relationship="Self.rapport_fk1" FromRole="RAPPORT" ToRole="Visiteur" />
+          <Property Name="remplacement" Type="Boolean" />
+          <Property Name="nomRemplacent" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="prenomRemplacent" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -1125,6 +1131,9 @@
           <EntitySetMapping Name="RAPPORT">
             <EntityTypeMapping TypeName="Leviathan_PPE3Model.RAPPORT">
               <MappingFragment StoreEntitySet="RAPPORT">
+                <ScalarProperty Name="prenomRemplacent" ColumnName="prenomRemplacent" />
+                <ScalarProperty Name="nomRemplacent" ColumnName="nomRemplacent" />
+                <ScalarProperty Name="remplacement" ColumnName="remplacement" />
                 <ScalarProperty Name="idRapport" ColumnName="idRapport" />
                 <ScalarProperty Name="dateRapport" ColumnName="dateRapport" />
                 <ScalarProperty Name="idMotif" ColumnName="idMotif" />

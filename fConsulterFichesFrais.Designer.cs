@@ -261,6 +261,7 @@
             this.dgvLigneFor.Name = "dgvLigneFor";
             this.dgvLigneFor.Size = new System.Drawing.Size(240, 150);
             this.dgvLigneFor.TabIndex = 23;
+            this.dgvLigneFor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLigneFor_CellContentClick);
             // 
             // dgvLigneHor
             // 
