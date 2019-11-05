@@ -41,7 +41,6 @@
             this.txtRole = new System.Windows.Forms.Label();
             this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
-            this.cboVisiteur = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
@@ -140,20 +139,11 @@
             // 
             this.bsVisiteurs.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
             // 
-            // cboVisiteur
-            // 
-            this.cboVisiteur.FormattingEnabled = true;
-            this.cboVisiteur.Location = new System.Drawing.Point(10, 135);
-            this.cboVisiteur.Name = "cboVisiteur";
-            this.cboVisiteur.Size = new System.Drawing.Size(126, 21);
-            this.cboVisiteur.TabIndex = 10;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cboVisiteur);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.txtPrénom);
             this.Controls.Add(this.txtNom);
@@ -190,6 +180,5 @@
         private System.Windows.Forms.Label txtRole;
         private System.Windows.Forms.BindingSource bsVisiteurs;
         private System.Windows.Forms.BindingSource bsVisiteur;
-        private System.Windows.Forms.ComboBox cboVisiteur;
     }
 }

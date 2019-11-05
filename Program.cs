@@ -20,7 +20,7 @@ namespace PPE3_Leviathan
             controleurMission2.init();
             //controleurMission3.init();
             //Application.Run(new FrmConnexion());
-            Application.Run(new testCo());
+            Application.Run(new FrmModifRapport());
             //corig
         }
     }

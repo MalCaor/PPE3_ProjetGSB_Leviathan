@@ -134,6 +134,15 @@ namespace PPE3_Leviathan
             }
             return MedecinsV;
         }
+
+        /*public static Object VisiteurTest()
+        {
+            
+            var LQuery = maConnexion.Visiteur.ToList()
+                           .Where(x => x.id)
+            
+        }*/
+
         /*public static Object CompositeurParNationalite(int idNation)
         {
             var LQuery = maConnexion.COMPOSITEUR.ToList()

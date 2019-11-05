@@ -85,6 +85,12 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjoutRapport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutRapport.Designer.cs">
+      <DependentUpon>FrmAjoutRapport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="FrmMission1.Designer.cs">
       <DependentUpon>FrmMission1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifRapport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifRapport.Designer.cs">
+      <DependentUpon>FrmModifRapport.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -156,6 +168,9 @@
     <Compile Include="Secteur.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Spec.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="SPECIALITE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -185,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMission1.resx">
       <DependentUpon>FrmMission1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifRapport.resx">
+      <DependentUpon>FrmModifRapport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

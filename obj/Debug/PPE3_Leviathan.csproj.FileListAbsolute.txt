@@ -134,3 +134,4 @@ X:\PPE3 working version\bin\Debug\EntityFramework.SqlServer.dll
 X:\PPE3 working version\bin\Debug\fr\EntityFramework.resources.dll
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
+X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmModifRapport.resources

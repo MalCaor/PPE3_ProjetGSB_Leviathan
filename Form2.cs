@@ -19,7 +19,6 @@ namespace PPE3_Leviathan
             //c'est la syncro
 
             bsVisiteurs.DataSource = controleurMission2.listeVisiteurs();
-            cboVisiteur.DataSource = bsVisiteurs;
             /*bsVisiteur.DataSource = ...;*/
         }
 
