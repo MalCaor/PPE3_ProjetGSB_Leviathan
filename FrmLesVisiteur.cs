@@ -48,7 +48,7 @@ namespace PPE3_Leviathan
                 {
                     foreach(Secteur secteur in SecteurGlobal)
                     {
-                        if(secteur.idVisiteur == visiteur.idVisiteur/* && visiteur.idVisiteur != resultatPrecedent*/)
+                        if(secteur.idVisiteur == visiteur.idVisiteur)
                         {
                             messageGlobal += "\tResponsable du Secteur " + secteur.libSecteur + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
                             resultatPrecedent = visiteur.idVisiteur;
@@ -64,7 +64,7 @@ namespace PPE3_Leviathan
                         List<Region> LesRegionTravailGlobal = visiteur.Region1.ToList();
                         foreach(Region regionTravail in LesRegionTravailGlobal)
                         {
-                            if(region.idRegion == regionTravail.idRegion /*&& visiteur.idVisiteur != resultatPrecedent*/)
+                            if(region.idRegion == regionTravail.idRegion)
                             {
                                 resultatPrecedent = visiteur.idVisiteur;
                                 messageGlobal += "\t\tResponsable de la Region " + region.libRegion + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
@@ -74,6 +74,7 @@ namespace PPE3_Leviathan
                 }
                 rtbListeSelection.Text = messageGlobal;
             }
+
             if(choix == "Par Secteur")
             {
                 List<Secteur>LesSecteurs = ControleurMission1.listeSecteur();
@@ -115,6 +116,7 @@ namespace PPE3_Leviathan
                 //lblTest1.Text = messageSecteur;
                 rtbListeSelection.Text = messageSecteur;
             }
+
             if(choix == "Par Région")
             {
                 List<Region> LesRegion= ControleurMission1.listeRegion();
