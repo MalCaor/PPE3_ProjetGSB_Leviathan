@@ -7,3 +7,6 @@
 .vs
 .bin
 .obj
+*.csproj
+bin
+obj

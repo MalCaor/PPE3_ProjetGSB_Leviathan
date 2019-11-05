@@ -17,10 +17,7 @@ namespace PPE3_Leviathan
             maConnexion = new Leviathan_PPE3Entities();
         }
 
-        /*public static List<BATIMENT> listebatiment()
-        {
-            return maConnexion.BATIMENT.ToList();
-        }*/
+        //Fonctions d'appel des liste depuis la BDD
 
         public static List<Etat> listeEtats()
         {
@@ -50,6 +47,92 @@ namespace PPE3_Leviathan
         public static List<LigneFraisForfait> listeLigneFraisForfaits()
         {
             return maConnexion.LigneFraisForfait.ToList();
+        }
+
+        public static List<LigneFraisHorsForfait> listeLigneFraisHorsForfaits()
+        {
+            return maConnexion.LigneFraisHorsForfait.ToList();
+        }
+
+        public static List<MEDECIN> listeMedecins()
+        {
+            return maConnexion.MEDECIN.ToList();
+        }
+        
+        public static List<MEDICAMENT> listeMedicaments()
+        {
+            return maConnexion.MEDICAMENT.ToList();
+        }
+
+        public static List<MOTIF> listeMOTIFS()
+        {
+            return maConnexion.MOTIF.ToList();
+        }
+
+        public static List<OFFRIR> listeOffrir()
+        {
+            return maConnexion.OFFRIR.ToList();
+        }
+
+        public static List<RAPPORT> listeRapports()
+        {
+            return maConnexion.RAPPORT.ToList();
+        }
+
+        public static List<Region> listeRegions()
+        {
+            return maConnexion.Region.ToList();
+        }
+
+        public static List<Secteur> listeSecteurs()
+        {
+            return maConnexion.Secteur.ToList();
+        }
+
+        public static List<SPECIALITE> listeSpecialités()
+        {
+            return maConnexion.SPECIALITE.ToList();
+        }
+
+        public static List<Visiteur> listeVisiteurs()
+        {
+            return maConnexion.Visiteur.ToList();
+        }
+
+        public static List<RAPPORT> listeRapportV(Visiteur V)
+        {
+            List<RAPPORT> RapportsV = new List<RAPPORT>();
+
+            foreach(RAPPORT R in listeRapports())
+            {
+                if(V.identifiant == R.idVisiteur)
+                {
+                    RapportsV.Add(R);
+                }
+            }
+            
+            return RapportsV;
+        }
+        public static List<MEDECIN> listeMedecinsSuivi(Visiteur V)
+        {
+            List<MEDECIN> MedecinsV = new List<MEDECIN>();
+            bool parcours;
+            foreach(RAPPORT R in V.RAPPORT /*listeRapportV(V)*/)
+            {
+                parcours = false;
+                foreach (MEDECIN M in MedecinsV)
+                {
+                    if (M.idMedecin == R.idMedecin)
+                    {
+                        parcours = true;
+                    }
+                    else
+                    {
+                        MedecinsV.Add(M);
+                    }
+                }
+            }
+            return MedecinsV;
         }
         /*public static Object CompositeurParNationalite(int idNation)
         {

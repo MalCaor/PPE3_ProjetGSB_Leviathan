@@ -54,10 +54,19 @@
             this.labMont = new System.Windows.Forms.Label();
             this.tbDateModif = new System.Windows.Forms.TextBox();
             this.labDateModif = new System.Windows.Forms.Label();
+            this.dgvLigneFor = new System.Windows.Forms.DataGridView();
+            this.dgvLigneHor = new System.Windows.Forms.DataGridView();
+            this.bindingSourceLigneF = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceLigneHF = new System.Windows.Forms.BindingSource(this.components);
+            this.bModifFF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneHF)).BeginInit();
             this.SuspendLayout();
             // 
             // CBVisiteur
@@ -242,11 +251,40 @@
             this.labDateModif.TabIndex = 21;
             this.labDateModif.Text = "Derniere Modification :";
             // 
+            // dgvLigneFor
+            // 
+            this.dgvLigneFor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLigneFor.Location = new System.Drawing.Point(207, 239);
+            this.dgvLigneFor.Name = "dgvLigneFor";
+            this.dgvLigneFor.Size = new System.Drawing.Size(240, 150);
+            this.dgvLigneFor.TabIndex = 23;
+            // 
+            // dgvLigneHor
+            // 
+            this.dgvLigneHor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLigneHor.Location = new System.Drawing.Point(453, 239);
+            this.dgvLigneHor.Name = "dgvLigneHor";
+            this.dgvLigneHor.Size = new System.Drawing.Size(240, 150);
+            this.dgvLigneHor.TabIndex = 24;
+            // 
+            // bModifFF
+            // 
+            this.bModifFF.Location = new System.Drawing.Point(207, 396);
+            this.bModifFF.Name = "bModifFF";
+            this.bModifFF.Size = new System.Drawing.Size(75, 23);
+            this.bModifFF.TabIndex = 25;
+            this.bModifFF.Text = "Modifier";
+            this.bModifFF.UseVisualStyleBackColor = true;
+            this.bModifFF.Click += new System.EventHandler(this.BModifFF_Click);
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bModifFF);
+            this.Controls.Add(this.dgvLigneHor);
+            this.Controls.Add(this.dgvLigneFor);
             this.Controls.Add(this.tbDateModif);
             this.Controls.Add(this.labDateModif);
             this.Controls.Add(this.tbMont);
@@ -276,6 +314,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneHF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +350,10 @@
         private System.Windows.Forms.Label labMont;
         private System.Windows.Forms.TextBox tbDateModif;
         private System.Windows.Forms.Label labDateModif;
+        private System.Windows.Forms.DataGridView dgvLigneFor;
+        private System.Windows.Forms.DataGridView dgvLigneHor;
+        private System.Windows.Forms.BindingSource bindingSourceLigneF;
+        private System.Windows.Forms.BindingSource bindingSourceLigneHF;
+        private System.Windows.Forms.Button bModifFF;
     }
 }
