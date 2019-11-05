@@ -127,7 +127,7 @@ namespace PPE3_Leviathan
             //-----------MODIFICATION MDP----------------
             if(!string.IsNullOrEmpty(txtAncienMdp.Text) && !string.IsNullOrEmpty(txtNouveauMdp.Text) && !string.IsNullOrEmpty(txtConfirmerMdp.Text))
             {
-                if(ControleurMission1.leVisiteur.password == GetMd5Hash(txtAncienMdp.Text.ToString()) && txtNouveauMdp.Text.ToString() == txtConfirmerMdp.Text.ToString())
+                if((ControleurMission1.leVisiteur.password == GetMd5Hash(txtAncienMdp.Text.ToString()) || ControleurMission1.leVisiteur.password == txtAncienMdp.Text.ToString() ) && txtNouveauMdp.Text.ToString() == txtConfirmerMdp.Text.ToString())
                 {
                     ControleurMission1.leVisiteur.password = GetMd5Hash(txtConfirmerMdp.Text.ToString());
                     message = message + "- Mot de passe modifié \n";

@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvVisiteurs = new System.Windows.Forms.DataGridView();
             this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
             this.cboChoixAffichage = new System.Windows.Forms.ComboBox();
-            this.lblTest1 = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurs)).BeginInit();
+            this.rtbListeSelection = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvVisiteurs
-            // 
-            this.dgvVisiteurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVisiteurs.Location = new System.Drawing.Point(58, 117);
-            this.dgvVisiteurs.Name = "dgvVisiteurs";
-            this.dgvVisiteurs.Size = new System.Drawing.Size(667, 288);
-            this.dgvVisiteurs.TabIndex = 0;
             // 
             // bsVisiteurs
             // 
@@ -58,15 +48,6 @@
             this.cboChoixAffichage.Size = new System.Drawing.Size(121, 21);
             this.cboChoixAffichage.TabIndex = 1;
             // 
-            // lblTest1
-            // 
-            this.lblTest1.AutoSize = true;
-            this.lblTest1.Location = new System.Drawing.Point(332, 46);
-            this.lblTest1.Name = "lblTest1";
-            this.lblTest1.Size = new System.Drawing.Size(35, 13);
-            this.lblTest1.TabIndex = 2;
-            this.lblTest1.Text = "label1";
-            // 
             // btnRetour
             // 
             this.btnRetour.Location = new System.Drawing.Point(649, 415);
@@ -77,31 +58,35 @@
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.BtnRetour_Click);
             // 
+            // rtbListeSelection
+            // 
+            this.rtbListeSelection.Location = new System.Drawing.Point(58, 92);
+            this.rtbListeSelection.Name = "rtbListeSelection";
+            this.rtbListeSelection.Size = new System.Drawing.Size(666, 302);
+            this.rtbListeSelection.TabIndex = 4;
+            this.rtbListeSelection.Text = "";
+            // 
             // FrmLesVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rtbListeSelection);
             this.Controls.Add(this.btnRetour);
-            this.Controls.Add(this.lblTest1);
             this.Controls.Add(this.cboChoixAffichage);
-            this.Controls.Add(this.dgvVisiteurs);
             this.Name = "FrmLesVisiteur";
             this.Text = "FrmLesVisiteur";
             this.Load += new System.EventHandler(this.FrmLesVisiteur_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.BindingSource bsVisiteurs;
-        private System.Windows.Forms.DataGridView dgvVisiteurs;
         private System.Windows.Forms.ComboBox cboChoixAffichage;
-        private System.Windows.Forms.Label lblTest1;
         private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.RichTextBox rtbListeSelection;
     }
 }
