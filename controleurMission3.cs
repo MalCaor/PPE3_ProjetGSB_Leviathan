@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PPE3_Leviathan
-{
+{ 
     public static class controleurMission3
     {
-        // Set la Connexion avec la base
-        private static Leviathan_PPE3Entities maConnexion;
-        
+       // Set la Connexion avec la base
+       private static Leviathan_PPE3Entities maConnexion;
+        public static LigneFraisForfait LFF;
+        public static LigneFraisHorsForfait LFHF;
+
         public static void init()
         {
             // init Connexion
@@ -20,6 +22,16 @@ namespace PPE3_Leviathan
         public static List<fichefrais> listeFicheFrais()
         {
             return maConnexion.fichefrais.ToList();
+        }
+
+        public static List<LigneFraisForfait> listLFF()
+        {
+            return maConnexion.LigneFraisForfait.ToList();
+        }
+
+        public static List<LigneFraisHorsForfait> listLFHF()
+        {
+            return maConnexion.LigneFraisHorsForfait.ToList();
         }
 
         public static List<Visiteur> listeVisiteur()
@@ -98,6 +110,56 @@ namespace PPE3_Leviathan
                 }
             }
             return null;
+        }
+
+        //save Change
+        public static void savechange()
+        {
+            maConnexion.SaveChanges();
+        }
+
+        //met à jour la bdd des LignesFF
+        public static bool updateLFF(LigneFraisForfait ff, string mois, int quant)
+        {
+            List<LigneFraisForfait> LFF = controleurMission3.listLFF();
+            foreach(LigneFraisForfait lff in LFF)
+            {
+                if (lff == ff)
+                {
+                    //Check Stuff
+                    if (mois == null)
+                    {
+                        return false;
+                    }
+
+                    //update in EDMX
+                    lff.mois = mois;
+                    lff.quantite = quant;
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool updateLFHF(LigneFraisHorsForfait ff, string mois, int mont)
+        {
+            List<LigneFraisHorsForfait> LFHF = controleurMission3.listLFHF();
+            foreach(LigneFraisHorsForfait lfhf in LFHF)
+            {
+                if (lfhf == ff)
+                {
+                    //Check Stuff
+                    if (mois == null)
+                    {
+                        return false;
+                    }
+
+                    //update in EDMX
+                    lfhf.mois = mois;
+                    lfhf.montant = mont;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

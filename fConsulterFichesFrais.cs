@@ -87,6 +87,8 @@ namespace PPE3_Leviathan
 
         private void BModifFF_Click(object sender, EventArgs e)
         {
+            controleurMission3.LFF = (LigneFraisForfait)bindingSourceLigneF.Current;
+            controleurMission3.savechange();
             LigneFraisForfait F = (LigneFraisForfait)bindingSourceLigneF.Current;
             Form modifFF = new fModifFF(F);
             modifFF.ShowDialog();
@@ -94,6 +96,8 @@ namespace PPE3_Leviathan
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            controleurMission3.LFHF = (LigneFraisHorsForfait)bindingSourceLigneHF.Current;
+            controleurMission3.savechange();
             LigneFraisHorsForfait HF = (LigneFraisHorsForfait)bindingSourceLigneHF.Current;
             Form modifFF = new fModifFF(HF);
             modifFF.ShowDialog();
