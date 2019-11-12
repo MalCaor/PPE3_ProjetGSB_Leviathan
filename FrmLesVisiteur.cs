@@ -21,7 +21,7 @@ namespace PPE3_Leviathan
         {
             bsVisiteurs.DataSource = ControleurMission1.ListeChoixVisualisation();
             cboChoixAffichage.DataSource = bsVisiteurs;
-            if(ControleurMission1.getVerifAdmin())
+            if (ControleurMission1.getVerifAdmin())
             {
                 btnGestionLabo.Visible = true;
             }
@@ -37,13 +37,29 @@ namespace PPE3_Leviathan
 
         private void BsVisiteurs_CurrentChanged(object sender, EventArgs e)
         {
-            Visiteur lesInfos = ControleurMission1.LesInfosVisiteur();
             string choix = (string)bsVisiteurs.Current;
             if(choix == "Global")
             {
-                string messageGlobal = "useless";
+                List<Laboratoire>LesLabos = ControleurMission1.listeLaboratoire();
+                string messageGlobal = "";
                 
-
+                foreach(Laboratoire labo in LesLabos)
+                {
+                    if(labo.nomLabo == "Autres laboratoires ")
+                    {
+                        messageGlobal += "Membres des autres Laboratoires : ";
+                    }
+                    else
+                    {
+                        messageGlobal += "Membres du Laboratoire " + labo.nomLabo + " : ";
+                    }
+                    List<Visiteur> lesVisiteurs = labo.Visiteur.ToList();
+                    foreach(Visiteur visiteur in lesVisiteurs)
+                    {
+                        messageGlobal += "\n\t-" + visiteur.nom + " " + visiteur.prenom;
+                    }
+                    messageGlobal += "\n\n";
+                }
 
                 rtbListeSelection.Text = messageGlobal;
             }

@@ -143,7 +143,6 @@ X:\PPE3_GSB_Leviathan\bin\Debug\EntityFramework.SqlServer.dll
 X:\PPE3_GSB_Leviathan\bin\Debug\fr\EntityFramework.resources.dll
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.Accueil.resources
-X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.Form2.resources
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConnexion.resources
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConsulterInfos.resources
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmLesVisiteur.resources
@@ -156,3 +155,5 @@ X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CoreCompileInputs.cache
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.exe
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.pdb
+X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmGestionSecteur.resources
+X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.InfoVisiteur.resources

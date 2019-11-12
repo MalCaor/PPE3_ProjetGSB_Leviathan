@@ -100,17 +100,25 @@ namespace PPE3_Leviathan
         private static bool boolGestionRegion = false;
         public static bool verifGestionSecteur()
         {
-            if(leVisiteur.Secteur.ToList() != null)
+            List<Secteur> lesSecteurs = leVisiteur.Secteur.ToList();
+            foreach(Secteur s in lesSecteurs)
             {
-                boolGestionSecteur = true;
+                if (leVisiteur.idVisiteur == s.idVisiteur)
+                {
+                    boolGestionSecteur = true;
+                }
             }
             return boolGestionSecteur;
         }
         public static bool verifGestionRegion()
         {
-            if (leVisiteur.Region.ToList() != null)
+            List<Region> lesRegions = leVisiteur.Region.ToList();
+            foreach(Region r in lesRegions)
             {
-                boolGestionRegion = true;
+                if (leVisiteur.idVisiteur == r.idVisiteur)
+                {
+                    boolGestionRegion = true;
+                }
             }
             return boolGestionRegion;
         }
@@ -233,10 +241,10 @@ namespace PPE3_Leviathan
         {
             return maConnexion.Secteur.ToList();
         }
-
-
-
-
+        public static List<Laboratoire> listeLaboratoire()
+        {
+            return maConnexion.Laboratoire.ToList();
+        }
 
     }
 }

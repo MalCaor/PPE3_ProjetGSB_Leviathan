@@ -198,6 +198,9 @@
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionSecteur.resx">
+      <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfoVisiteur.resx">
       <DependentUpon>InfoVisiteur.cs</DependentUpon>
     </EmbeddedResource>

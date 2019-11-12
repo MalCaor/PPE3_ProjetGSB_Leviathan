@@ -16,5 +16,35 @@ namespace PPE3_Leviathan
         {
             InitializeComponent();
         }
+
+        private void FrmGestionSecteur_Load(object sender, EventArgs e)
+        {
+            List<Secteur>LesSecteursVisiteurs = ControleurMission1.leVisiteur.Secteur.ToList();
+            List<string> ContenuCBO = new List<string>();
+            foreach(Secteur s in LesSecteursVisiteurs)
+            {
+                ContenuCBO.Add(s.libSecteur);
+            }
+            bsGestionSecteur.DataSource = ControleurMission1.leVisiteur.Secteur.ToList(); 
+            cboGestionSecteur.DataSource = bsGestionSecteur;
+        }
+
+        private void BsGestionSecteur_CurrentChanged(object sender, EventArgs e)
+        {
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            List<Region> LesRegionsSecteur = s.Region.ToList();
+            List<Visiteur> vretour = new List<Visiteur>();
+            vretour.Add(s.Visiteur);
+            foreach(Region region in LesRegionsSecteur)
+            {
+                vretour.Add(region.Visiteur);
+                List<Visiteur> lesVisiteursRegions = region.Visiteur1.ToList();
+                foreach(Visiteur visiteur in lesVisiteursRegions)
+                {
+                    vretour.Add(visiteur);
+                }
+            }
+            dataGridView1.DataSource = vretour;
+        }
     }
 }
