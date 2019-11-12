@@ -1,6 +1,6 @@
 ﻿namespace PPE3_Leviathan
 {
-    partial class Form2
+    partial class InfoVisiteur
     {
         /// <summary>
         /// Required designer variable.
@@ -139,7 +139,7 @@
             // 
             this.bsVisiteurs.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
             // 
-            // Form2
+            // InfoVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,8 +154,8 @@
             this.Controls.Add(this.lbRole);
             this.Controls.Add(this.lbPrenom);
             this.Controls.Add(this.lbNom);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "InfoVisiteur";
+            this.Text = "Information Visiteur";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).EndInit();

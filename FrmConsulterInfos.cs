@@ -32,21 +32,21 @@ namespace PPE3_Leviathan
             // Liste des régions où le visiteur travail
             List<Region> lesRegions = lesInfos.Region1.ToList();
             string lesreg = "";
-            if (lesreg.Count() > 1)
+            if (lesRegions.Count() > 1)
             {
-                lesreg = "Régions : ";
+                lblRegionTravail.Text = "Régions : ";
             }
             else
             {
-                lesreg = "Région : ";
-                if(lesreg.Count() == 0)
+                lblRegionTravail.Text = "Région : ";
+                if(lesRegions.Count() == 0)
                 {
-                    lesreg = "Région : /";
+                    lesreg = " /";
                 }
             }
             foreach (Region Region in lesRegions)
             {
-                lesreg += Region.libRegion+", ";
+                lesreg += Region.libRegion+"\n\t\t\t";
             }
             lblRegionsVisiteur.Text = lesreg;
 
@@ -55,19 +55,19 @@ namespace PPE3_Leviathan
             string message = "";
             if(LesRegionResp.Count()>1)
             {
-                message = "Responsable des Régions : ";
+                lblResponsable.Text = "Responsable des Régions : ";
             }
             else
             {
-                message = "Responsable de la Région : ";
+                lblResponsable.Text = "Responsable de la Région : ";
                 if(LesRegionResp.Count() == 0)
                 {
-                    message = "Responsable de la Région : /";
+                    message = " /";
                 }
             }
             foreach(Region Region in LesRegionResp)
             {
-                message += Region.libRegion + ", ";
+                message += Region.libRegion + "\n\t\t\t";
             }
             lblRegionresponsable.Text = message;
 
@@ -76,7 +76,7 @@ namespace PPE3_Leviathan
             string secteurVisiteur = "";
             if(lesSecteurs.Count() > 0)
             {
-                secteurVisiteur = "Responsable du secteur : ";
+                lblResponsableSec.Text = "Responsable du secteur : ";
                 foreach(Secteur secteur in lesSecteurs)
                 {
                     secteurVisiteur += secteur.libSecteur;
@@ -84,7 +84,7 @@ namespace PPE3_Leviathan
             }
             else
             {
-                secteurVisiteur = "Responsable du secteur : /";
+                secteurVisiteur = " /";
             }
             lblSecteurVisiteur.Text = secteurVisiteur;
         }
