@@ -103,6 +103,18 @@
     <Compile Include="FrmConsulterInfos.Designer.cs">
       <DependentUpon>FrmConsulterInfos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionRegion.Designer.cs">
+      <DependentUpon>FrmGestionRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionSecteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionSecteur.Designer.cs">
+      <DependentUpon>FrmGestionSecteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLesVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>

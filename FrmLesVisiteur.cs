@@ -21,6 +21,18 @@ namespace PPE3_Leviathan
         {
             bsVisiteurs.DataSource = ControleurMission1.ListeChoixVisualisation();
             cboChoixAffichage.DataSource = bsVisiteurs;
+            if(ControleurMission1.getVerifAdmin())
+            {
+                btnGestionLabo.Visible = true;
+            }
+            if(ControleurMission1.verifGestionSecteur())
+            {
+                btnGestionSecteur.Visible = true;
+            }
+            if(ControleurMission1.verifGestionRegion())
+            {
+                btnGestionRegion.Visible = true;
+            }
         }
 
         private void BsVisiteurs_CurrentChanged(object sender, EventArgs e)
@@ -29,133 +41,59 @@ namespace PPE3_Leviathan
             string choix = (string)bsVisiteurs.Current;
             if(choix == "Global")
             {
-                string messageGlobal = "";
-                string resultatPrecedent = "";
-                List<Secteur>SecteurGlobal = ControleurMission1.listeSecteur();
-                List<Region>RegionGlobal = ControleurMission1.listeRegion();
-                List<Visiteur>VisiteurGlobal = ControleurMission1.listeVisiteur();
+                string messageGlobal = "useless";
                 
-                foreach(Visiteur visiteur in VisiteurGlobal)
-                {
-                    if(visiteur.nom == "Admin" && visiteur.prenom == "Admin" && visiteur.identifiant == "Admin")
-                    {
-                        messageGlobal += "Administrateur : " + visiteur.nom + " " + visiteur.prenom + "\n";
-                        break;
-                    }
-                }
 
-                foreach (Visiteur visiteur in VisiteurGlobal)
-                {
-                    foreach(Secteur secteur in SecteurGlobal)
-                    {
-                        if(secteur.idVisiteur == visiteur.idVisiteur)
-                        {
-                            messageGlobal += "\tResponsable du Secteur " + secteur.libSecteur + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
-                            resultatPrecedent = visiteur.idVisiteur;
-                        }
-                    }
-                }
 
-                resultatPrecedent = "";
-                foreach(Region region in RegionGlobal)
-                {
-                    foreach(Visiteur visiteur in VisiteurGlobal)
-                    {
-                        List<Region> LesRegionTravailGlobal = visiteur.Region1.ToList();
-                        foreach(Region regionTravail in LesRegionTravailGlobal)
-                        {
-                            if(region.idRegion == regionTravail.idRegion)
-                            {
-                                resultatPrecedent = visiteur.idVisiteur;
-                                messageGlobal += "\t\tResponsable de la Region " + region.libRegion + " : " + visiteur.nom + " " + visiteur.prenom + "\n";
-                            }
-                        }
-                    }
-                }
                 rtbListeSelection.Text = messageGlobal;
             }
 
             if(choix == "Par Secteur")
             {
                 List<Secteur>LesSecteurs = ControleurMission1.listeSecteur();
-                List<Visiteur> lesVisiteurSecteur = ControleurMission1.listeVisiteur();
                 string messageSecteur = "";
-                string responsableSecteur = "";
-                string dernierAjout = "";
-                foreach (Secteur secteur in LesSecteurs)
+                
+                foreach(Secteur secteur in LesSecteurs)
                 {
-                    foreach(Visiteur visiteur in lesVisiteurSecteur)
+                    messageSecteur += "Responsable du secteur " + secteur.libSecteur + " : " + secteur.Visiteur.nom + " " + secteur.Visiteur.prenom;
+                    List<Region> lesRegions = secteur.Region.ToList();
+                    foreach(Region region in lesRegions)
                     {
-                        if(secteur.idVisiteur == visiteur.idVisiteur)
+                        messageSecteur += "\n\tResponsable de la Région " + region.libRegion + " : " + region.Visiteur.nom + " " + region.Visiteur.prenom;
+                        List<Visiteur> lesVisiteurs = region.Visiteur1.ToList();
+                        foreach(Visiteur visiteur in lesVisiteurs)
                         {
-                            responsableSecteur = visiteur.idVisiteur;
-                            messageSecteur += "Secteur "+secteur.libSecteur + "\n|--Responsable de Secteur : " + visiteur.nom + " " + visiteur.prenom + "\n|--Coordonnées : " + visiteur.rue + " " + visiteur.cp + " " + visiteur.ville;
-                        }
-                    }
-                    foreach(Visiteur visiteur in lesVisiteurSecteur)
-                    {
-                        List<Region> LesRegionTravailSecteur = visiteur.Region1.ToList();
-                        List<Region> LesRegion = ControleurMission1.listeRegion();
-                        foreach(Region regionTravail in LesRegionTravailSecteur)
-                        {
-                            foreach(Region region in LesRegion)
+                            if (visiteur.nom != region.Visiteur.nom && visiteur.prenom != region.Visiteur.prenom)
                             {
-                                if(region.idRegion == regionTravail.idRegion)
-                                {
-                                    if(regionTravail.idSecteur == secteur.idSecteur && visiteur.idVisiteur != responsableSecteur && visiteur.idVisiteur != dernierAjout)
-                                    {
-                                        messageSecteur += "\n|\n|----------" + visiteur.nom + " " + visiteur.prenom;
-                                        dernierAjout = visiteur.idVisiteur;
-                                    }
-                                }
+                                messageSecteur += "\n\t\t- " + visiteur.nom + " " + visiteur.prenom;
                             }
                         }
                     }
                     messageSecteur += "\n\n";
                 }
-                //lblTest1.Text = messageSecteur;
+
                 rtbListeSelection.Text = messageSecteur;
             }
 
             if(choix == "Par Région")
             {
-                List<Region> LesRegion= ControleurMission1.listeRegion();
-                List<Visiteur> lesVisiteurs = ControleurMission1.listeVisiteur();
+                List<Region> LesRegions = ControleurMission1.listeRegion();
                 string messageRegion = "";
-                string responsableRegion = "";
-                foreach(Region region in LesRegion)
+                
+                foreach(Region region in LesRegions)
                 {
-                    messageRegion += region.libRegion;
-                    foreach(Visiteur visiteur in lesVisiteurs)
+                    messageRegion += "Responsable de la Région " + region.libRegion + " : " + region.Visiteur.nom + " " + region.Visiteur.prenom;
+                    List<Visiteur> lesVisiteursRegions = region.Visiteur1.ToList();
+                    foreach (Visiteur visiteur in lesVisiteursRegions)
                     {
-                        List<Region> LesRegionResponsable = visiteur.Region.ToList();
-                        foreach(Region regionResponsable in LesRegionResponsable)
+                        if (visiteur.nom != region.Visiteur.nom && visiteur.prenom != region.Visiteur.prenom)
                         {
-                            if(regionResponsable.libRegion == region.libRegion)
-                            {
-                                messageRegion += "\n|--Responsable de la Région : " + visiteur.nom + " " + visiteur.prenom + "\n|--Coordonnées : " + visiteur.rue + " " + visiteur.cp + " " + visiteur.ville;
-                                responsableRegion = visiteur.idVisiteur;
-                            }
+                            messageRegion += "\n\t- " + visiteur.nom + " " + visiteur.prenom;
                         }
                     }
-
-                    foreach (Visiteur visiteur in lesVisiteurs)
-                    {
-                        List<Region> LesRegionTravail = visiteur.Region1.ToList();
-                        foreach (Region regionlbl in LesRegionTravail)
-                        {
-                            if (regionlbl.libRegion == region.libRegion && visiteur.idVisiteur != responsableRegion)
-                            {
-                                messageRegion += "\n|\n|----------" + visiteur.nom + " " + visiteur.prenom;
-                            }
-                        }
-                    }
-
-
-
                     messageRegion += "\n\n";
                 }
-                //lblTest1.Text = messageRegion;
+
                 rtbListeSelection.Text = messageRegion;
             }
         }
@@ -163,6 +101,18 @@ namespace PPE3_Leviathan
         private void BtnRetour_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnGestionSecteur_Click(object sender, EventArgs e)
+        {
+            Form GestionSecteur = new FrmGestionSecteur();
+            GestionSecteur.Show();
+        }
+
+        private void BtnGestionRegion_Click(object sender, EventArgs e)
+        {
+            Form GestionRegion = new FrmGestionRegion();
+            GestionRegion.Show();
         }
     }
 }

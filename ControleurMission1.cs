@@ -26,7 +26,7 @@ namespace PPE3_Leviathan
         private static Laboratoire leLabo;
         private static bool connexionValide = false;
         private static string nomConnexion;
-        
+
 
         private static string GetMd5Hash(string PasswdSaisi) //Cryptage du mot de passe
         {
@@ -43,19 +43,27 @@ namespace PPE3_Leviathan
         public static string validConnexion(string identifiantVisiteur, string motDePasse)
         {
             string message = "";
-            var LQuery = maConnexion.Visiteur.ToList()
+            try
+            {            
+                var LQuery = maConnexion.Visiteur.ToList()
                                .Where(x => x.identifiant == identifiantVisiteur);    
-            leVisiteur = (Visiteur)LQuery.First();
-            if(leVisiteur.password.ToString() == GetMd5Hash(motDePasse.ToString()) || leVisiteur.password.ToString() == motDePasse)
-            {
-                connexionValide = true;
-                message = message + "Connecté";
+                leVisiteur = (Visiteur)LQuery.First();
+                if (leVisiteur.password.ToString() == GetMd5Hash(motDePasse.ToString()) || leVisiteur.password.ToString() == motDePasse)
+                {
+                    connexionValide = true;
+                    message = message + "Connecté";
+                }
+                else
+                {
+                    connexionValide = false;
+                    message = message + "Erreur de mot de passe ou Identifiant incorrect";
+                }
             }
-            else
+            catch(Exception ex)
             {
-                connexionValide = false;
-                message = message + "Erreur de mot de passe ou Identifiant incorrect";
+                message = "Erreur de mot de passe ou Identifiant incorrect";
             }
+            
             return message;
         }
         public static bool getConnexionValide()
@@ -87,6 +95,33 @@ namespace PPE3_Leviathan
             return boolADMIN;
         }
 
+        //Verification si le visiteur gère un secteur ou une region
+        private static bool boolGestionSecteur = false;
+        private static bool boolGestionRegion = false;
+        public static bool verifGestionSecteur()
+        {
+            if(leVisiteur.Secteur.ToList() != null)
+            {
+                boolGestionSecteur = true;
+            }
+            return boolGestionSecteur;
+        }
+        public static bool verifGestionRegion()
+        {
+            if (leVisiteur.Region.ToList() != null)
+            {
+                boolGestionRegion = true;
+            }
+            return boolGestionRegion;
+        }
+        public static bool getGestionSecteur()
+        {
+            return boolGestionSecteur;
+        }
+        public static bool getGestionRegion()
+        {
+            return boolGestionRegion;
+        }
 
 
         //-------------GETTER DE LA PERSONNE CONNECTEE-------------------------------
