@@ -85,12 +85,6 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmAjoutRapport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAjoutRapport.Designer.cs">
-      <DependentUpon>FrmAjoutRapport.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>

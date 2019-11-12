@@ -115,7 +115,6 @@ X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.Accueil.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmMission1.resources
 X:\test\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmConsulterInfos.resources
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.Accueil.resources
-X:\PPE3 working version\obj\Debug\PPE3_Leviathan.Form2.resources
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmConnexion.resources
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmConsulterInfos.resources
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmLesVisiteur.resources
@@ -135,3 +134,4 @@ X:\PPE3 working version\bin\Debug\fr\EntityFramework.resources.dll
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmModifRapport.resources
+X:\PPE3 working version\obj\Debug\PPE3_Leviathan.InfoVisiteur.resources

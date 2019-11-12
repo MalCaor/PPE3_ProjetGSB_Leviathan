@@ -87,12 +87,12 @@
             this.dgvRapports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRapports.Location = new System.Drawing.Point(153, 12);
             this.dgvRapports.Name = "dgvRapports";
-            this.dgvRapports.Size = new System.Drawing.Size(635, 426);
+            this.dgvRapports.Size = new System.Drawing.Size(619, 337);
             this.dgvRapports.TabIndex = 4;
             // 
             // btnAjout
             // 
-            this.btnAjout.Location = new System.Drawing.Point(13, 385);
+            this.btnAjout.Location = new System.Drawing.Point(13, 294);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(123, 23);
             this.btnAjout.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // btnModif
             // 
-            this.btnModif.Location = new System.Drawing.Point(12, 414);
+            this.btnModif.Location = new System.Drawing.Point(12, 323);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(124, 23);
             this.btnModif.TabIndex = 6;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.txtPrénom);
             this.Controls.Add(this.txtNom);
