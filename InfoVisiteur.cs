@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace PPE3_Leviathan
 {
-    public partial class Form2 : Form
+    public partial class InfoVisiteur : Form
     {
         private bool close;
-        public Form2()
+        public InfoVisiteur()
         {
             InitializeComponent();
             //c'est la syncro
