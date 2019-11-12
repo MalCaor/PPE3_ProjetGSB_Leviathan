@@ -47,6 +47,21 @@ namespace PPE3_Leviathan
             return maConnexion.Laboratoire.ToList();
         }
 
+        public static List<FraisForfait> listFF()
+        {
+            return maConnexion.FraisForfait.ToList();
+        }
+        public static List<string> libFF()
+        {
+            List<FraisForfait> FF = listFF();
+            List<string> retour = new List<string>();
+            foreach (FraisForfait ff in FF)
+            {
+                retour.Add(ff.libelle);
+            }
+            return retour;
+        }
+
 
         public static List<string> nomVisit()
         {

@@ -136,3 +136,5 @@ X:\PPE3 working version\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
 X:\PPE3 working version\obj\Debug\PPE3_Leviathan.FrmModifRapport.resources
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fModifFF.resources
 E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.csprojAssemblyReference.cache
+E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fAjoutLigneFHF.resources
+E:\MalCaor\Scolaire\SIO2\PPE3_Prog\PPE3_ProjetGSB_Leviathan\obj\Debug\PPE3_Leviathan.fAjoutLigneFF.resources

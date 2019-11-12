@@ -57,69 +57,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controleur.cs" />
-    <Compile Include="ControleurMission1.cs" />
-    <Compile Include="controleurMission2.cs" />
     <Compile Include="controleurMission3.cs" />
     <Compile Include="Etat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="fAjoutLigneFF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAjoutLigneFF.Designer.cs">
+      <DependentUpon>fAjoutLigneFF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAjoutLigneFHF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAjoutLigneFHF.Designer.cs">
+      <DependentUpon>fAjoutLigneFHF.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAMILLE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fConsulterFichesFrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fConsulterFichesFrais.Designer.cs">
+      <DependentUpon>fConsulterFichesFrais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGestionRembFrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGestionRembFrais.Designer.cs">
+      <DependentUpon>FGestionRembFrais.cs</DependentUpon>
     </Compile>
     <Compile Include="fichefrais.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Accueil.cs">
+    <Compile Include="fModifFF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Accueil.Designer.cs">
-      <DependentUpon>Accueil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="fModifFF.Designer.cs">
+      <DependentUpon>fModifFF.cs</DependentUpon>
     </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAjoutRapport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAjoutRapport.Designer.cs">
-      <DependentUpon>FrmAjoutRapport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConnexion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConnexion.Designer.cs">
-      <DependentUpon>FrmConnexion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConsulterInfos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsulterInfos.Designer.cs">
-      <DependentUpon>FrmConsulterInfos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLesVisiteur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLesVisiteur.Designer.cs">
-      <DependentUpon>FrmLesVisiteur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMission1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMission1.Designer.cs">
-      <DependentUpon>FrmMission1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmModifRapport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmModifRapport.Designer.cs">
-      <DependentUpon>FrmModifRapport.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -174,35 +153,23 @@
     <Compile Include="SPECIALITE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="testCo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="testCo.Designer.cs">
-      <DependentUpon>testCo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Visiteur.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Accueil.resx">
-      <DependentUpon>Accueil.cs</DependentUpon>
+    <EmbeddedResource Include="fAjoutLigneFF.resx">
+      <DependentUpon>fAjoutLigneFF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="fAjoutLigneFHF.resx">
+      <DependentUpon>fAjoutLigneFHF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConnexion.resx">
-      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    <EmbeddedResource Include="fConsulterFichesFrais.resx">
+      <DependentUpon>fConsulterFichesFrais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsulterInfos.resx">
-      <DependentUpon>FrmConsulterInfos.cs</DependentUpon>
+    <EmbeddedResource Include="fGestionRembFrais.resx">
+      <DependentUpon>FGestionRembFrais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLesVisiteur.resx">
-      <DependentUpon>FrmLesVisiteur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMission1.resx">
-      <DependentUpon>FrmMission1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmModifRapport.resx">
-      <DependentUpon>FrmModifRapport.cs</DependentUpon>
+    <EmbeddedResource Include="fModifFF.resx">
+      <DependentUpon>fModifFF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -213,9 +180,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="testCo.resx">
-      <DependentUpon>testCo.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
