@@ -54,6 +54,9 @@
             this.lblRegionsVisiteur = new System.Windows.Forms.Label();
             this.lblRegionresponsable = new System.Windows.Forms.Label();
             this.lblSecteurVisiteur = new System.Windows.Forms.Label();
+            this.lblRegionTravail = new System.Windows.Forms.Label();
+            this.lblResponsable = new System.Windows.Forms.Label();
+            this.lblResponsableSec = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblnom
@@ -257,7 +260,7 @@
             // lblRegionsVisiteur
             // 
             this.lblRegionsVisiteur.AutoSize = true;
-            this.lblRegionsVisiteur.Location = new System.Drawing.Point(36, 322);
+            this.lblRegionsVisiteur.Location = new System.Drawing.Point(102, 321);
             this.lblRegionsVisiteur.Name = "lblRegionsVisiteur";
             this.lblRegionsVisiteur.Size = new System.Drawing.Size(90, 13);
             this.lblRegionsVisiteur.TabIndex = 23;
@@ -266,7 +269,7 @@
             // lblRegionresponsable
             // 
             this.lblRegionresponsable.AutoSize = true;
-            this.lblRegionresponsable.Location = new System.Drawing.Point(36, 385);
+            this.lblRegionresponsable.Location = new System.Drawing.Point(183, 384);
             this.lblRegionresponsable.Name = "lblRegionresponsable";
             this.lblRegionresponsable.Size = new System.Drawing.Size(108, 13);
             this.lblRegionresponsable.TabIndex = 24;
@@ -275,17 +278,47 @@
             // lblSecteurVisiteur
             // 
             this.lblSecteurVisiteur.AutoSize = true;
-            this.lblSecteurVisiteur.Location = new System.Drawing.Point(373, 321);
+            this.lblSecteurVisiteur.Location = new System.Drawing.Point(453, 321);
             this.lblSecteurVisiteur.Name = "lblSecteurVisiteur";
             this.lblSecteurVisiteur.Size = new System.Drawing.Size(88, 13);
             this.lblSecteurVisiteur.TabIndex = 25;
             this.lblSecteurVisiteur.Text = "lblSecteurVisiteur";
+            // 
+            // lblRegionTravail
+            // 
+            this.lblRegionTravail.AutoSize = true;
+            this.lblRegionTravail.Location = new System.Drawing.Point(36, 321);
+            this.lblRegionTravail.Name = "lblRegionTravail";
+            this.lblRegionTravail.Size = new System.Drawing.Size(55, 13);
+            this.lblRegionTravail.TabIndex = 26;
+            this.lblRegionTravail.Text = "Régions : ";
+            // 
+            // lblResponsable
+            // 
+            this.lblResponsable.AutoSize = true;
+            this.lblResponsable.Location = new System.Drawing.Point(36, 384);
+            this.lblResponsable.Name = "lblResponsable";
+            this.lblResponsable.Size = new System.Drawing.Size(141, 13);
+            this.lblResponsable.TabIndex = 27;
+            this.lblResponsable.Text = "Responsable de la Région : ";
+            // 
+            // lblResponsableSec
+            // 
+            this.lblResponsableSec.AutoSize = true;
+            this.lblResponsableSec.Location = new System.Drawing.Point(314, 321);
+            this.lblResponsableSec.Name = "lblResponsableSec";
+            this.lblResponsableSec.Size = new System.Drawing.Size(133, 13);
+            this.lblResponsableSec.TabIndex = 28;
+            this.lblResponsableSec.Text = "Responsable du Secteur : ";
             // 
             // FrmConsulterInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 471);
+            this.Controls.Add(this.lblResponsableSec);
+            this.Controls.Add(this.lblResponsable);
+            this.Controls.Add(this.lblRegionTravail);
             this.Controls.Add(this.lblSecteurVisiteur);
             this.Controls.Add(this.lblRegionresponsable);
             this.Controls.Add(this.lblRegionsVisiteur);
@@ -348,5 +381,8 @@
         private System.Windows.Forms.Label lblRegionsVisiteur;
         private System.Windows.Forms.Label lblRegionresponsable;
         private System.Windows.Forms.Label lblSecteurVisiteur;
+        private System.Windows.Forms.Label lblRegionTravail;
+        private System.Windows.Forms.Label lblResponsable;
+        private System.Windows.Forms.Label lblResponsableSec;
     }
 }
