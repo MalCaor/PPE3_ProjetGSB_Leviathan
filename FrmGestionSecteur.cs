@@ -19,12 +19,8 @@ namespace PPE3_Leviathan
 
         private void FrmGestionSecteur_Load(object sender, EventArgs e)
         {
-            List<Secteur>LesSecteursVisiteurs = ControleurMission1.leVisiteur.Secteur.ToList();
-            List<string> ContenuCBO = new List<string>();
-            foreach(Secteur s in LesSecteursVisiteurs)
-            {
-                ContenuCBO.Add(s.libSecteur);
-            }
+            cboGestionSecteur.ValueMember = "idSecteur";
+            cboGestionSecteur.DisplayMember = "libSecteur";
             bsGestionSecteur.DataSource = ControleurMission1.leVisiteur.Secteur.ToList(); 
             cboGestionSecteur.DataSource = bsGestionSecteur;
         }
@@ -41,10 +37,35 @@ namespace PPE3_Leviathan
                 List<Visiteur> lesVisiteursRegions = region.Visiteur1.ToList();
                 foreach(Visiteur visiteur in lesVisiteursRegions)
                 {
-                    vretour.Add(visiteur);
+                    if(!vretour.Contains(visiteur))
+                    {
+                        vretour.Add(visiteur);
+                    }
                 }
             }
-            dataGridView1.DataSource = vretour;
+            dgvVisiteurGestion.DataSource = vretour;
+            dgvVisiteurGestion.Columns[0].Visible = false;
+            dgvVisiteurGestion.Columns[1].Visible = false;
+            dgvVisiteurGestion.Columns[8].Visible = false;
+            dgvVisiteurGestion.Columns[9].Visible = false;
+            dgvVisiteurGestion.Columns[10].Visible = false;
+            dgvVisiteurGestion.Columns[11].Visible = false;
+            dgvVisiteurGestion.Columns[12].Visible = false;
+            dgvVisiteurGestion.Columns[13].Visible = false;
+            dgvVisiteurGestion.Columns[14].Visible = false;
+            dgvVisiteurGestion.Columns[15].Visible = false;
+        }
+
+
+        private void BtnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
