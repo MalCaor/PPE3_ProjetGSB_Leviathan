@@ -176,6 +176,8 @@
           <Property Name="dateEmbauche" Type="char" MaxLength="10" />
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="actif" Type="int" />
+          <Property Name="dateFinEmbauche" Type="date" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__1ED998B2">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
@@ -699,6 +701,8 @@
           <NavigationProperty Name="Region" Relationship="Self.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
           <NavigationProperty Name="Secteur" Relationship="Self.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
           <NavigationProperty Name="Region1" Relationship="Self.Travailler" FromRole="Visiteur" ToRole="Region" />
+          <Property Name="actif" Type="Int32" />
+          <Property Name="dateFinEmbauche" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__1ED998B2">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
@@ -1173,6 +1177,8 @@
           <EntitySetMapping Name="Visiteur">
             <EntityTypeMapping TypeName="Leviathan_PPE3Model.Visiteur">
               <MappingFragment StoreEntitySet="Visiteur">
+                <ScalarProperty Name="dateFinEmbauche" ColumnName="dateFinEmbauche" />
+                <ScalarProperty Name="actif" ColumnName="actif" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
                 <ScalarProperty Name="nom" ColumnName="nom" />

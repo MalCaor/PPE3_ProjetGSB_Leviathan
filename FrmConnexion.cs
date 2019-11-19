@@ -35,6 +35,9 @@ namespace PPE3_Leviathan
             Application.Run(new FrmMission1());
         }
 
-
+        private void BtnInscrire_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

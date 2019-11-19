@@ -260,7 +260,7 @@
             // lblRegionsVisiteur
             // 
             this.lblRegionsVisiteur.AutoSize = true;
-            this.lblRegionsVisiteur.Location = new System.Drawing.Point(102, 321);
+            this.lblRegionsVisiteur.Location = new System.Drawing.Point(89, 274);
             this.lblRegionsVisiteur.Name = "lblRegionsVisiteur";
             this.lblRegionsVisiteur.Size = new System.Drawing.Size(90, 13);
             this.lblRegionsVisiteur.TabIndex = 23;
@@ -269,16 +269,17 @@
             // lblRegionresponsable
             // 
             this.lblRegionresponsable.AutoSize = true;
-            this.lblRegionresponsable.Location = new System.Drawing.Point(183, 384);
+            this.lblRegionresponsable.Location = new System.Drawing.Point(452, 274);
             this.lblRegionresponsable.Name = "lblRegionresponsable";
             this.lblRegionresponsable.Size = new System.Drawing.Size(108, 13);
             this.lblRegionresponsable.TabIndex = 24;
             this.lblRegionresponsable.Text = "lblRegionresponsable";
+            this.lblRegionresponsable.Click += new System.EventHandler(this.LblRegionresponsable_Click);
             // 
             // lblSecteurVisiteur
             // 
             this.lblSecteurVisiteur.AutoSize = true;
-            this.lblSecteurVisiteur.Location = new System.Drawing.Point(453, 321);
+            this.lblSecteurVisiteur.Location = new System.Drawing.Point(446, 353);
             this.lblSecteurVisiteur.Name = "lblSecteurVisiteur";
             this.lblSecteurVisiteur.Size = new System.Drawing.Size(88, 13);
             this.lblSecteurVisiteur.TabIndex = 25;
@@ -287,7 +288,7 @@
             // lblRegionTravail
             // 
             this.lblRegionTravail.AutoSize = true;
-            this.lblRegionTravail.Location = new System.Drawing.Point(36, 321);
+            this.lblRegionTravail.Location = new System.Drawing.Point(35, 274);
             this.lblRegionTravail.Name = "lblRegionTravail";
             this.lblRegionTravail.Size = new System.Drawing.Size(55, 13);
             this.lblRegionTravail.TabIndex = 26;
@@ -296,7 +297,7 @@
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(36, 384);
+            this.lblResponsable.Location = new System.Drawing.Point(305, 274);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(141, 13);
             this.lblResponsable.TabIndex = 27;
@@ -305,7 +306,7 @@
             // lblResponsableSec
             // 
             this.lblResponsableSec.AutoSize = true;
-            this.lblResponsableSec.Location = new System.Drawing.Point(314, 321);
+            this.lblResponsableSec.Location = new System.Drawing.Point(305, 353);
             this.lblResponsableSec.Name = "lblResponsableSec";
             this.lblResponsableSec.Size = new System.Drawing.Size(133, 13);
             this.lblResponsableSec.TabIndex = 28;

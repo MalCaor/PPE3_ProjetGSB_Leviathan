@@ -23,39 +23,61 @@ namespace PPE3_Leviathan
             cboGestionSecteur.DisplayMember = "libSecteur";
             bsGestionSecteur.DataSource = ControleurMission1.leVisiteur.Secteur.ToList(); 
             cboGestionSecteur.DataSource = bsGestionSecteur;
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            cboRegionPourResponsabilite.ValueMember = "idRegion";
+            cboRegionPourResponsabilite.DisplayMember = "libRegion";
+            cboRegionPourResponsabilite.DataSource = s.Region.ToList();
         }
 
         private void BsGestionSecteur_CurrentChanged(object sender, EventArgs e)
         {
             Secteur s = (Secteur)bsGestionSecteur.Current;
             List<Region> LesRegionsSecteur = s.Region.ToList();
-            List<Visiteur> vretour = new List<Visiteur>();
-            vretour.Add(s.Visiteur);
+            List<Visiteur> dgvValue = new List<Visiteur>();
+            lblResponsableRegionsActuel.Text = "resposable de Région :\n";
+            dgvValue.Add(s.Visiteur);
             foreach(Region region in LesRegionsSecteur)
             {
-                vretour.Add(region.Visiteur);
+                dgvValue.Add(region.Visiteur);
                 List<Visiteur> lesVisiteursRegions = region.Visiteur1.ToList();
                 foreach(Visiteur visiteur in lesVisiteursRegions)
                 {
-                    if(!vretour.Contains(visiteur))
+                    if(!dgvValue.Contains(visiteur))
                     {
-                        vretour.Add(visiteur);
+                        dgvValue.Add(visiteur);
                     }
                 }
+                lblResponsableRegionsActuel.Text += "\t"+region.libRegion + " : " + region.Visiteur.nom + " " + region.Visiteur.prenom+"\n";
             }
-            dgvVisiteurGestion.DataSource = vretour;
+            bsVisiteur.DataSource = dgvValue;
+            dgvVisiteurGestion.DataSource = bsVisiteur;
             dgvVisiteurGestion.Columns[0].Visible = false;
             dgvVisiteurGestion.Columns[1].Visible = false;
             dgvVisiteurGestion.Columns[8].Visible = false;
             dgvVisiteurGestion.Columns[9].Visible = false;
-            dgvVisiteurGestion.Columns[10].Visible = false;
-            dgvVisiteurGestion.Columns[11].Visible = false;
+            //dgvVisiteurGestion.Columns[10].Visible = false;
+            //dgvVisiteurGestion.Columns[11].Visible = false;
             dgvVisiteurGestion.Columns[12].Visible = false;
             dgvVisiteurGestion.Columns[13].Visible = false;
             dgvVisiteurGestion.Columns[14].Visible = false;
             dgvVisiteurGestion.Columns[15].Visible = false;
+            dgvVisiteurGestion.Columns[16].Visible = false;
+            dgvVisiteurGestion.Columns[17].Visible = false;
+            lblResponsable.Text = "Responsable du secteur " + s.libSecteur + " : " + s.Visiteur.nom + " " + s.Visiteur.prenom;
         }
-
+        private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)bsVisiteur.Current;
+            try
+            {
+                lblResponsableRegion.Text = "Nommer " + v.nom.ToString() + " " + v.prenom + " responsable de la région :";
+                lblCurrentVisiteur.Text = v.nom.ToString() + " " + v.prenom;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("erreur");
+            }
+        }
 
         private void BtnRetour_Click(object sender, EventArgs e)
         {
@@ -65,7 +87,79 @@ namespace PPE3_Leviathan
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //inutile, ne pas faire attention
+        }
 
+        private void BtnRendreInactif_Click(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)bsVisiteur.Current;
+            if(v.actif != 0 && v.dateFinEmbauche == null)
+            {
+                v.actif = 0;
+            }
+            ControleurMission1.SaveChanges();
+            FrmGestionSecteur_Load(sender, e);
+        }
+
+        private void BtnRendreActif_Click(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)bsVisiteur.Current;
+            if (v.actif != 1 && v.dateFinEmbauche == null)
+            {
+                v.actif = 0;
+            }
+            ControleurMission1.SaveChanges();
+            FrmGestionSecteur_Load(sender, e);
+        }
+
+        private void BtnValiderResponsable_Click(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)bsVisiteur.Current;
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            List<Region> lesRegions = s.Region.ToList();
+            foreach(Region region in lesRegions)
+            {
+                if(region == cboRegionPourResponsabilite.SelectedItem && v.actif == 1 && v.dateFinEmbauche == null)
+                {
+                    region.Visiteur = v;
+                }
+            }
+            ControleurMission1.SaveChanges();
+            FrmGestionSecteur_Load(sender, e);
+        }
+
+        private void BtnMettreFinContrat_Click(object sender, EventArgs e)
+        {
+            Visiteur v = (Visiteur)bsVisiteur.Current;
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            List<Region> LesRegionsSecteurs = s.Region.ToList();
+            List<Region> lesRegions = v.Region1.ToList();
+            foreach (Region region in lesRegions)
+            {
+                foreach(Region regionSecteur in LesRegionsSecteurs)
+                {
+                    if(region.idRegion == regionSecteur.idRegion)
+                    {
+                        v.Region1.Remove(region);
+                    }
+                }
+            }
+            v.dateFinEmbauche = dtpDateFinContrat.Value;
+            ControleurMission1.SaveChanges();
+            FrmGestionSecteur_Load(sender, e);
+        }
+
+        private void VerifResponsable()
+        {
+            List<Secteur> LesSecteursVisiteur = ControleurMission1.leVisiteur.Secteur.ToList();
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            foreach (Secteur secteurVisiteur in LesSecteursVisiteur)
+            {
+                if(secteurVisiteur.idSecteur != s.idSecteur)
+                {
+                    this.Close(); 
+                }
+            }
         }
     }
 }

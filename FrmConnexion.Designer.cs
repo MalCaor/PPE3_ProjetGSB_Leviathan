@@ -33,6 +33,7 @@
             this.LblIdentifiant = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConnexion = new System.Windows.Forms.Button();
+            this.btnInscrire = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtIdentifiant
@@ -41,6 +42,7 @@
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(188, 20);
             this.txtIdentifiant.TabIndex = 0;
+            this.txtIdentifiant.Text = "veynde";
             // 
             // txtMotDePasse
             // 
@@ -49,6 +51,7 @@
             this.txtMotDePasse.PasswordChar = '*';
             this.txtMotDePasse.Size = new System.Drawing.Size(188, 20);
             this.txtMotDePasse.TabIndex = 1;
+            this.txtMotDePasse.Text = "veynde";
             // 
             // LblIdentifiant
             // 
@@ -78,11 +81,22 @@
             this.btnConnexion.UseVisualStyleBackColor = true;
             this.btnConnexion.Click += new System.EventHandler(this.BtnConnexion_Click);
             // 
+            // btnInscrire
+            // 
+            this.btnInscrire.Location = new System.Drawing.Point(38, 189);
+            this.btnInscrire.Name = "btnInscrire";
+            this.btnInscrire.Size = new System.Drawing.Size(75, 23);
+            this.btnInscrire.TabIndex = 5;
+            this.btnInscrire.Text = "S\'inscrire";
+            this.btnInscrire.UseVisualStyleBackColor = true;
+            this.btnInscrire.Click += new System.EventHandler(this.BtnInscrire_Click);
+            // 
             // FrmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 253);
+            this.Controls.Add(this.btnInscrire);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblIdentifiant);
@@ -102,5 +116,6 @@
         private System.Windows.Forms.Label LblIdentifiant;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.Button btnInscrire;
     }
 }
