@@ -56,7 +56,10 @@ namespace PPE3_Leviathan
                     List<Visiteur> lesVisiteurs = labo.Visiteur.ToList();
                     foreach(Visiteur visiteur in lesVisiteurs)
                     {
-                        messageGlobal += "\n\t-" + visiteur.nom + " " + visiteur.prenom;
+                        if (visiteur.actif == 1)
+                        {
+                            messageGlobal += "\n\t-" + visiteur.nom + " " + visiteur.prenom;
+                        }
                     }
                     messageGlobal += "\n\n";
                 }
@@ -81,7 +84,10 @@ namespace PPE3_Leviathan
                         {
                             if (visiteur.nom != region.Visiteur.nom && visiteur.prenom != region.Visiteur.prenom)
                             {
-                                messageSecteur += "\n\t\t- " + visiteur.nom + " " + visiteur.prenom;
+                                if (visiteur.actif == 1)
+                                {
+                                    messageSecteur += "\n\t\t- " + visiteur.nom + " " + visiteur.prenom;
+                                }
                             }
                         }
                     }
@@ -104,7 +110,10 @@ namespace PPE3_Leviathan
                     {
                         if (visiteur.nom != region.Visiteur.nom && visiteur.prenom != region.Visiteur.prenom)
                         {
-                            messageRegion += "\n\t- " + visiteur.nom + " " + visiteur.prenom;
+                            if (visiteur.actif == 1)
+                            {
+                                messageRegion += "\n\t- " + visiteur.nom + " " + visiteur.prenom;
+                            }
                         }
                     }
                     messageRegion += "\n\n";

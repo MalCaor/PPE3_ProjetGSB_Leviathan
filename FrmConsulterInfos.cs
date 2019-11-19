@@ -179,5 +179,9 @@ namespace PPE3_Leviathan
             txtNouveauMdp.Text = "";
         }
 
+        private void LblRegionresponsable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
