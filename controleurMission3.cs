@@ -176,5 +176,10 @@ namespace PPE3_Leviathan
             }
             return false;
         }
+
+        public static bool addLFHF(string idV, string mois, string idFF, int qte)
+        {
+
+        }
     }
 }

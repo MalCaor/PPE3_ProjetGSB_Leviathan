@@ -118,7 +118,7 @@ namespace PPE3_Leviathan
 
         private void BtAjFF_Click(object sender, EventArgs e)
         {
-            Form AddFF = new fAjoutLigneFF();
+            Form AddFF = new fAjoutLigneFF(v.identifiant);
             AddFF.ShowDialog();
         }
 

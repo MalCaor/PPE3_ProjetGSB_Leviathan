@@ -12,10 +12,11 @@ namespace PPE3_Leviathan
 {
     public partial class fAjoutLigneFF : Form
     {
-        public fAjoutLigneFF()
+        static string idvis;
+        public fAjoutLigneFF(string idvisit)
         {
             InitializeComponent();
-
+            idvis = idvisit;
             //ComboBox
             bsFF.DataSource = controleurMission3.libFF();
             cbFF.DataSource = bsFF.DataSource;
@@ -23,7 +24,10 @@ namespace PPE3_Leviathan
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
-            string Mois = tbMois.ToString()+tbAnnee.ToString();
+            string idV = idvis;
+            string mois = tbMois.ToString() + tbAnnee.ToString();
+            string idFF = cbFF.Text;
+            int qte = Convert.ToInt32(Math.Round(tbQuan.Value, 0)); // Get the value of a NumUpDowb is just ridiculous
 
         }
     }
