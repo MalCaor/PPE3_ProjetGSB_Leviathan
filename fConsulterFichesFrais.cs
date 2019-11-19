@@ -118,13 +118,13 @@ namespace PPE3_Leviathan
 
         private void BtAjFF_Click(object sender, EventArgs e)
         {
-            Form AddFF = new fAjoutLigneFF(v.identifiant);
+            Form AddFF = new fAjoutLigneFF(v.idVisiteur);
             AddFF.ShowDialog();
         }
 
         private void BtAjFHF_Click(object sender, EventArgs e)
         {
-            Form AddFHF = new fAjoutLigneFHF(v.identifiant);
+            Form AddFHF = new fAjoutLigneFHF(v.idVisiteur);
             AddFHF.ShowDialog();
         }
     }

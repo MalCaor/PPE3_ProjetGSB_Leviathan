@@ -61,6 +61,7 @@ namespace PPE3_Leviathan
             }
             return retour;
         }
+       
 
 
         public static List<string> nomVisit()
@@ -177,9 +178,11 @@ namespace PPE3_Leviathan
             return false;
         }
 
-        public static bool addLFHF(string idV, string mois, string idFF, int qte)
+        public static bool addLFF(LigneFraisForfait ff)
         {
-
+            maConnexion.LigneFraisForfait.Add(ff);
+            maConnexion.SaveChanges();
+            return true;
         }
     }
 }

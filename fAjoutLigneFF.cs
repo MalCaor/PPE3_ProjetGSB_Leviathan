@@ -18,17 +18,29 @@ namespace PPE3_Leviathan
             InitializeComponent();
             idvis = idvisit;
             //ComboBox
-            bsFF.DataSource = controleurMission3.libFF();
+            bsFF.DataSource = controleurMission3.listFF();      
+            cbFF.ValueMember = "id";
+            cbFF.DisplayMember = "libelle";
             cbFF.DataSource = bsFF.DataSource;
         }
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
             string idV = idvis;
-            string mois = tbMois.ToString() + tbAnnee.ToString();
-            string idFF = cbFF.Text;
+            string mois = tbMois.Value.ToString() + tbAnnee.Value.ToString();
+            string idFF = ((FraisForfait)bsFF.Current).id;
             int qte = Convert.ToInt32(Math.Round(tbQuan.Value, 0)); // Get the value of a NumUpDowb is just ridiculous
-
+            // add new ff
+            LigneFraisForfait ff = new LigneFraisForfait();
+            ff.mois = mois;
+            ff.idVisiteur = idV;
+            ff.idFraisForfait = idFF;
+            ff.quantite = qte;
+            
+            if(controleurMission3.addLFF(ff))
+            {
+                this.Close();
+            }
         }
     }
 }
