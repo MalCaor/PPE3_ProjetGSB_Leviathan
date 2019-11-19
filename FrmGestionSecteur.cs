@@ -77,8 +77,6 @@ namespace PPE3_Leviathan
             {
                 MessageBox.Show("erreur");
             }
-
-
         }
 
         private void BtnRetour_Click(object sender, EventArgs e)
@@ -146,8 +144,22 @@ namespace PPE3_Leviathan
                     }
                 }
             }
+            v.dateFinEmbauche = dtpDateFinContrat.Value;
             ControleurMission1.SaveChanges();
             FrmGestionSecteur_Load(sender, e);
+        }
+
+        private void VerifResponsable()
+        {
+            List<Secteur> LesSecteursVisiteur = ControleurMission1.leVisiteur.Secteur.ToList();
+            Secteur s = (Secteur)bsGestionSecteur.Current;
+            foreach (Secteur secteurVisiteur in LesSecteursVisiteur)
+            {
+                if(secteurVisiteur.idSecteur != s.idSecteur)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

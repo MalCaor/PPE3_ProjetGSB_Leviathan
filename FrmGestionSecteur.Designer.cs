@@ -44,6 +44,7 @@
             this.lblCurrentVisiteur = new System.Windows.Forms.Label();
             this.lblResponsableRegionsActuel = new System.Windows.Forms.Label();
             this.btnMettreFinContrat = new System.Windows.Forms.Button();
+            this.dtpDateFinContrat = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.bsGestionSecteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurGestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
@@ -161,7 +162,7 @@
             // 
             // btnMettreFinContrat
             // 
-            this.btnMettreFinContrat.Location = new System.Drawing.Point(435, 347);
+            this.btnMettreFinContrat.Location = new System.Drawing.Point(781, 347);
             this.btnMettreFinContrat.Name = "btnMettreFinContrat";
             this.btnMettreFinContrat.Size = new System.Drawing.Size(127, 23);
             this.btnMettreFinContrat.TabIndex = 15;
@@ -169,11 +170,19 @@
             this.btnMettreFinContrat.UseVisualStyleBackColor = true;
             this.btnMettreFinContrat.Click += new System.EventHandler(this.BtnMettreFinContrat_Click);
             // 
+            // dtpDateFinContrat
+            // 
+            this.dtpDateFinContrat.Location = new System.Drawing.Point(575, 350);
+            this.dtpDateFinContrat.Name = "dtpDateFinContrat";
+            this.dtpDateFinContrat.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateFinContrat.TabIndex = 16;
+            // 
             // FrmGestionSecteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 407);
+            this.Controls.Add(this.dtpDateFinContrat);
             this.Controls.Add(this.btnMettreFinContrat);
             this.Controls.Add(this.lblResponsableRegionsActuel);
             this.Controls.Add(this.lblCurrentVisiteur);
@@ -215,5 +224,6 @@
         private System.Windows.Forms.Label lblCurrentVisiteur;
         private System.Windows.Forms.Label lblResponsableRegionsActuel;
         private System.Windows.Forms.Button btnMettreFinContrat;
+        private System.Windows.Forms.DateTimePicker dtpDateFinContrat;
     }
 }

@@ -144,7 +144,14 @@ namespace PPE3_Leviathan
                 message = message + "- Modification enregistré \n";
             }
             MessageBox.Show(message);
-            ControleurMission1.SaveChanges();
+            try
+            {
+                ControleurMission1.SaveChanges();
+            } catch(Exception ex)
+            {
+                MessageBox.Show("Erreur");
+            }
+            
             reset();
         }
 
