@@ -157,7 +157,7 @@ namespace PPE3_Leviathan
             {
                 if(secteurVisiteur.idSecteur != s.idSecteur)
                 {
-                    this.Close(); 
+                    this.Close();
                 }
             }
         }
