@@ -20,5 +20,10 @@ namespace PPE3_Leviathan
             bsFF.DataSource = controleurMission3.libFF();
             cbFF.DataSource = bsFF.DataSource;
         }
+
+        private void NumericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
