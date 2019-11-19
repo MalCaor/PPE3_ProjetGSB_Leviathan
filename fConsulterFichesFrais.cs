@@ -13,6 +13,7 @@ namespace PPE3_Leviathan
     public partial class fConsulterFichesFrais : Form
     {
         private bool close = false;
+        static Visiteur v;
         private bool change = false;
         public fConsulterFichesFrais()
         {
@@ -28,7 +29,7 @@ namespace PPE3_Leviathan
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             change = false;
-            Visiteur v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
+            v = (Visiteur)controleurMission3.visiteurIDSearch(CBVisiteur.Text);
             bindingSourceFicheFrais.DataSource = controleurMission3.listFicheFraisVisiteur(v);
             cbFicheFrais.DataSource = bindingSourceFicheFrais;
             cbFicheFrais.ValueMember = "mois";
@@ -123,7 +124,7 @@ namespace PPE3_Leviathan
 
         private void BtAjFHF_Click(object sender, EventArgs e)
         {
-            Form AddFHF = new fAjoutLigneFHF();
+            Form AddFHF = new fAjoutLigneFHF(v.identifiant);
             AddFHF.ShowDialog();
         }
     }

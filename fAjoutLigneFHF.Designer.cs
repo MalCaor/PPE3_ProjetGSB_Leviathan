@@ -35,14 +35,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bsFF = new System.Windows.Forms.BindingSource(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.tbMois = new System.Windows.Forms.NumericUpDown();
+            this.tbAnnee = new System.Windows.Forms.NumericUpDown();
             this.tiret = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.tbQuan = new System.Windows.Forms.NumericUpDown();
+            this.btnAj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsFF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMois)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAnnee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,45 +91,45 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Quantite :";
             // 
-            // numericUpDown1
+            // tbMois
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(98, 103);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.tbMois.Location = new System.Drawing.Point(98, 103);
+            this.tbMois.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.tbMois.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.tbMois.Name = "tbMois";
+            this.tbMois.Size = new System.Drawing.Size(44, 20);
+            this.tbMois.TabIndex = 9;
+            this.tbMois.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // tbAnnee
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(164, 103);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.tbAnnee.Location = new System.Drawing.Point(164, 103);
+            this.tbAnnee.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.tbAnnee.Minimum = new decimal(new int[] {
             2000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown2.TabIndex = 10;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.tbAnnee.Name = "tbAnnee";
+            this.tbAnnee.Size = new System.Drawing.Size(100, 20);
+            this.tbAnnee.TabIndex = 10;
+            this.tbAnnee.Value = new decimal(new int[] {
             2019,
             0,
             0,
@@ -143,28 +144,39 @@
             this.tiret.TabIndex = 11;
             this.tiret.Text = "-";
             // 
-            // numericUpDown3
+            // tbQuan
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(526, 103);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.tbQuan.Location = new System.Drawing.Point(526, 103);
+            this.tbQuan.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown3.TabIndex = 12;
-            this.numericUpDown3.ValueChanged += new System.EventHandler(this.NumericUpDown3_ValueChanged);
+            this.tbQuan.Name = "tbQuan";
+            this.tbQuan.Size = new System.Drawing.Size(44, 20);
+            this.tbQuan.TabIndex = 12;
+            this.tbQuan.ValueChanged += new System.EventHandler(this.NumericUpDown3_ValueChanged);
+            // 
+            // btnAj
+            // 
+            this.btnAj.Location = new System.Drawing.Point(18, 321);
+            this.btnAj.Name = "btnAj";
+            this.btnAj.Size = new System.Drawing.Size(75, 23);
+            this.btnAj.TabIndex = 13;
+            this.btnAj.Text = "Ajouter";
+            this.btnAj.UseVisualStyleBackColor = true;
+            this.btnAj.Click += new System.EventHandler(this.BtnAj_Click);
             // 
             // fAjoutLigneFHF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.btnAj);
+            this.Controls.Add(this.tbQuan);
             this.Controls.Add(this.tiret);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.tbAnnee);
+            this.Controls.Add(this.tbMois);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lMoisAnnee);
@@ -173,9 +185,9 @@
             this.Name = "fAjoutLigneFHF";
             this.Text = "fAjoutLigneFHF";
             ((System.ComponentModel.ISupportInitialize)(this.bsFF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMois)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAnnee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbQuan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,9 +201,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource bsFF;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown tbMois;
+        private System.Windows.Forms.NumericUpDown tbAnnee;
         private System.Windows.Forms.Label tiret;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown tbQuan;
+        private System.Windows.Forms.Button btnAj;
     }
 }

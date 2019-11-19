@@ -20,5 +20,11 @@ namespace PPE3_Leviathan
             bsFF.DataSource = controleurMission3.libFF();
             cbFF.DataSource = bsFF.DataSource;
         }
+
+        private void BtnAjouter_Click(object sender, EventArgs e)
+        {
+            string Mois = tbMois.ToString()+tbAnnee.ToString();
+
+        }
     }
 }
