@@ -18,7 +18,7 @@ namespace PPE3_Leviathan
             InitializeComponent();
             //c'est la syncro
 
-            bsVisiteurs.DataSource = controleurMission2.listeVisiteurs();
+            bsMedecins.DataSource = controleurMission2.listeVisiteurs();
             /*bsVisiteur.DataSource = ...;*/
         }
 
@@ -35,7 +35,7 @@ namespace PPE3_Leviathan
             }
             else
             {
-                Visiteur v = (Visiteur)bsVisiteurs.Current;
+                Visiteur v = (Visiteur)bsMedecins.Current;
                 txtNom.Text = v.nom.ToString();
                 txtPrénom.Text = v.prenom.ToString();
                 //txtRole.Text = v.role.ToString();

@@ -38,7 +38,7 @@ namespace PPE3_Leviathan
             leVisiteur.Show();
             Visiteur v = (Visiteur)dgvV.Sele;*/
         }
-        
+
 
         /*private void BsV_CurrentChanged(object sender, EventArgs e)
         {
@@ -54,6 +54,25 @@ namespace PPE3_Leviathan
             }
         }*/
 
+
+
+        /*public static object<Visiteur> testVisiteur()
+        {
+            var lQuery = maConnexion.Visiteur.ToList()
+                            .Where(x =>idNation == a13)
+                            .Select(x => new { x. , x. ...})
+                            .OrderBy(x => x.)
+        }*/
+
+        /*public static Object CompositeurParNationalite(int idNation)
+        {
+            var LQuery = maConnexion.COMPOSITEUR.ToList()
+                           .Where(x => x.idNation == idNation)
+                           .Select(x => new { x.nomCompositeur, x.prenomCompositeur, x.STYLE.libStyle, x.anNais, x.anMort, x.remarque })
+                           .OrderBy(x => x.nomCompositeur);
+            return LQuery.ToList();
+
+        }*/
 
     }
 }

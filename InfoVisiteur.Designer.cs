@@ -39,11 +39,14 @@
             this.txtNom = new System.Windows.Forms.Label();
             this.txtPrénom = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.Label();
-            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMedecins = new System.Windows.Forms.BindingSource(this.components);
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.btnToutLesRapports = new System.Windows.Forms.Button();
+            this.bsRapports = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNom
@@ -135,15 +138,25 @@
             this.txtRole.TabIndex = 9;
             this.txtRole.Text = "infoR";
             // 
-            // bsVisiteurs
+            // bsMedecins
             // 
-            this.bsVisiteurs.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
+            this.bsMedecins.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
+            // 
+            // btnToutLesRapports
+            // 
+            this.btnToutLesRapports.Location = new System.Drawing.Point(13, 265);
+            this.btnToutLesRapports.Name = "btnToutLesRapports";
+            this.btnToutLesRapports.Size = new System.Drawing.Size(123, 23);
+            this.btnToutLesRapports.TabIndex = 10;
+            this.btnToutLesRapports.Text = "Tout les rapports";
+            this.btnToutLesRapports.UseVisualStyleBackColor = true;
             // 
             // InfoVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.btnToutLesRapports);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.txtPrénom);
             this.Controls.Add(this.txtNom);
@@ -159,8 +172,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +192,9 @@
         private System.Windows.Forms.Label txtNom;
         private System.Windows.Forms.Label txtPrénom;
         private System.Windows.Forms.Label txtRole;
-        private System.Windows.Forms.BindingSource bsVisiteurs;
+        private System.Windows.Forms.BindingSource bsMedecins;
         private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.Button btnToutLesRapports;
+        private System.Windows.Forms.BindingSource bsRapports;
     }
 }

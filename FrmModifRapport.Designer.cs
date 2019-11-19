@@ -41,30 +41,30 @@
             this.btnValid = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.grpEchantillons = new System.Windows.Forms.GroupBox();
-            this.lblMédicament = new System.Windows.Forms.Label();
-            this.lblNbMédicament = new System.Windows.Forms.Label();
-            this.cboM1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.g = new System.Windows.Forms.NumericUpDown();
-            this.cboM2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.cboM3 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.cboM4 = new System.Windows.Forms.ComboBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.cboM5 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.cboM4 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.cboM3 = new System.Windows.Forms.ComboBox();
+            this.g = new System.Windows.Forms.NumericUpDown();
+            this.cboM2 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cboM1 = new System.Windows.Forms.ComboBox();
+            this.lblNbMédicament = new System.Windows.Forms.Label();
+            this.lblMédicament = new System.Windows.Forms.Label();
             this.txtPrénomRemplacent = new System.Windows.Forms.TextBox();
             this.grpEchantillons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.g)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMedecin
@@ -197,85 +197,52 @@
             this.grpEchantillons.Size = new System.Drawing.Size(375, 306);
             this.grpEchantillons.TabIndex = 13;
             this.grpEchantillons.TabStop = false;
-            this.grpEchantillons.Text = "groupBox1";
+            this.grpEchantillons.Text = "grpEchantillons";
             // 
-            // lblMédicament
+            // checkBox5
             // 
-            this.lblMédicament.AutoSize = true;
-            this.lblMédicament.Location = new System.Drawing.Point(101, 20);
-            this.lblMédicament.Name = "lblMédicament";
-            this.lblMédicament.Size = new System.Drawing.Size(65, 13);
-            this.lblMédicament.TabIndex = 0;
-            this.lblMédicament.Text = "Médicament";
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(23, 191);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5.TabIndex = 16;
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // lblNbMédicament
+            // checkBox4
             // 
-            this.lblNbMédicament.AutoSize = true;
-            this.lblNbMédicament.Location = new System.Drawing.Point(230, 20);
-            this.lblNbMédicament.Name = "lblNbMédicament";
-            this.lblNbMédicament.Size = new System.Drawing.Size(111, 13);
-            this.lblNbMédicament.TabIndex = 1;
-            this.lblNbMédicament.Text = "Nombre d\'échantillons";
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(23, 153);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 15;
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // cboM1
+            // checkBox3
             // 
-            this.cboM1.FormattingEnabled = true;
-            this.cboM1.Location = new System.Drawing.Point(60, 47);
-            this.cboM1.Name = "cboM1";
-            this.cboM1.Size = new System.Drawing.Size(140, 21);
-            this.cboM1.TabIndex = 2;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(23, 119);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 14;
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // checkBox2
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(215, 48);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(140, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(23, 83);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 13;
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // g
+            // checkBox1
             // 
-            this.g.Location = new System.Drawing.Point(215, 82);
-            this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(140, 20);
-            this.g.TabIndex = 5;
-            // 
-            // cboM2
-            // 
-            this.cboM2.FormattingEnabled = true;
-            this.cboM2.Location = new System.Drawing.Point(60, 82);
-            this.cboM2.Name = "cboM2";
-            this.cboM2.Size = new System.Drawing.Size(140, 21);
-            this.cboM2.TabIndex = 4;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(215, 117);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(140, 20);
-            this.numericUpDown3.TabIndex = 7;
-            // 
-            // cboM3
-            // 
-            this.cboM3.FormattingEnabled = true;
-            this.cboM3.Location = new System.Drawing.Point(60, 117);
-            this.cboM3.Name = "cboM3";
-            this.cboM3.Size = new System.Drawing.Size(140, 21);
-            this.cboM3.TabIndex = 6;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(215, 152);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(140, 20);
-            this.numericUpDown4.TabIndex = 9;
-            // 
-            // cboM4
-            // 
-            this.cboM4.FormattingEnabled = true;
-            this.cboM4.Location = new System.Drawing.Point(60, 152);
-            this.cboM4.Name = "cboM4";
-            this.cboM4.Size = new System.Drawing.Size(140, 21);
-            this.cboM4.TabIndex = 8;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(23, 49);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // numericUpDown5
             // 
@@ -292,50 +259,83 @@
             this.cboM5.Size = new System.Drawing.Size(140, 21);
             this.cboM5.TabIndex = 10;
             // 
-            // checkBox1
+            // numericUpDown4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 49);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.numericUpDown4.Location = new System.Drawing.Point(215, 152);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(140, 20);
+            this.numericUpDown4.TabIndex = 9;
             // 
-            // checkBox2
+            // cboM4
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(23, 83);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cboM4.FormattingEnabled = true;
+            this.cboM4.Location = new System.Drawing.Point(60, 152);
+            this.cboM4.Name = "cboM4";
+            this.cboM4.Size = new System.Drawing.Size(140, 21);
+            this.cboM4.TabIndex = 8;
             // 
-            // checkBox3
+            // numericUpDown3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(23, 119);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.numericUpDown3.Location = new System.Drawing.Point(215, 117);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(140, 20);
+            this.numericUpDown3.TabIndex = 7;
             // 
-            // checkBox4
+            // cboM3
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(23, 153);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 15;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cboM3.FormattingEnabled = true;
+            this.cboM3.Location = new System.Drawing.Point(60, 117);
+            this.cboM3.Name = "cboM3";
+            this.cboM3.Size = new System.Drawing.Size(140, 21);
+            this.cboM3.TabIndex = 6;
             // 
-            // checkBox5
+            // g
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(23, 191);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 16;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.g.Location = new System.Drawing.Point(215, 82);
+            this.g.Name = "g";
+            this.g.Size = new System.Drawing.Size(140, 20);
+            this.g.TabIndex = 5;
+            // 
+            // cboM2
+            // 
+            this.cboM2.FormattingEnabled = true;
+            this.cboM2.Location = new System.Drawing.Point(60, 82);
+            this.cboM2.Name = "cboM2";
+            this.cboM2.Size = new System.Drawing.Size(140, 21);
+            this.cboM2.TabIndex = 4;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(215, 48);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(140, 20);
+            this.numericUpDown1.TabIndex = 3;
+            // 
+            // cboM1
+            // 
+            this.cboM1.FormattingEnabled = true;
+            this.cboM1.Location = new System.Drawing.Point(60, 47);
+            this.cboM1.Name = "cboM1";
+            this.cboM1.Size = new System.Drawing.Size(140, 21);
+            this.cboM1.TabIndex = 2;
+            // 
+            // lblNbMédicament
+            // 
+            this.lblNbMédicament.AutoSize = true;
+            this.lblNbMédicament.Location = new System.Drawing.Point(230, 20);
+            this.lblNbMédicament.Name = "lblNbMédicament";
+            this.lblNbMédicament.Size = new System.Drawing.Size(111, 13);
+            this.lblNbMédicament.TabIndex = 1;
+            this.lblNbMédicament.Text = "Nombre d\'échantillons";
+            // 
+            // lblMédicament
+            // 
+            this.lblMédicament.AutoSize = true;
+            this.lblMédicament.Location = new System.Drawing.Point(101, 20);
+            this.lblMédicament.Name = "lblMédicament";
+            this.lblMédicament.Size = new System.Drawing.Size(65, 13);
+            this.lblMédicament.TabIndex = 0;
+            this.lblMédicament.Text = "Médicament";
             // 
             // txtPrénomRemplacent
             // 
@@ -369,11 +369,11 @@
             this.Load += new System.EventHandler(this.FrmModifRapport_Load);
             this.grpEchantillons.ResumeLayout(false);
             this.grpEchantillons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.g)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
