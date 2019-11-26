@@ -67,8 +67,10 @@
             // 
             this.calandar.Location = new System.Drawing.Point(18, 134);
             this.calandar.Name = "calandar";
+            this.calandar.ShowUpDown = true;
             this.calandar.Size = new System.Drawing.Size(200, 20);
             this.calandar.TabIndex = 5;
+            this.calandar.ValueChanged += new System.EventHandler(this.Calandar_ValueChanged);
             // 
             // fAjoutFicheFrais
             // 
