@@ -45,6 +45,7 @@
             this.lblResponsableRegionsActuel = new System.Windows.Forms.Label();
             this.btnMettreFinContrat = new System.Windows.Forms.Button();
             this.dtpDateFinContrat = new System.Windows.Forms.DateTimePicker();
+            this.rtbMotifFinContrat = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsGestionSecteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurGestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
@@ -68,7 +69,7 @@
             this.dgvVisiteurGestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisiteurGestion.Location = new System.Drawing.Point(32, 83);
             this.dgvVisiteurGestion.Name = "dgvVisiteurGestion";
-            this.dgvVisiteurGestion.Size = new System.Drawing.Size(876, 197);
+            this.dgvVisiteurGestion.Size = new System.Drawing.Size(898, 197);
             this.dgvVisiteurGestion.TabIndex = 1;
             this.dgvVisiteurGestion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -97,7 +98,7 @@
             // 
             // btnValiderResponsable
             // 
-            this.btnValiderResponsable.Location = new System.Drawing.Point(486, 303);
+            this.btnValiderResponsable.Location = new System.Drawing.Point(470, 303);
             this.btnValiderResponsable.Name = "btnValiderResponsable";
             this.btnValiderResponsable.Size = new System.Drawing.Size(110, 23);
             this.btnValiderResponsable.TabIndex = 8;
@@ -154,7 +155,7 @@
             // lblResponsableRegionsActuel
             // 
             this.lblResponsableRegionsActuel.AutoSize = true;
-            this.lblResponsableRegionsActuel.Location = new System.Drawing.Point(671, 306);
+            this.lblResponsableRegionsActuel.Location = new System.Drawing.Point(35, 396);
             this.lblResponsableRegionsActuel.Name = "lblResponsableRegionsActuel";
             this.lblResponsableRegionsActuel.Size = new System.Drawing.Size(157, 13);
             this.lblResponsableRegionsActuel.TabIndex = 14;
@@ -162,7 +163,7 @@
             // 
             // btnMettreFinContrat
             // 
-            this.btnMettreFinContrat.Location = new System.Drawing.Point(781, 347);
+            this.btnMettreFinContrat.Location = new System.Drawing.Point(810, 303);
             this.btnMettreFinContrat.Name = "btnMettreFinContrat";
             this.btnMettreFinContrat.Size = new System.Drawing.Size(127, 23);
             this.btnMettreFinContrat.TabIndex = 15;
@@ -172,16 +173,25 @@
             // 
             // dtpDateFinContrat
             // 
-            this.dtpDateFinContrat.Location = new System.Drawing.Point(575, 350);
+            this.dtpDateFinContrat.Location = new System.Drawing.Point(604, 304);
             this.dtpDateFinContrat.Name = "dtpDateFinContrat";
             this.dtpDateFinContrat.Size = new System.Drawing.Size(200, 20);
             this.dtpDateFinContrat.TabIndex = 16;
+            // 
+            // rtbMotifFinContrat
+            // 
+            this.rtbMotifFinContrat.Location = new System.Drawing.Point(604, 330);
+            this.rtbMotifFinContrat.Name = "rtbMotifFinContrat";
+            this.rtbMotifFinContrat.Size = new System.Drawing.Size(333, 82);
+            this.rtbMotifFinContrat.TabIndex = 17;
+            this.rtbMotifFinContrat.Text = "";
             // 
             // FrmGestionSecteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 407);
+            this.ClientSize = new System.Drawing.Size(942, 547);
+            this.Controls.Add(this.rtbMotifFinContrat);
             this.Controls.Add(this.dtpDateFinContrat);
             this.Controls.Add(this.btnMettreFinContrat);
             this.Controls.Add(this.lblResponsableRegionsActuel);
@@ -225,5 +235,6 @@
         private System.Windows.Forms.Label lblResponsableRegionsActuel;
         private System.Windows.Forms.Button btnMettreFinContrat;
         private System.Windows.Forms.DateTimePicker dtpDateFinContrat;
+        private System.Windows.Forms.RichTextBox rtbMotifFinContrat;
     }
 }

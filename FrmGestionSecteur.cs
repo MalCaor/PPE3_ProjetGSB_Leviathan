@@ -27,6 +27,22 @@ namespace PPE3_Leviathan
             cboRegionPourResponsabilite.ValueMember = "idRegion";
             cboRegionPourResponsabilite.DisplayMember = "libRegion";
             cboRegionPourResponsabilite.DataSource = s.Region.ToList();
+
+            //On verifie si la personne connecté est toujours responsable de 
+            List<Secteur>lesSecteurDeLaCombo = ControleurMission1.leVisiteur.Secteur.ToList();
+            int nbSecteur = lesSecteurDeLaCombo.Count();
+            int nbTrue = 0;
+            foreach(Secteur secteurCombo in lesSecteurDeLaCombo)
+            {
+                if(secteurCombo.Visiteur.idVisiteur != ControleurMission1.leVisiteur.idVisiteur)
+                {
+                    nbTrue += 1;
+                }
+            }
+            if(nbTrue == nbSecteur)
+            {
+                this.Close();
+            }
         }
 
         private void BsGestionSecteur_CurrentChanged(object sender, EventArgs e)
@@ -34,7 +50,7 @@ namespace PPE3_Leviathan
             Secteur s = (Secteur)bsGestionSecteur.Current;
             List<Region> LesRegionsSecteur = s.Region.ToList();
             List<Visiteur> dgvValue = new List<Visiteur>();
-            lblResponsableRegionsActuel.Text = "resposable de Région :\n";
+            lblResponsableRegionsActuel.Text = "Resposable de Région :\n";
             dgvValue.Add(s.Visiteur);
             foreach(Region region in LesRegionsSecteur)
             {
@@ -106,7 +122,7 @@ namespace PPE3_Leviathan
             Visiteur v = (Visiteur)bsVisiteur.Current;
             if (v.actif != 1 && v.dateFinEmbauche == null)
             {
-                v.actif = 0;
+                v.actif = 1;
             }
             ControleurMission1.SaveChanges();
             FrmGestionSecteur_Load(sender, e);
@@ -130,23 +146,32 @@ namespace PPE3_Leviathan
 
         private void BtnMettreFinContrat_Click(object sender, EventArgs e)
         {
-            Visiteur v = (Visiteur)bsVisiteur.Current;
-            Secteur s = (Secteur)bsGestionSecteur.Current;
-            List<Region> LesRegionsSecteurs = s.Region.ToList();
-            List<Region> lesRegions = v.Region1.ToList();
-            foreach (Region region in lesRegions)
+            if(rtbMotifFinContrat.Text == "")
             {
-                foreach(Region regionSecteur in LesRegionsSecteurs)
+                MessageBox.Show("Erreur, saisir le motif");
+            }
+            else
+            {
+                //MessageBox.Show("ok");
+                Visiteur v = (Visiteur)bsVisiteur.Current;
+                Secteur s = (Secteur)bsGestionSecteur.Current;
+                List<Region> LesRegionsSecteurs = s.Region.ToList();
+                List<Region> lesRegions = v.Region1.ToList();
+                foreach (Region region in lesRegions)
                 {
-                    if(region.idRegion == regionSecteur.idRegion)
+                    foreach (Region regionSecteur in LesRegionsSecteurs)
                     {
-                        v.Region1.Remove(region);
+                        if (region.idRegion == regionSecteur.idRegion)
+                        {
+                            v.Region1.Remove(region);
+                        }
                     }
                 }
+                v.dateFinEmbauche = dtpDateFinContrat.Value;
+                v.actif = 1;
+                ControleurMission1.SaveChanges();
+                FrmGestionSecteur_Load(sender, e);
             }
-            v.dateFinEmbauche = dtpDateFinContrat.Value;
-            ControleurMission1.SaveChanges();
-            FrmGestionSecteur_Load(sender, e);
         }
 
         private void VerifResponsable()
