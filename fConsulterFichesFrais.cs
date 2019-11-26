@@ -62,7 +62,12 @@ namespace PPE3_Leviathan
                 tbMois.Text = string.Concat(moisAnne.Substring(0, 2), " / ", moisAnne.Substring(2, 4));
                 tbNbJust.Text = ff.nbJustificatifs.ToString();
                 tbMont.Text = ff.montantValide.ToString();
+                if(!String.IsNullOrEmpty(ff.dateModif.ToString()))
+                {
+
+                
                 tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
+                }
                 change = true;
                 bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
                 bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
