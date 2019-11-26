@@ -24,7 +24,12 @@ namespace PPE3_Leviathan
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //Chargement du visiteur connecté
             bsVisiteur.DataSource = controleurMission2.logInfoVisiteur();
+
+            //Chargement de la liste des medecins en charge
+            cboMedecin.ValueMember = "idStyle";
+            cboMedecin.DisplayMember = "libStyle";
             bsMedecins.DataSource = controleurMission2.listeMedecinsSuivi(controleurMission2.leVisiteur);
             /*txtNom.Text = bsVisiteur.*/
         }
@@ -37,10 +42,14 @@ namespace PPE3_Leviathan
             }
             else
             {
-                Visiteur v = (Visiteur)bsMedecins.Current;
+                //Chargement des informations du Visiteur connecté
+                Visiteur v = controleurMission2.leVisiteur;
                 txtNom.Text = v.nom.ToString();
                 txtPrénom.Text = v.prenom.ToString();
                 //txtRole.Text = v.role.ToString();
+
+                //Chargement des 
+                
                 cboMedecin.DataSource = controleurMission2.listeMedecinsSuivi(v);
                 dgvRapports.DataSource = cboMedecin.SelectedValue;
             }
