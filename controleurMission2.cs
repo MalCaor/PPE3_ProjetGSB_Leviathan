@@ -103,7 +103,7 @@ namespace PPE3_Leviathan
 
         public static List<Visiteur> listeVisiteurs()
         {
-            return maConnexion.Visiteur.ToList();
+            return maConnexion.Visiteur.ToList(); 
         }
 
         //------------------CONNEXION------------------

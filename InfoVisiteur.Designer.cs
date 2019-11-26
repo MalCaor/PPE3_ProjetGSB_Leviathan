@@ -140,7 +140,11 @@
             // 
             // bsMedecins
             // 
-            this.bsMedecins.CurrentChanged += new System.EventHandler(this.BsVisiteurs_CurrentChanged);
+            this.bsMedecins.CurrentChanged += new System.EventHandler(this.BsMedecins_CurrentChanged);
+            // 
+            // bsVisiteur
+            // 
+            this.bsVisiteur.CurrentChanged += new System.EventHandler(this.bsVisiteur_CurrentChanged);
             // 
             // btnToutLesRapports
             // 
@@ -150,6 +154,7 @@
             this.btnToutLesRapports.TabIndex = 10;
             this.btnToutLesRapports.Text = "Tout les rapports";
             this.btnToutLesRapports.UseVisualStyleBackColor = true;
+            this.btnToutLesRapports.Click += new System.EventHandler(this.btnToutLesRapports_Click);
             // 
             // InfoVisiteur
             // 

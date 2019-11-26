@@ -26,6 +26,7 @@ namespace PPE3_Leviathan
         {
             //Chargement du visiteur connecté
             bsVisiteur.DataSource = controleurMission2.logInfoVisiteur();
+            bsRapports.DataSource = controleurMission2.listeRapportV(controleurMission2.leVisiteur);
 
             //Chargement de la liste des medecins en charge
             cboMedecin.ValueMember = "idMedecin";
@@ -34,7 +35,12 @@ namespace PPE3_Leviathan
             /*txtNom.Text = bsVisiteur.*/
         }
 
-        private void BsVisiteurs_CurrentChanged(object sender, EventArgs e)
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            close = true;
+        }
+
+        private void bsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
             if (close == true)
             {
@@ -46,18 +52,28 @@ namespace PPE3_Leviathan
                 Visiteur v = controleurMission2.leVisiteur;
                 txtNom.Text = v.nom.ToString();
                 txtPrénom.Text = v.prenom.ToString();
-                //txtRole.Text = v.role.ToString();
-
-                //Chargement des 
-                
-                cboMedecin.DataSource = controleurMission2.listeMedecinsSuivi(v);
-                dgvRapports.DataSource = cboMedecin.SelectedValue;
+                //txtRole.Text = v.role.ToString(); pas de rôle en bdd pour l'instant
             }
         }
 
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        private void BsMedecins_CurrentChanged(object sender, EventArgs e)
         {
-            close = true;
+            if (close == true)
+            {
+
+            }
+            else
+            {
+                //Chargement des informations du Medecin sélectionner
+                dgvRapports.DataSource = cboMedecin.SelectedValue;
+            }
+
+        }
+
+        private void btnToutLesRapports_Click(object sender, EventArgs e)
+        {
+            //Chargement de tout les rapport du visiteur dans la DataGreedView
+            dgvRapports.DataSource = bsRapports;
         }
     }
 }
