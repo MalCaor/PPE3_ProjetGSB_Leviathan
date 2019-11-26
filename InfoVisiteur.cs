@@ -28,8 +28,8 @@ namespace PPE3_Leviathan
             bsVisiteur.DataSource = controleurMission2.logInfoVisiteur();
 
             //Chargement de la liste des medecins en charge
-            cboMedecin.ValueMember = "idStyle";
-            cboMedecin.DisplayMember = "libStyle";
+            cboMedecin.ValueMember = "idMedecin";
+            cboMedecin.DisplayMember = "nom";
             bsMedecins.DataSource = controleurMission2.listeMedecinsSuivi(controleurMission2.leVisiteur);
             /*txtNom.Text = bsVisiteur.*/
         }
