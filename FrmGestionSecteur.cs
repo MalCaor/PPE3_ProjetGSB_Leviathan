@@ -29,20 +29,7 @@ namespace PPE3_Leviathan
             cboRegionPourResponsabilite.DataSource = s.Region.ToList();
 
             //On verifie si la personne connecté est toujours responsable de 
-            List<Secteur>lesSecteurDeLaCombo = ControleurMission1.leVisiteur.Secteur.ToList();
-            int nbSecteur = lesSecteurDeLaCombo.Count();
-            int nbTrue = 0;
-            foreach(Secteur secteurCombo in lesSecteurDeLaCombo)
-            {
-                if(secteurCombo.Visiteur.idVisiteur != ControleurMission1.leVisiteur.idVisiteur)
-                {
-                    nbTrue += 1;
-                }
-            }
-            if(nbTrue == nbSecteur)
-            {
-                this.Close();
-            }
+            //VerifResponsable();
         }
 
         private void BsGestionSecteur_CurrentChanged(object sender, EventArgs e)
@@ -58,7 +45,7 @@ namespace PPE3_Leviathan
                 List<Visiteur> lesVisiteursRegions = region.Visiteur1.ToList();
                 foreach(Visiteur visiteur in lesVisiteursRegions)
                 {
-                    if(!dgvValue.Contains(visiteur))
+                    if(!(dgvValue.Contains(visiteur)))
                     {
                         dgvValue.Add(visiteur);
                     }

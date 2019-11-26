@@ -16,5 +16,12 @@ namespace PPE3_Leviathan
         {
             InitializeComponent();
         }
+
+        private void FrmInscription_Load(object sender, EventArgs e)
+        {
+            cboVisiteur.ValueMember = "idVisiteur";
+            cboVisiteur.DisplayMember = "prenom" + "nom";
+
+        }
     }
 }

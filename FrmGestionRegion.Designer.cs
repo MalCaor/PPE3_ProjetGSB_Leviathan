@@ -40,7 +40,6 @@
             this.btnRendreActif = new System.Windows.Forms.Button();
             this.dgvVisiteurGestion = new System.Windows.Forms.DataGridView();
             this.btnAjouterVisiteurExistant = new System.Windows.Forms.Button();
-            this.btnCreerVisiteur = new System.Windows.Forms.Button();
             this.bsGestionRegion = new System.Windows.Forms.BindingSource(this.components);
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurGestion)).BeginInit();
@@ -73,6 +72,7 @@
             this.btnRetour.TabIndex = 7;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.BtnRetour_Click);
             // 
             // rtbMotifFinContrat
             // 
@@ -97,6 +97,7 @@
             this.btnMettreFinContrat.TabIndex = 25;
             this.btnMettreFinContrat.Text = "Mettre Fin au Contrat";
             this.btnMettreFinContrat.UseVisualStyleBackColor = true;
+            this.btnMettreFinContrat.Click += new System.EventHandler(this.BtnMettreFinContrat_Click);
             // 
             // lblCurrentVisiteur
             // 
@@ -115,6 +116,7 @@
             this.btnRendreInactif.TabIndex = 22;
             this.btnRendreInactif.Text = "Rendre Inactif";
             this.btnRendreInactif.UseVisualStyleBackColor = true;
+            this.btnRendreInactif.Click += new System.EventHandler(this.BtnRendreInactif_Click);
             // 
             // btnRendreActif
             // 
@@ -124,6 +126,7 @@
             this.btnRendreActif.TabIndex = 21;
             this.btnRendreActif.Text = "Rendre Actif";
             this.btnRendreActif.UseVisualStyleBackColor = true;
+            this.btnRendreActif.Click += new System.EventHandler(this.BtnRendreActif_Click);
             // 
             // dgvVisiteurGestion
             // 
@@ -137,30 +140,25 @@
             // 
             this.btnAjouterVisiteurExistant.Location = new System.Drawing.Point(12, 314);
             this.btnAjouterVisiteurExistant.Name = "btnAjouterVisiteurExistant";
-            this.btnAjouterVisiteurExistant.Size = new System.Drawing.Size(156, 24);
+            this.btnAjouterVisiteurExistant.Size = new System.Drawing.Size(121, 24);
             this.btnAjouterVisiteurExistant.TabIndex = 29;
-            this.btnAjouterVisiteurExistant.Text = "Ajouter un Visiteur Existant";
+            this.btnAjouterVisiteurExistant.Text = "Ajouter un Visiteur";
             this.btnAjouterVisiteurExistant.UseVisualStyleBackColor = true;
-            // 
-            // btnCreerVisiteur
-            // 
-            this.btnCreerVisiteur.Location = new System.Drawing.Point(12, 348);
-            this.btnCreerVisiteur.Name = "btnCreerVisiteur";
-            this.btnCreerVisiteur.Size = new System.Drawing.Size(156, 24);
-            this.btnCreerVisiteur.TabIndex = 30;
-            this.btnCreerVisiteur.Text = "Créer un Visiteur";
-            this.btnCreerVisiteur.UseVisualStyleBackColor = true;
+            this.btnAjouterVisiteurExistant.Click += new System.EventHandler(this.BtnAjouterVisiteurExistant_Click);
             // 
             // bsGestionRegion
             // 
             this.bsGestionRegion.CurrentChanged += new System.EventHandler(this.BsGestionRegion_CurrentChanged);
+            // 
+            // bsVisiteur
+            // 
+            this.bsVisiteur.CurrentChanged += new System.EventHandler(this.BsVisiteur_CurrentChanged);
             // 
             // FrmGestionRegion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 450);
-            this.Controls.Add(this.btnCreerVisiteur);
             this.Controls.Add(this.btnAjouterVisiteurExistant);
             this.Controls.Add(this.dgvVisiteurGestion);
             this.Controls.Add(this.rtbMotifFinContrat);
@@ -196,7 +194,6 @@
         private System.Windows.Forms.Button btnRendreActif;
         private System.Windows.Forms.DataGridView dgvVisiteurGestion;
         private System.Windows.Forms.Button btnAjouterVisiteurExistant;
-        private System.Windows.Forms.Button btnCreerVisiteur;
         private System.Windows.Forms.BindingSource bsGestionRegion;
         private System.Windows.Forms.BindingSource bsVisiteur;
     }
