@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cboVisiteur = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +56,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.bsAjoutVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLaboratoire = new System.Windows.Forms.BindingSource(this.components);
+            this.cboRegion = new System.Windows.Forms.ComboBox();
+            this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsAjoutVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLaboratoire)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,9 +96,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(175, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 13);
+            this.label4.Size = new System.Drawing.Size(188, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "comme colladorateur dans cette Région";
+            this.label4.Text = "comme colladorateur dans la Région : ";
             // 
             // txtNomVisiteur
             // 
@@ -122,6 +130,7 @@
             this.btnAjouterVisiteur.TabIndex = 8;
             this.btnAjouterVisiteur.Text = "Ajouter";
             this.btnAjouterVisiteur.UseVisualStyleBackColor = true;
+            this.btnAjouterVisiteur.Click += new System.EventHandler(this.BtnAjouterVisiteur_Click);
             // 
             // txtRueVisiteur
             // 
@@ -180,6 +189,7 @@
             this.btnRetour.TabIndex = 16;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.BtnRetour_Click);
             // 
             // btnCreer
             // 
@@ -189,6 +199,7 @@
             this.btnCreer.TabIndex = 17;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = true;
+            this.btnCreer.Click += new System.EventHandler(this.BtnCreer_Click);
             // 
             // label2
             // 
@@ -280,11 +291,20 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Confirmer";
             // 
+            // cboRegion
+            // 
+            this.cboRegion.FormattingEnabled = true;
+            this.cboRegion.Location = new System.Drawing.Point(369, 60);
+            this.cboRegion.Name = "cboRegion";
+            this.cboRegion.Size = new System.Drawing.Size(121, 21);
+            this.cboRegion.TabIndex = 28;
+            // 
             // FrmInscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 380);
+            this.Controls.Add(this.cboRegion);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -315,6 +335,9 @@
             this.Name = "FrmInscription";
             this.Text = "FrmInscription";
             this.Load += new System.EventHandler(this.FrmInscription_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsAjoutVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLaboratoire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +372,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.BindingSource bsAjoutVisiteur;
+        private System.Windows.Forms.BindingSource bsLaboratoire;
+        private System.Windows.Forms.ComboBox cboRegion;
+        private System.Windows.Forms.BindingSource bsRegion;
     }
 }
