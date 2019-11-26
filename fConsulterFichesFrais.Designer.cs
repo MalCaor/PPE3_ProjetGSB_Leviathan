@@ -64,6 +64,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btAjFF = new System.Windows.Forms.Button();
             this.btAjFHF = new System.Windows.Forms.Button();
+            this.btAddFF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
@@ -331,11 +332,22 @@
             this.btAjFHF.UseVisualStyleBackColor = true;
             this.btAjFHF.Click += new System.EventHandler(this.BtAjFHF_Click);
             // 
+            // btAddFF
+            // 
+            this.btAddFF.Location = new System.Drawing.Point(626, 53);
+            this.btAddFF.Name = "btAddFF";
+            this.btAddFF.Size = new System.Drawing.Size(135, 23);
+            this.btAddFF.TabIndex = 31;
+            this.btAddFF.Text = "Ajouter FraisForfait";
+            this.btAddFF.UseVisualStyleBackColor = true;
+            this.btAddFF.Click += new System.EventHandler(this.BtAddFF_Click);
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btAddFF);
             this.Controls.Add(this.btAjFHF);
             this.Controls.Add(this.btAjFF);
             this.Controls.Add(this.label2);
@@ -419,5 +431,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btAjFF;
         private System.Windows.Forms.Button btAjFHF;
+        private System.Windows.Forms.Button btAddFF;
     }
 }

@@ -15,6 +15,7 @@ namespace PPE3_Leviathan
         private bool close = false;
         static Visiteur v;
         private bool change = false;
+        static fichefrais ff;
         public fConsulterFichesFrais()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace PPE3_Leviathan
             tbCP.Text = v.cp;
             Laboratoire lab = v.Laboratoire;
             tbLab.Text = lab.nomLabo;
-            fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
+            ff = (fichefrais)bindingSourceFicheFrais.Current;
         }
 
         private void CbFicheFrais_Format(object sender, ListControlConvertEventArgs e)
@@ -118,7 +119,7 @@ namespace PPE3_Leviathan
 
         private void BtAjFF_Click(object sender, EventArgs e)
         {
-            Form AddFF = new fAjoutLigneFF(v.idVisiteur);
+            Form AddFF = new fAjoutLigneFF(v.idVisiteur, ff);
             AddFF.ShowDialog();
         }
 
@@ -126,6 +127,12 @@ namespace PPE3_Leviathan
         {
             Form AddFHF = new fAjoutLigneFHF(v.idVisiteur);
             AddFHF.ShowDialog();
+        }
+
+        private void BtAddFF_Click(object sender, EventArgs e)
+        {
+            Form AddFraisForfait = new fAjoutFraisForfait();
+            AddFraisForfait.ShowDialog();
         }
     }
 }
