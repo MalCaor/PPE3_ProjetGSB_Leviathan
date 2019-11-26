@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bindingSourceFicheFrais = new System.Windows.Forms.BindingSource(this.components);
             this.CBVisiteur = new System.Windows.Forms.ComboBox();
-            this.bindingSourceVisiteur = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceNomVis = new System.Windows.Forms.BindingSource(this.components);
             this.labVisit = new System.Windows.Forms.Label();
             this.labVille = new System.Windows.Forms.Label();
-            this.bindingSourceRegion = new System.Windows.Forms.BindingSource(this.components);
             this.labDEmbau = new System.Windows.Forms.Label();
             this.tbVille = new System.Windows.Forms.TextBox();
             this.tbDateEmb = new System.Windows.Forms.TextBox();
@@ -56,20 +52,25 @@
             this.labDateModif = new System.Windows.Forms.Label();
             this.dgvLigneFor = new System.Windows.Forms.DataGridView();
             this.dgvLigneHor = new System.Windows.Forms.DataGridView();
-            this.bindingSourceLigneF = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceLigneHF = new System.Windows.Forms.BindingSource(this.components);
             this.bModifFF = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btAjFF = new System.Windows.Forms.Button();
             this.btAjFHF = new System.Windows.Forms.Button();
+            this.btAddFF = new System.Windows.Forms.Button();
+            this.bindingSourceFicheFrais = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceNomVis = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceLigneF = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceLigneHF = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneHF)).BeginInit();
             this.SuspendLayout();
@@ -331,11 +332,26 @@
             this.btAjFHF.UseVisualStyleBackColor = true;
             this.btAjFHF.Click += new System.EventHandler(this.BtAjFHF_Click);
             // 
+            // btAddFF
+            // 
+            this.btAddFF.Location = new System.Drawing.Point(626, 53);
+            this.btAddFF.Name = "btAddFF";
+            this.btAddFF.Size = new System.Drawing.Size(135, 23);
+            this.btAddFF.TabIndex = 31;
+            this.btAddFF.Text = "Ajouter FraisForfait";
+            this.btAddFF.UseVisualStyleBackColor = true;
+            this.btAddFF.Click += new System.EventHandler(this.BtAddFF_Click);
+            // 
+            // bindingSourceFicheFrais
+            // 
+            this.bindingSourceFicheFrais.CurrentChanged += new System.EventHandler(this.BindingSourceFicheFrais_CurrentChanged);
+            // 
             // fConsulterFichesFrais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btAddFF);
             this.Controls.Add(this.btAjFHF);
             this.Controls.Add(this.btAjFF);
             this.Controls.Add(this.label2);
@@ -369,12 +385,12 @@
             this.Text = "fConsulterFichesFrais";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FConsulterFichesFrais_FormClosing);
             this.Load += new System.EventHandler(this.FConsulterFichesFrais_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFicheFrais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceNomVis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneFor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLigneHor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLigneHF)).EndInit();
             this.ResumeLayout(false);
@@ -419,5 +435,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btAjFF;
         private System.Windows.Forms.Button btAjFHF;
+        private System.Windows.Forms.Button btAddFF;
     }
 }

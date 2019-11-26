@@ -42,7 +42,7 @@
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(188, 20);
             this.txtIdentifiant.TabIndex = 0;
-            this.txtIdentifiant.Text = "veynde";
+            this.txtIdentifiant.Text = "jmartin";
             // 
             // txtMotDePasse
             // 
@@ -51,7 +51,7 @@
             this.txtMotDePasse.PasswordChar = '*';
             this.txtMotDePasse.Size = new System.Drawing.Size(188, 20);
             this.txtMotDePasse.TabIndex = 1;
-            this.txtMotDePasse.Text = "veynde";
+            this.txtMotDePasse.Text = "jmartin";
             // 
             // LblIdentifiant
             // 

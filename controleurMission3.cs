@@ -184,5 +184,10 @@ namespace PPE3_Leviathan
             maConnexion.SaveChanges();
             return true;
         }
+        public static void addFichefrais(fichefrais ff)
+        {
+            maConnexion.fichefrais.Add(ff);
+            maConnexion.SaveChanges();
+        }
     }
 }

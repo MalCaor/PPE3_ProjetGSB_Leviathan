@@ -224,9 +224,43 @@ namespace PPE3_Leviathan
             return (Region)LQuery;
         }
 
+        //AJOUT VISITEUR
+        private static Visiteur newVisiteur;
+        public static bool AjoutVisiteur(int idLabo, string nom, string prenom, string rue, string cp, string ville, string date, string identifiant, string mdp)
+        {
+            bool vretour = true;
+            try
+            {
+                newVisiteur = new Visiteur();
+                newVisiteur.idVisiteur = GetLetter().ToString();
+                newVisiteur.nom = nom;
+                newVisiteur.prenom = prenom;
+                newVisiteur.idLabo = idLabo;
+                newVisiteur.rue = rue;
+                newVisiteur.cp = cp;
+                newVisiteur.ville = ville;
+                newVisiteur.identifiant = identifiant;
+                newVisiteur.password = GetMd5Hash(mdp.ToString());
+                newVisiteur.dateEmbauche = date;
+                newVisiteur.actif = 1;
+                newVisiteur.dateFinEmbauche = null;
+            }
+            catch(Exception ex)
+            {
+                vretour = false;
+            }
+            return vretour;
+        }
 
-
-
+        static Random _random = new Random();
+        public static char GetLetter()
+        {
+            // This method returns a random lowercase letter.
+            // ... Between 'a' and 'z' inclusize.
+            int num = _random.Next(0, 26); // Zero to 25
+            char let = (char)('a' + num);
+            return let;
+        }
 
         //LISTE DES TABLES DE LA BASE DE DONNEES
         public static List<Visiteur> listeVisiteur()
