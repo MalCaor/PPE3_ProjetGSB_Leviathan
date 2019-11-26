@@ -33,6 +33,7 @@ namespace PPE3_Leviathan
             fichefrais.idVisiteur = v.idVisiteur;
             fichefrais.idEtat = "VA";
             fichefrais.mois = date;
+            controleurMission3.addFichefrais(fichefrais);
         }
     }
 }
