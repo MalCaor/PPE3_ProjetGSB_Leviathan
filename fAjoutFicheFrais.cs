@@ -16,13 +16,15 @@ namespace PPE3_Leviathan
         public fAjoutFicheFrais(Visiteur V)
         {
             InitializeComponent();
+            calandar.Format = DateTimePickerFormat.Custom;
+            calandar.CustomFormat = "MM-yyyy";
             v = V;
         }
 
         private void BtOK_Click(object sender, EventArgs e)
         {
-            string Annee = (calandar.SelectionRange.Start.Year.ToString());
-            string mois = (calandar.SelectionRange.Start.Month.ToString());
+            string Annee = (calandar.Value.Year.ToString());
+            string mois = (calandar.Value.Month.ToString());
             if(mois.Length == 1)
             {
                 mois = "0" + mois;

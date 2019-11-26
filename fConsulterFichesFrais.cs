@@ -55,36 +55,7 @@ namespace PPE3_Leviathan
 
         private void CbFicheFrais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!close && !change)
-            {
-                fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
-                string moisAnne = ff.mois;
-                tbMois.Text = string.Concat(moisAnne.Substring(0, 2), " / ", moisAnne.Substring(2, 4));
-                tbNbJust.Text = ff.nbJustificatifs.ToString();
-                tbMont.Text = ff.montantValide.ToString();
-                if(!String.IsNullOrEmpty(ff.dateModif.ToString()))
-                {
-
-                
-                tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
-                }
-                change = true;
-                bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
-                bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
-                dgvLigneFor.DataSource = bindingSourceLigneF.DataSource;
-                //hide object info
-                dgvLigneFor.Columns[4].Visible = false;
-                dgvLigneFor.Columns[5].Visible = false;
-                dgvLigneHor.DataSource = bindingSourceLigneHF.DataSource;
-                //hide object info
-                dgvLigneHor.Columns[4].Visible = false;
-                dgvLigneHor.Columns[5].Visible = false;
-                dgvLigneHor.Columns[6].Visible = false;
-                if (!(ff.idEtat == "CL"))
-                {
-                    bModifFF.Enabled = true;
-                }
-            }
+          
         }
 
         private void FConsulterFichesFrais_Load(object sender, EventArgs e)
@@ -138,6 +109,40 @@ namespace PPE3_Leviathan
         {
             Form AddFraisForfait = new fAjoutFicheFrais(v);
             AddFraisForfait.ShowDialog();
+        }
+
+        private void BindingSourceFicheFrais_CurrentChanged(object sender, EventArgs e)
+        {
+            if (!close)
+            {
+                fichefrais ff = (fichefrais)bindingSourceFicheFrais.Current;
+                string moisAnne = ff.mois;
+                tbMois.Text = string.Concat(moisAnne.Substring(0, 2), " / ", moisAnne.Substring(2, 4));
+                tbNbJust.Text = ff.nbJustificatifs.ToString();
+                tbMont.Text = ff.montantValide.ToString();
+                if (!String.IsNullOrEmpty(ff.dateModif.ToString()))
+                {
+
+
+                    tbDateModif.Text = ff.dateModif.ToString().Substring(0, 10);
+                }
+                change = true;
+                bindingSourceLigneHF.DataSource = ff.LigneFraisHorsForfait.ToList();
+                bindingSourceLigneF.DataSource = ff.LigneFraisForfait.ToList();
+                dgvLigneFor.DataSource = bindingSourceLigneF.DataSource;
+                //hide object info
+                dgvLigneFor.Columns[4].Visible = false;
+                dgvLigneFor.Columns[5].Visible = false;
+                dgvLigneHor.DataSource = bindingSourceLigneHF.DataSource;
+                //hide object info
+                dgvLigneHor.Columns[4].Visible = false;
+                dgvLigneHor.Columns[5].Visible = false;
+                dgvLigneHor.Columns[6].Visible = false;
+                if (!(ff.idEtat == "CL"))
+                {
+                    bModifFF.Enabled = true;
+                }
+            }
         }
     }
 }
