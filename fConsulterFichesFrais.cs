@@ -131,7 +131,7 @@ namespace PPE3_Leviathan
 
         private void BtAddFF_Click(object sender, EventArgs e)
         {
-            Form AddFraisForfait = new fAjoutFraisForfait();
+            Form AddFraisForfait = new fAjoutFicheFrais(v);
             AddFraisForfait.ShowDialog();
         }
     }
