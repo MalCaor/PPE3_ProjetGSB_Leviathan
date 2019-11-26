@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cboGestionRegion = new System.Windows.Forms.ComboBox();
             this.lblResponsable = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
             this.rtbMotifFinContrat = new System.Windows.Forms.RichTextBox();
             this.dtpDateFinContrat = new System.Windows.Forms.DateTimePicker();
             this.btnMettreFinContrat = new System.Windows.Forms.Button();
-            this.lblResponsableRegionsActuel = new System.Windows.Forms.Label();
             this.lblCurrentVisiteur = new System.Windows.Forms.Label();
             this.btnRendreInactif = new System.Windows.Forms.Button();
             this.btnRendreActif = new System.Windows.Forms.Button();
-            this.cboRegionPourResponsabilite = new System.Windows.Forms.ComboBox();
-            this.lblResponsableRegion = new System.Windows.Forms.Label();
-            this.btnValiderResponsable = new System.Windows.Forms.Button();
             this.dgvVisiteurGestion = new System.Windows.Forms.DataGridView();
+            this.btnAjouterVisiteurExistant = new System.Windows.Forms.Button();
+            this.btnCreerVisiteur = new System.Windows.Forms.Button();
+            this.bsGestionRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurGestion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsGestionRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
             // cboGestionRegion
@@ -58,9 +61,9 @@
             this.lblResponsable.AutoSize = true;
             this.lblResponsable.Location = new System.Drawing.Point(170, 15);
             this.lblResponsable.Name = "lblResponsable";
-            this.lblResponsable.Size = new System.Drawing.Size(109, 13);
+            this.lblResponsable.Size = new System.Drawing.Size(106, 13);
             this.lblResponsable.TabIndex = 6;
-            this.lblResponsable.Text = "Responsable Secteur";
+            this.lblResponsable.Text = "Responsable Region";
             // 
             // btnRetour
             // 
@@ -95,19 +98,10 @@
             this.btnMettreFinContrat.Text = "Mettre Fin au Contrat";
             this.btnMettreFinContrat.UseVisualStyleBackColor = true;
             // 
-            // lblResponsableRegionsActuel
-            // 
-            this.lblResponsableRegionsActuel.AutoSize = true;
-            this.lblResponsableRegionsActuel.Location = new System.Drawing.Point(5, 356);
-            this.lblResponsableRegionsActuel.Name = "lblResponsableRegionsActuel";
-            this.lblResponsableRegionsActuel.Size = new System.Drawing.Size(157, 13);
-            this.lblResponsableRegionsActuel.TabIndex = 24;
-            this.lblResponsableRegionsActuel.Text = "Label des responsabelde region";
-            // 
             // lblCurrentVisiteur
             // 
             this.lblCurrentVisiteur.AutoSize = true;
-            this.lblCurrentVisiteur.Location = new System.Drawing.Point(5, 312);
+            this.lblCurrentVisiteur.Location = new System.Drawing.Point(16, 270);
             this.lblCurrentVisiteur.Name = "lblCurrentVisiteur";
             this.lblCurrentVisiteur.Size = new System.Drawing.Size(136, 13);
             this.lblCurrentVisiteur.TabIndex = 23;
@@ -115,7 +109,7 @@
             // 
             // btnRendreInactif
             // 
-            this.btnRendreInactif.Location = new System.Drawing.Point(263, 307);
+            this.btnRendreInactif.Location = new System.Drawing.Point(274, 265);
             this.btnRendreInactif.Name = "btnRendreInactif";
             this.btnRendreInactif.Size = new System.Drawing.Size(110, 23);
             this.btnRendreInactif.TabIndex = 22;
@@ -124,38 +118,12 @@
             // 
             // btnRendreActif
             // 
-            this.btnRendreActif.Location = new System.Drawing.Point(147, 307);
+            this.btnRendreActif.Location = new System.Drawing.Point(158, 265);
             this.btnRendreActif.Name = "btnRendreActif";
             this.btnRendreActif.Size = new System.Drawing.Size(110, 23);
             this.btnRendreActif.TabIndex = 21;
             this.btnRendreActif.Text = "Rendre Actif";
             this.btnRendreActif.UseVisualStyleBackColor = true;
-            // 
-            // cboRegionPourResponsabilite
-            // 
-            this.cboRegionPourResponsabilite.FormattingEnabled = true;
-            this.cboRegionPourResponsabilite.Location = new System.Drawing.Point(313, 263);
-            this.cboRegionPourResponsabilite.Name = "cboRegionPourResponsabilite";
-            this.cboRegionPourResponsabilite.Size = new System.Drawing.Size(121, 21);
-            this.cboRegionPourResponsabilite.TabIndex = 20;
-            // 
-            // lblResponsableRegion
-            // 
-            this.lblResponsableRegion.AutoSize = true;
-            this.lblResponsableRegion.Location = new System.Drawing.Point(5, 266);
-            this.lblResponsableRegion.Name = "lblResponsableRegion";
-            this.lblResponsableRegion.Size = new System.Drawing.Size(302, 13);
-            this.lblResponsableRegion.TabIndex = 19;
-            this.lblResponsableRegion.Text = "Nommer VisiteurNom VisiteurPrenom responsable de la région :";
-            // 
-            // btnValiderResponsable
-            // 
-            this.btnValiderResponsable.Location = new System.Drawing.Point(440, 263);
-            this.btnValiderResponsable.Name = "btnValiderResponsable";
-            this.btnValiderResponsable.Size = new System.Drawing.Size(110, 23);
-            this.btnValiderResponsable.TabIndex = 18;
-            this.btnValiderResponsable.Text = "Valider changement";
-            this.btnValiderResponsable.UseVisualStyleBackColor = true;
             // 
             // dgvVisiteurGestion
             // 
@@ -165,28 +133,51 @@
             this.dgvVisiteurGestion.Size = new System.Drawing.Size(898, 197);
             this.dgvVisiteurGestion.TabIndex = 28;
             // 
+            // btnAjouterVisiteurExistant
+            // 
+            this.btnAjouterVisiteurExistant.Location = new System.Drawing.Point(12, 314);
+            this.btnAjouterVisiteurExistant.Name = "btnAjouterVisiteurExistant";
+            this.btnAjouterVisiteurExistant.Size = new System.Drawing.Size(156, 24);
+            this.btnAjouterVisiteurExistant.TabIndex = 29;
+            this.btnAjouterVisiteurExistant.Text = "Ajouter un Visiteur Existant";
+            this.btnAjouterVisiteurExistant.UseVisualStyleBackColor = true;
+            // 
+            // btnCreerVisiteur
+            // 
+            this.btnCreerVisiteur.Location = new System.Drawing.Point(12, 348);
+            this.btnCreerVisiteur.Name = "btnCreerVisiteur";
+            this.btnCreerVisiteur.Size = new System.Drawing.Size(156, 24);
+            this.btnCreerVisiteur.TabIndex = 30;
+            this.btnCreerVisiteur.Text = "Créer un Visiteur";
+            this.btnCreerVisiteur.UseVisualStyleBackColor = true;
+            // 
+            // bsGestionRegion
+            // 
+            this.bsGestionRegion.CurrentChanged += new System.EventHandler(this.BsGestionRegion_CurrentChanged);
+            // 
             // FrmGestionRegion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 450);
+            this.Controls.Add(this.btnCreerVisiteur);
+            this.Controls.Add(this.btnAjouterVisiteurExistant);
             this.Controls.Add(this.dgvVisiteurGestion);
             this.Controls.Add(this.rtbMotifFinContrat);
             this.Controls.Add(this.dtpDateFinContrat);
             this.Controls.Add(this.btnMettreFinContrat);
-            this.Controls.Add(this.lblResponsableRegionsActuel);
             this.Controls.Add(this.lblCurrentVisiteur);
             this.Controls.Add(this.btnRendreInactif);
             this.Controls.Add(this.btnRendreActif);
-            this.Controls.Add(this.cboRegionPourResponsabilite);
-            this.Controls.Add(this.lblResponsableRegion);
-            this.Controls.Add(this.btnValiderResponsable);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblResponsable);
             this.Controls.Add(this.cboGestionRegion);
             this.Name = "FrmGestionRegion";
             this.Text = "FrmGestionRegion";
+            this.Load += new System.EventHandler(this.FrmGestionRegion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisiteurGestion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsGestionRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,13 +191,13 @@
         private System.Windows.Forms.RichTextBox rtbMotifFinContrat;
         private System.Windows.Forms.DateTimePicker dtpDateFinContrat;
         private System.Windows.Forms.Button btnMettreFinContrat;
-        private System.Windows.Forms.Label lblResponsableRegionsActuel;
         private System.Windows.Forms.Label lblCurrentVisiteur;
         private System.Windows.Forms.Button btnRendreInactif;
         private System.Windows.Forms.Button btnRendreActif;
-        private System.Windows.Forms.ComboBox cboRegionPourResponsabilite;
-        private System.Windows.Forms.Label lblResponsableRegion;
-        private System.Windows.Forms.Button btnValiderResponsable;
         private System.Windows.Forms.DataGridView dgvVisiteurGestion;
+        private System.Windows.Forms.Button btnAjouterVisiteurExistant;
+        private System.Windows.Forms.Button btnCreerVisiteur;
+        private System.Windows.Forms.BindingSource bsGestionRegion;
+        private System.Windows.Forms.BindingSource bsVisiteur;
     }
 }

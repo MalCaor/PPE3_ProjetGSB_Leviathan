@@ -159,3 +159,4 @@ X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CoreCompileInputs.cache
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.csproj.CopyComplete
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.exe
 X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.pdb
+X:\PPE3_GSB_Leviathan\obj\Debug\PPE3_Leviathan.FrmGestionRegion.resources
