@@ -20,7 +20,8 @@ namespace PPE3_Leviathan
             controleurMission2.init();
             //controleurMission3.init();
             //Application.Run(new FrmConnexion());
-            Application.Run(new FrmModifRapport());
+            Application.Run(new InfoVisiteur());
+            //Application.Run(new FrmModifRapport());
             //Application.Run(new fGestionRembFrais());
             //corig
         }

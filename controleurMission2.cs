@@ -17,6 +17,13 @@ namespace PPE3_Leviathan
             maConnexion = new Leviathan_PPE3Entities();
         }
 
+        public static void SaveChanges()
+        {
+            maConnexion.SaveChanges();
+        }
+
+        public static Visiteur leVisiteur;
+
         //Fonctions d'appel des liste depuis la BDD
 
         public static List<Etat> listeEtats()
@@ -99,13 +106,34 @@ namespace PPE3_Leviathan
             return maConnexion.Visiteur.ToList();
         }
 
+        //------------------CONNEXION------------------
+        //-------------------SIMULER-------------------
+
+        public static Visiteur logInfoVisiteur()
+        {
+
+
+            foreach (Visiteur V in listeVisiteurs())
+            {
+                if (V.idVisiteur == "a13")
+                {
+                    leVisiteur = V;
+                }
+            }
+
+            return leVisiteur;
+        }
+
+        // TRAITEMENT INFO VISITEUR
+
+        // Récupération de la liste des rapport du visiteur
         public static List<RAPPORT> listeRapportV(Visiteur V)
         {
             List<RAPPORT> RapportsV = new List<RAPPORT>();
 
             foreach(RAPPORT R in listeRapports())
-            {
-                if(V.identifiant == R.idVisiteur)
+            { 
+                if(V.idVisiteur == R.idVisiteur)
                 {
                     RapportsV.Add(R);
                 }
@@ -113,28 +141,43 @@ namespace PPE3_Leviathan
             
             return RapportsV;
         }
+
+        //Récupération de la liste des médecins suivi par le visiteur connecté
         public static List<MEDECIN> listeMedecinsSuivi(Visiteur V)
         {
             List<MEDECIN> MedecinsV = new List<MEDECIN>();
-            bool parcours;
-            foreach(RAPPORT R in V.RAPPORT /*listeRapportV(V)*/)
+            List<MEDECIN> Medecins = new List<MEDECIN>();
+            List<RAPPORT> RapportV = new List<RAPPORT>();
+            
+            foreach(RAPPORT R in /*V.RAPPORT*/ listeRapportV(V))
             {
-                parcours = false;
-                foreach (MEDECIN M in MedecinsV)
+                //Vérification de l'existance du médecins du rapport dans la liste MedecinsV
+                if (verifSuivi(MedecinsV, R) == false)
                 {
-                    if (M.idMedecin == R.idMedecin)
-                    {
-                        parcours = true;
-                    }
-                    else
-                    {
-                        MedecinsV.Add(M);
-                    }
+                    //Ajout du médecins du rapport à la liste 
+                    MedecinsV.Add(R.MEDECIN);
                 }
             }
             return MedecinsV;
         }
 
+        //Vérification de l'existance du médecin dans la liste en cour dans la fonction listeMedecinsSuivi(Visiteur V)
+        public static bool verifSuivi(List<MEDECIN> MedecinsV, RAPPORT R)
+        {
+            bool vretour = false;
+
+            foreach(MEDECIN M in MedecinsV)
+            {
+                if (M.idMedecin == R.idMedecin)
+                {
+                    vretour = true;
+                }
+            }
+
+            return vretour;
+        }
+
+        
         /*public static Object VisiteurTest()
         {
             

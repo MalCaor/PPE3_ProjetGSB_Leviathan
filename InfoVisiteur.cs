@@ -17,13 +17,15 @@ namespace PPE3_Leviathan
         {
             InitializeComponent();
             //c'est la syncro
-
-            bsMedecins.DataSource = controleurMission2.listeVisiteurs();
+            //bsVisiteur.DataSource = controleurMission2.listeVisiteurs();
+            //bsMedecins.DataSource = controleurMission2.listeVisiteurs();
             /*bsVisiteur.DataSource = ...;*/
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            bsVisiteur.DataSource = controleurMission2.logInfoVisiteur();
+            bsMedecins.DataSource = controleurMission2.listeMedecinsSuivi(controleurMission2.leVisiteur);
             /*txtNom.Text = bsVisiteur.*/
         }
 
